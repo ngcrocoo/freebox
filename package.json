@@ -2,7 +2,7 @@
   "name": "freebox",
   "version": "1.0.0",
   "description": "Freie Boxen für alle",
-  "main": "index.js",
+  "main": "./js/index.js",
   "scripts": {
     "css-build": "node-sass --omit-source-map-url sass/style.scss css/style.css",
     "css-watch": "npm run css-build -- --watch",

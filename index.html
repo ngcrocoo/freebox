@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="manifest" href="/manifest.json">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,34 +9,27 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-     <h1 class="title">
-        FreeBox
-      </h1>
-
-      <p class="subtitle">
-        Kostenfreie Boxen <a href="https://github.com/ngcrocoo/freebox">GIT</a>
-      </p>
-
-      <div class="field">
-        <div class="control">
-          <input class="input" type="text" placeholder="Input">
+    <section class="section has-background-info">
+        <div class="container">
+            <div class="columns is-mobile">
+                <div class="column">
+                    <div>
+                    <button class="button">Button 1</button>
+                </div>
+                </div>
+                <div class="column">
+                    <div>
+                        <button class="button">Button 2</button>
+                    </div>
+                </div>
+                <div class="column">
+                    <div>
+                        <button class="button">Button 3</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="field">
-        <p class="control">
-          <span class="select">
-            <select>
-              <option>Select dropdown</option>
-              <option>Select dropdown</option>
-            </select>
-          </span>
-        </p>
-      </div>
-
-      <div class="buttons">
-        <a class="button is-primary">Primary</a>
-        <a class="button is-link">Link</a>
-      </div>
+    </section>
+   
   </body>
 </html>
