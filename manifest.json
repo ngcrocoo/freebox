@@ -1,0 +1,26 @@
+{
+    "name": "FreeBox",
+    "short_name": "FreeBox",
+    "start_url": "/index.html",
+    "id": "/index.html",
+    "display": "standalone",
+    "background_color": "#76B900",
+    "description": "Kostenfreie Boxen in deiner Umgebung",
+    "lang": "de-DE",
+    "dir": "ltr",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+          "src": "/img/freemuelltonne.jpg",
+          "type": "image/jpg",
+          "sizes": "1100x825"
+        
+      },
+      {
+        "src": "/img/square.png",
+        "type": "image/png",
+        "sizes": "1200x1200"
+      
+    }
+    ]
+  }
