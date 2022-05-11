@@ -1,0 +1,9 @@
+// keep bulma import always as first import so that you can overwrite the bulma styles with every scss code after that
+@import "../node_modules/bulma/bulma.sass";
+
+// dividing scss styling into multiple files for different use cases
+@import "main.scss";
+@import "navbar.scss";
+
+
+
