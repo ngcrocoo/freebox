@@ -7878,3 +7878,13 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .testclass {
   color: red; }
+
+.content {
+  height: 100vh;
+  background-color: red; }
+
+.karte {
+  background-color: green; }
+
+.inhaltbox {
+  background-color: yellow; }
