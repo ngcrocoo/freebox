@@ -7,32 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FreeBox</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        #map{
+            height:400px;
+            width:100%;
+        }
+
+    </style>
   </head>
   <body>
-    <section class="section is-fullheight content">
-        <div class="container karte">
-            <h1>Karte</h1>
-        </div>
-        <div class="container inhaltbox">
-            <div class="columns is-mobile">
-                <div class="column">
-                    <div>
-                    <button class="button">Button 1</button>
-                </div>
-                </div>
-                <div class="column">
-                    <div>
-                        <button class="button">Button 2</button>
-                    </div>
-                </div>
-                <div class="column">
-                    <div>
-                        <button class="button">Button 3</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="map" class="hero is-fullheight map">
+        <div class="hero-body infobox">
+            <p class="title">
+              Hero title
+            </p>
+          </div> 
+    </div>
+
+ 
+
+
+
+    <script>
+        function initMap(){
+            var options={
+                zoom:12,
+                center:{lat:52.544937, lng:13.402677}
+            }
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+       }
+    </script>
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg&callback=initMap">
+</script>
    
   </body>
 </html>

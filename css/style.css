@@ -7880,11 +7880,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   color: red; }
 
 .content {
-  height: 100vh;
-  background-color: red; }
-
-.karte {
   background-color: green; }
 
-.inhaltbox {
+.infobox {
+  background-color: red;
+  margin-left: 60px;
+  margin-right: 60px; }
+
+.buttons {
   background-color: yellow; }

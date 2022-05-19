@@ -6,15 +6,18 @@
 @import "navbar.scss";
 
 .content {
-    height: 100vh;
+    background-color: green; 
+}
+
+.infobox {
     background-color: red;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
-.karte {
-    background-color: green;
-}
-
-.inhaltbox {
+.buttons {
     background-color: yellow;
 }
+
+
 
