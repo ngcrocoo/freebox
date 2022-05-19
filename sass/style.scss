@@ -1,23 +1,38 @@
 // keep bulma import always as first import so that you can overwrite the bulma styles with every scss code after that
 @import "../node_modules/bulma/bulma.sass";
-
 // dividing scss styling into multiple files for different use cases
 @import "main.scss";
 @import "navbar.scss";
-
 .content {
-    background-color: green; 
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.map {
+    position: absolute;
+    height: 400px;
+    width: 100%;
 }
 
 .infobox {
     background-color: red;
-    margin-left: 60px;
-    margin-right: 60px;
+    position: absolute;
+    z-index: 1;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 5rem;
+    width: 90vw;
+    .buttons:last-child {
+        margin-bottom: 0;
+    }
+    .button {
+        margin: 0.5rem!important;
+    }
 }
 
 .buttons {
-    background-color: yellow;
+    display: flex;
+    justify-content: space-evenly;
 }
-
-
-
