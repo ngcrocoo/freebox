@@ -8,26 +8,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FreeBox</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a57b6f63d4.js" crossorigin="anonymous"></script>
 
 </head>
 
-<body>
+<body class="is-size-7-mobile">
     <section class="content">
         <div id="map" class="hero is-fullheight map"></div>
-        <div class="infobox">
-            <div class="container ">
-                <div class="buttons">
-                    <div class=" ">
-                        <button class="button">Button 1 </button>
+        <div class="infobox box">
+            <div class="container suche">
+                <div class="container mt-0">
+                    <div class="center titel">
+                        <div class="circles ">
+                            <img src="img/suche.png">
+                        </div>
                     </div>
-                    <div class=" ">
-                        <button class="button">Button 2 </button>
+                </div>
+                <container class="container mt-3 mb-3 center erklaerung">
+                    <div class="">
+                        <p>Suche nach Plätzen in Berlin, an denen Boxen zum Verschenken aufgestellt werden.</p>
                     </div>
-                    <div class=" ">
-                        <button class="button ">Button 3 </button>
+                </container>
+                <container class="container center inhalt">
+                    <!-- <input class="input is-small" type="text" placeholder="Text input">
+                    <p>PLZ eingeben.</p> -->
+                    <div class="field">
+                        <p class="control">
+                            <input class="input" placeholder="PLZ">
+                        </p>
+                        <p class="beschreibung ml-0 mt-0">PLZ eingeben.</p>
+                    </div>
+                    <div class="container auswahl">
+                        <!-- <h6 class="title is-6 mb-1">Kategorien</h6> -->
+                        <p></p>
+                        <p class="mb-0 ">Du suchst nach etwas Bestimmten? Grenze Deine Suche ein.</p>
+
+                        <div class="columns is-mobile mt-0 kategorien">
+                            <div class="column ">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Kleidung
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Bücher
+                                </label>
+                            </div>
+                            <div class="column">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Pflanzen
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Möbel
+                                </label>
+                            </div>
+                            <div class="column">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Elektronik
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Sonstiges
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </container>
+            </div>
+            <div class="container start">
+                <div class="columns is-mobile">
+                    <div class="column center">
+                        <div class="circles">
+                            <img src="img/suche.png">
+                            <!-- <i class="fa-solid fa-magnifying-glass is-128x128"></i> -->
+                        </div>
+                    </div>
+                    <div class="column center">
+                        <div class="circles">
+                            <img src="img/plus.png">
+                        </div>
+                    </div>
+                    <div class="column center">
+                        <div class="circles">
+                            <img src="img/benutzer.png">
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
