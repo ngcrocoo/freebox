@@ -3,6 +3,7 @@
 // dividing scss styling into multiple files for different use cases
 @import "main.scss";
 @import "navbar.scss";
+@import "suche.scss";
 .content {
     position: relative;
     height: 100vh;
@@ -26,6 +27,7 @@
     right: 0;
     bottom: 2.5rem;
     width: 90vw;
+    max-height: 80%;
     // .buttons:last-child {
     //     margin-bottom: 0;
     // }
@@ -53,8 +55,8 @@
 //     justify-content: space-around;
 // }
 .circles {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     background-color: white;
     opacity: 1!important;
@@ -77,21 +79,18 @@ p {
     flex: flex-shrink;
 }
 
-.inhalt {
-    flex-direction: column;
+.suche {
+    display: none;
 }
 
-.beschreibung {
-    text-align: left;
-    margin-top: 0;
+.hinzufuegen {
+    display: none;
 }
 
-.input {
-    margin-bottom: 0;
+.meinAccount {
+    display: none;
 }
 
-.kategorien {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.scroll {
+    overflow-y: scroll;
 }

@@ -7876,6 +7876,34 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+.top {
+  position: absolute;
+  top: 1rem; }
+
+.inhalt {
+  flex-direction: column;
+  overflow-y: scroll; }
+
+.beschreibung {
+  text-align: left;
+  margin-top: 0; }
+
+.input {
+  margin-bottom: 0; }
+
+.kategorien {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.goButton {
+  display: flex;
+  justify-content: center; }
+
+.checkbox {
+  display: flex;
+  justify-content: center; }
+
 .content {
   position: relative;
   height: 100vh;
@@ -7896,7 +7924,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   left: 0;
   right: 0;
   bottom: 2.5rem;
-  width: 90vw; }
+  width: 90vw;
+  max-height: 80%; }
 
 .center {
   display: flex;
@@ -7904,8 +7933,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   align-items: center; }
 
 .circles {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   background-color: white;
   opacity: 1 !important;
@@ -7923,17 +7952,14 @@ p {
   font-size: 10;
   flex: flex-shrink; }
 
-.inhalt {
-  flex-direction: column; }
+.suche {
+  display: none; }
 
-.beschreibung {
-  text-align: left;
-  margin-top: 0; }
+.hinzufuegen {
+  display: none; }
 
-.input {
-  margin-bottom: 0; }
+.meinAccount {
+  display: none; }
 
-.kategorien {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+.scroll {
+  overflow-y: scroll; }
