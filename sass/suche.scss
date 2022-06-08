@@ -1,0 +1,34 @@
+.top {
+    position: absolute;
+    top: 1rem;
+}
+
+.inhalt {
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.beschreibung {
+    text-align: left;
+    margin-top: 0;
+}
+
+.input {
+    margin-bottom: 0;
+}
+
+.kategorien {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goButton {
+    display: flex;
+    justify-content: center;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+}

@@ -7876,5 +7876,90 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-.testclass {
-  color: red; }
+.top {
+  position: absolute;
+  top: 1rem; }
+
+.inhalt {
+  flex-direction: column;
+  overflow-y: scroll; }
+
+.beschreibung {
+  text-align: left;
+  margin-top: 0; }
+
+.input {
+  margin-bottom: 0; }
+
+.kategorien {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.goButton {
+  display: flex;
+  justify-content: center; }
+
+.checkbox {
+  display: flex;
+  justify-content: center; }
+
+.content {
+  position: relative;
+  height: 100vh;
+  width: 100vw; }
+
+.map {
+  position: absolute;
+  height: 400px;
+  width: 100%; }
+
+.infobox {
+  background-color: whitesmoke;
+  opacity: .8;
+  position: absolute;
+  z-index: 1;
+  margin: 0 auto;
+  padding: 1rem;
+  left: 0;
+  right: 0;
+  bottom: 2.5rem;
+  width: 90vw;
+  max-height: 80%; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.circles {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 1 !important;
+  flex-shrink: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+img {
+  width: 2rem;
+  height: 2rem; }
+
+p {
+  text-align: center;
+  font-size: 10;
+  flex: flex-shrink; }
+
+.suche {
+  display: none; }
+
+.hinzufuegen {
+  display: none; }
+
+.meinAccount {
+  display: none; }
+
+.scroll {
+  overflow-y: scroll; }

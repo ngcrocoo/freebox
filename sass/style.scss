@@ -1,9 +1,96 @@
 // keep bulma import always as first import so that you can overwrite the bulma styles with every scss code after that
 @import "../node_modules/bulma/bulma.sass";
-
 // dividing scss styling into multiple files for different use cases
 @import "main.scss";
 @import "navbar.scss";
+@import "suche.scss";
+.content {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
 
+.map {
+    position: absolute;
+    height: 400px;
+    width: 100%;
+}
 
+.infobox {
+    background-color: whitesmoke;
+    opacity: .8;
+    position: absolute;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 1rem;
+    left: 0;
+    right: 0;
+    bottom: 2.5rem;
+    width: 90vw;
+    max-height: 80%;
+    // .buttons:last-child {
+    //     margin-bottom: 0;
+    // }
+    // .button {
+    //     margin: 5rem!important;
+    // }
+    .columns {
+        // align-items: center;
+    }
+}
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// .buttons {
+//     // display: flex;
+//     justify-content: space-evenly;
+//     width: 20%;
+// }
+// .columns {
+//     align-items: center;
+//     justify-content: space-around;
+// }
+.circles {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 1!important;
+    // margin-left: 10.5rem;
+    flex-shrink: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //margin-right: 50%;
+}
+
+img {
+    width: 2rem;
+    height: 2rem;
+}
+
+p {
+    text-align: center;
+    font-size: 10;
+    flex: flex-shrink;
+}
+
+.suche {
+    display: none;
+}
+
+.hinzufuegen {
+    display: none;
+}
+
+.meinAccount {
+    display: none;
+}
+
+.scroll {
+    overflow-y: scroll;
+}
