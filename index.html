@@ -9,23 +9,215 @@
     <title>FreeBox</title>
     <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a57b6f63d4.js" crossorigin="anonymous"></script>
 
 </head>
 
-<body>
+<body class="is-size-7-mobile">
     <section class="content">
         <div id="map" class="hero is-fullheight map"></div>
-        <div class="infobox">
-            <div class="container ">
-                <div class="buttons">
-                    <div class=" ">
-                        <button class="button">Button 1 </button>
+        <div class="box infobox">
+
+            <div class="container suche" id="suche">
+                <div class="container mt-0">
+                    <div class="center titel">
+                        <div class="circles ">
+                            <img src="img/suche.png">
+                        </div>
                     </div>
-                    <div class=" ">
-                        <button class="button">Button 2 </button>
+                </div>
+                <div class="container mt-3 mb-3 center erklaerung">
+                    <div class="">
+                        <p>Suche nach Plätzen in Berlin, an denen Boxen zum Verschenken aufgestellt sind.</p>
+                        <p></p>
+                        <p></p>
                     </div>
-                    <div class=" ">
-                        <button class="button ">Button 3 </button>
+                </div>
+                <div class="container center ml-4 mr-4 mb-2 inhalt scroll">
+                    <div class="field">
+                        <p class="control">
+                            <input class="input is-rounded" placeholder="PLZ">
+                        </p>
+                        <p class="beschreibung ml-0 mt-0">PLZ eingeben.</p>
+                    </div>
+                    <div class="container auswahl">
+                        <!-- <h6 class="title is-6 mb-1">Kategorien</h6> -->
+                        <p></p>
+                        <p class="mb-0 ">Du suchst nach etwas Bestimmten? Grenze Deine Suche ein.</p>
+
+                        <div class="columns is-mobile mt-3 is-multiline kategorien">
+                            <div class="column ">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Kleidung
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Bücher
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Elektronik
+                                </label>
+                            </div>
+                            <div class="column">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Pflanzen
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Möbel
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Sonstiges
+                                </label>
+                            </div>
+                        </div>
+                        <div class="container goButton">
+                            <button class="button goButton">Suche</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container hinzufuegen scroll" id="hinzufuegen">
+                <div class="container mt-0">
+                    <div class="center titel">
+                        <div class="circles ">
+                            <img src="img/plus.png">
+                        </div>
+                    </div>
+                </div>
+                <container class="container mt-3 mb-3 center erklaerung">
+                    <div class="">
+                        <p>Du hast etwas zu Verschenken? Füge Deine Box zur Karte hinzu.</p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </container>
+                <container class="container center ml-4 mr-4 mb-2 inhalt">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        Meinen Standort verwenden.
+                        </input>
+                    </label>
+                    <p></p>
+                    <p>oder: Adressdaten eingeben.</p>
+                    <div class="container">
+                        <div class="field">
+                            <p class="control">
+                                <input class="input is-rounded is-small">Straße und Hausnummer
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <input class="input is-rounded is-small">Postleitzahl
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <input class="input is-rounded is-small">Stadt
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <input class="input is-rounded is-small">Bemerkungen
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <input class="input is-rounded is-small">Beschreibe den Inhalt Deiner Box.
+                            </p>
+                        </div>
+                        <div class="columns is-mobile mt-3 is-multiline kategorien">
+                            <div class="column ">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Kleidung
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Bücher
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Elektronik
+                                </label>
+                            </div>
+                            <div class="column">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Pflanzen
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Möbel
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    Sonstiges
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file is-boxed">
+                        <label class="file-label">
+                          <input class="file-input" type="file" name="resume">
+                          <span class="file-cta">
+                            <span class="file-icon">
+                              <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                              Choose a file…
+                            </span>
+                          </span>
+                        </label>
+                    </div>
+                    <div class="container goButton">
+                        <button class="button goButton">Suche</button>
+                    </div>
+                </container>
+            </div>
+
+            <div class="container meinAccount" id="meinAccount">
+                <div class="container mt-0">
+                    <div class="center titel">
+                        <div class="circles ">
+                            <img src="img/benutzer.png">
+                        </div>
+                    </div>
+                </div>
+                <container class="container mt-3 mb-3 center erklaerung">
+                    <div class="">
+                        <p>Mein Account</p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </container>
+                <container class="container center ml-4 mr-4 mb-2 inhalt">
+
+                </container>
+            </div>
+            <div class="container start">
+                <div class="columns is-mobile">
+                    <div class="column center">
+                        <div class="circles">
+                            <img src="img/suche.png" onclick="suche()">
+                            <!-- <i class="fa-solid fa-magnifying-glass is-128x128"></i> -->
+                        </div>
+                    </div>
+                    <div class="column center">
+                        <div class="circles">
+                            <img src="img/plus.png" onclick="hinzufuegen()">
+                        </div>
+                    </div>
+                    <div class="column center">
+                        <div class="circles">
+                            <img src="img/benutzer.png" onclick="meinAccount()">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,6 +276,7 @@
 
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg&callback=initMap ">
     </script>lback=initMap"> /script>
+    <script src="js/index.js"></script>
 
 </body>
 
