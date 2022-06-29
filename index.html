@@ -12,16 +12,39 @@
 
 </head>
 
-<body class="is-size-7-mobile">
+<body>
     <section class="content">
+        <!-- Menüleiste -->
+        <nav class="menuleiste">
+            <div class="start">
+                <div class="columns is-mobile">
+                    <div class="column center">
+                        <div class="circles">
+                            <img src="img/suche.png" onclick="suche()">
+                        </div>
+                    </div>
+                    <div class="column center">
+                        <div class="circles">
+                            <img src="img/plus.png" onclick="hinzufuegen()">
+                        </div>
+                    </div>
+                    <div class="column center">
+                        <div class="circles">
+                            <img src="img/benutzer.png" onclick="meinAccount()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Map -->
         <div id="map" class="hero is-fullheight">
             <div class="map"></div>
         </div>
-        <div class="box">
-            <div class="infobox">
-                <div class="background-opt"></div>
+        <!-- Infobox -->
+        <div class="infobox">
+            <div class="">
 
-                <div class="container" id="suche">
+                <div class="container inactive" id="suche">
                     <div class="suche">
                         <div class="container mt-0">
                             <div class="center titel">
@@ -47,7 +70,7 @@
                                 </div>
                                 <div class="container">
                                     <div class="auswahl">
-                                        <!-- <h6 class="title is-6 mb-1">Kategorien</h6> -->
+                                        <h6 class="title is-6 mb-1">Kategorien</h6>
                                         <p></p>
                                         <p class="mb-0 ">Du suchst nach etwas Bestimmten? Grenze Deine Suche ein.</p>
 
@@ -218,28 +241,7 @@
 
                     </container>
                 </div>
-                <div class="container">
-                    <div class="start">
-                        <div class="columns is-mobile">
-                            <div class="column center">
-                                <div class="circles">
-                                    <img src="img/suche.png" onclick="suche()">
 
-                                </div>
-                            </div>
-                            <div class="column center">
-                                <div class="circles">
-                                    <img src="img/plus.png" onclick="hinzufuegen()">
-                                </div>
-                            </div>
-                            <div class="column center">
-                                <div class="circles">
-                                    <img src="img/benutzer.png" onclick="meinAccount()">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

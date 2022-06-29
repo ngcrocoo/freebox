@@ -7876,6 +7876,19 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+.menuleiste {
+  position: absolute;
+  z-index: 2;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 1.5rem;
+  width: 90vw;
+  max-height: 80%;
+  background-color: whitesmoke;
+  padding: 0.5rem;
+  opacity: .8; }
+
 .top {
   position: absolute;
   top: 1rem; }
@@ -7917,23 +7930,15 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .infobox {
   background-color: transparent;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   margin: 0 auto;
-  padding: 1rem;
   left: 0;
   right: 0;
-  bottom: 2.5rem;
+  bottom: 5.5rem;
   width: 90vw;
-  max-height: 80%; }
-  .infobox .background-opt {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    background-color: whitesmoke;
-    opacity: .8; }
+  max-height: 80%;
+  background-color: whitesmoke;
+  opacity: .8; }
 
 .start {
   z-index: 2; }
@@ -7962,7 +7967,10 @@ p {
   font-size: 10;
   flex: flex-shrink; }
 
-.suche {
+.acitve {
+  display: block; }
+
+.inactive {
   display: none; }
 
 .hinzufuegen {
