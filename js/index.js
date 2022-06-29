@@ -31,48 +31,51 @@
 function suche() {
     console.log("Funktioniert")
 
-    var suchen = document.getElementById("suche");
-    var hinzufuegen = document.getElementById("hinzufuegen");
-    var benutzer = document.getElementById("meinAccount");
+    var suchen = document.getElementById("suche") ? document.getElementById("suche") : null;
+    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("hinzufuegen") : null;
+    var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
 
-    if (suchen.style.display === "none") {
-        suchen.style.display = "block";
-        hinzufuegen.style.display = "none";
-        benutzer.style.display = "none";
-    } else {
-        suchen.style.display = "none";
+    if (suchen && hinzufuegen && benutzer) {
+        if (suchen.style.display === "none") {
+            suchen.style.display = "block";
+            hinzufuegen.style.display = "none";
+            benutzer.style.display = "none";
+        } else {
+            suchen.style.display = "none";
+        }
     }
+
 
 }
 
-function hinzufuegen() {
-    console.log("Funktioniert")
+// function hinzufuegen() {
+//     console.log("Funktioniert")
 
-    var suchen = document.getElementById("suche");
-    var hinzufuegen = document.getElementById("hinzufuegen");
-    var benutzer = document.getElementById("meinAccount");
+//     var suchen = document.getElementById("suche");
+//     var hinzufuegen = document.getElementById("hinzufuegen");
+//     var benutzer = document.getElementById("meinAccount");
 
-    if (hinzufuegen.style.display === "none") {
-        hinzufuegen.style.display = "block";
-        suchen.style.display = "none";
-        benutzer.style.display = "none";
-    } else {
-        hinzufuegen.style.display = "none";
-    }
-}
+//     if (hinzufuegen.style.display === "none") {
+//         hinzufuegen.style.display = "block";
+//         suchen.style.display = "none";
+//         benutzer.style.display = "none";
+//     } else {
+//         hinzufuegen.style.display = "none";
+//     }
+// }
 
-function meinAccount() {
-    console.log("Funktioniert")
+// function meinAccount() {
+//     console.log("Funktioniert")
 
-    var suchen = document.getElementById("suche");
-    var hinzufuegen = document.getElementById("hinzufuegen");
-    var benutzer = document.getElementById("meinAccount");
+//     var suchen = document.getElementById("suche");
+//     var hinzufuegen = document.getElementById("hinzufuegen");
+//     var benutzer = document.getElementById("meinAccount");
 
-    if (benutzer.style.display === "none") {
-        benutzer.style.display = "block";
-        hinzufuegen.style.display = "none";
-        suchen.style.display = "none";
-    } else {
-        benutzer.style.display = "none";
-    }
-}
+//     if (benutzer.style.display === "none") {
+//         benutzer.style.display = "block";
+//         hinzufuegen.style.display = "none";
+//         suchen.style.display = "none";
+//     } else {
+//         benutzer.style.display = "none";
+//     }
+// }
