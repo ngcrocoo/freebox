@@ -17,17 +17,25 @@
 }
 
 .infobox {
-    background-color: transparent;
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     margin: 0 auto;
     left: 0;
     right: 0;
     bottom: 5.5rem;
     width: 90vw;
     max-height: 80%;
-    background-color: whitesmoke;
-    opacity: .8;
+    background-color: transparent;
+    .background-opt {
+        z-index: 0;
+        background-color: whitesmoke;
+        opacity: .8;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 
 .start {
@@ -70,7 +78,7 @@ img {
 
 p {
     text-align: center;
-    font-size: 10;
+    font-size: 1!important;
     flex: flex-shrink;
 }
 
@@ -79,14 +87,6 @@ p {
 }
 
 .inactive {
-    display: none;
-}
-
-.hinzufuegen {
-    display: none;
-}
-
-.meinAccount {
     display: none;
 }
 

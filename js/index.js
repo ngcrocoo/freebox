@@ -46,6 +46,59 @@ function suche() {
     }
 }
 
+function hinzufuegen() {
+    console.log("Funktioniert")
+
+    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("suche") : null;
+    var suche = document.getElementById("suche") ? document.getElementById("suche") : null;
+    var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
+
+    console.log(hinzufuegen)
+    if (hinzufuegen) {
+        if (hinzufuegen.classList.contains("inactive")) {
+            console.log("in hinzufuegen click condition")
+            hinzufuegen.classList.toggle("inactive");
+        } else {
+            hinzufuegen.classList.toggle("inactive");
+        }
+    }
+}
+
+function meinAccount() {
+    console.log("Funktioniert")
+
+    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("suche") : null;
+    var suche = document.getElementById("suche") ? document.getElementById("suche") : null;
+    var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
+
+    console.log(benutzer)
+    if (benutzer) {
+        if (benutzer.classList.contains("inactive")) {
+            console.log("in benutzer click condition")
+            benutzer.classList.toggle("inactive");
+        } else {
+            benutzer.classList.toggle("inactive");
+        }
+    }
+}
+
+function kategorien() {
+    console.log("Funktioneirt")
+
+    var kategorien = document.getElementById("kategorien") ? document.getElementById("kategorien") : null;
+    if (kategorien) {
+        if (kategorien.classList.contains("inactive")) {
+            console.log("Click kategorien funktioneirt")
+            kategorien.classList.toggle("inactive");
+        } else {
+            kategorien.classList.toggle("inactive");
+        }
+    }
+
+}
+
+
+
 
 // function hinzufuegen() {
 //     console.log("Funktioniert")
