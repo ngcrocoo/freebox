@@ -49,7 +49,7 @@ function suche() {
 function hinzufuegen() {
     console.log("Funktioniert")
 
-    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("suche") : null;
+    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("hinzufuegen") : null;
     var suche = document.getElementById("suche") ? document.getElementById("suche") : null;
     var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
 

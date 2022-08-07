@@ -7896,28 +7896,35 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 0.5rem; }
 
 .inhalt {
-  flex-direction: column;
-  overflow-y: scroll; }
+  flex-direction: column; }
 
 .beschreibung {
   text-align: center;
   margin-top: 0; }
 
-.input {
+#inputplz {
   margin-bottom: 0; }
 
 .kategorien {
   display: flex;
-  justify-content: space-between;
-  align-items: center; }
+  justify-content: space-between; }
 
 .goButton {
   display: flex;
   justify-content: center; }
 
-.checkbox {
-  display: flex;
-  justify-content: center; }
+.katabstand {
+  padding: 0.2rem; }
+
+.katabst {
+  width: 90%;
+  align-items: center; }
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden; }
 
 .content {
   position: relative;
@@ -7983,4 +7990,12 @@ p {
   display: none; }
 
 .scroll {
-  overflow-y: scroll; }
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.tstred {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
