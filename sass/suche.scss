@@ -1,0 +1,41 @@
+.titel {
+    padding: 1rem;
+}
+
+.erklaerung {
+    padding: 0.5rem;
+}
+
+.inhalt {
+    flex-direction: column;
+    //overflow-y: scroll;
+}
+
+.beschreibung {
+    text-align: center;
+    margin-top: 0;
+}
+
+#inputplz {
+    margin-bottom: 0;
+}
+
+.kategorien {
+    display: flex;
+    justify-content: space-between;
+    //align-items: flex-start;
+}
+
+.goButton {
+    display: flex;
+    justify-content: center;
+}
+
+.katabstand {
+    padding: 0.2rem;
+}
+
+.katabst {
+    width: 90%;
+    align-items: center;
+}

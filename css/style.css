@@ -7876,8 +7876,55 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-.testclass {
-  color: red; }
+.menuleiste {
+  position: absolute;
+  z-index: 2;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 1.5rem;
+  width: 90vw;
+  max-height: 80%;
+  background-color: whitesmoke;
+  padding: 0.5rem;
+  opacity: .8; }
+
+.titel {
+  padding: 1rem; }
+
+.erklaerung {
+  padding: 0.5rem; }
+
+.inhalt {
+  flex-direction: column; }
+
+.beschreibung {
+  text-align: center;
+  margin-top: 0; }
+
+#inputplz {
+  margin-bottom: 0; }
+
+.kategorien {
+  display: flex;
+  justify-content: space-between; }
+
+.goButton {
+  display: flex;
+  justify-content: center; }
+
+.katabstand {
+  padding: 0.2rem; }
+
+.katabst {
+  width: 90%;
+  align-items: center; }
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden; }
 
 .content {
   position: relative;
@@ -7890,19 +7937,65 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   width: 100%; }
 
 .infobox {
-  background-color: red;
   position: absolute;
   z-index: 1;
   margin: 0 auto;
   left: 0;
   right: 0;
-  bottom: 5rem;
-  width: 90vw; }
-  .infobox .buttons:last-child {
-    margin-bottom: 0; }
-  .infobox .button {
-    margin: 0.5rem !important; }
+  bottom: 5.5rem;
+  width: 90vw;
+  max-height: 80%;
+  background-color: transparent; }
+  .infobox .background-opt {
+    z-index: 0;
+    background-color: whitesmoke;
+    opacity: .8;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
 
-.buttons {
+.start {
+  z-index: 2; }
+
+.center {
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: center;
+  align-items: center; }
+
+.circles {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  flex-shrink: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+img {
+  width: 2rem;
+  height: 2rem; }
+
+p {
+  text-align: center;
+  font-size: 1 !important;
+  flex: flex-shrink; }
+
+.acitve {
+  display: block; }
+
+.inactive {
+  display: none; }
+
+.scroll {
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.tstred {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
