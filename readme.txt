@@ -13,3 +13,5 @@ Beim weiteren bearbeiten des Projektes ist zuerst immer folgender Befehlt im Ter
 npm start
 
 Danach werden alle Änderungen in der ./sass/styles.scss erfasst und kompiliert und in der ./css/styles.css gespeichert.
+
+MongoDB in VSC installieren -> Shift+Ctrl+x drücken, dann nach MongoDB suchen, installieren und als connection "mongodb+srv://atlascluster.lqnfb.mongodb.net/myFirstDatabase" eingeben
