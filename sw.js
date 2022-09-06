@@ -13,5 +13,5 @@ self.addEventListener('activate', evt => {
 
 // fetch event
 self.addEventListener('fetch', evt => {
-    conslotchange.log('fetch event', evt);
+    console.log('fetch event', evt);
 });

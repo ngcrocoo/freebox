@@ -1,12 +1,14 @@
 
 --\c _name database_ verbindet zur datenbank in sqlshell
-CREATE TABLE standort(
-	koordinaten VARCHAR(100) PRIMARY KEY,
+IF NOT EXISTS(
+	CREATE TABLE standort(
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	koordinaten VARCHAR(100),
 	strasse VARCHAR(50) NOT NULL,
 	nummer INT NOT NULL,
 	plz INT NOT NULL,
 	stadt VARCHAR(50) NOT NULL,
-	land VARCHAR(50) NOT NULL
+	land VARCHAR(50) NOT NULL)
 );
 
 -- INSERT INTO standort (koordinaten, strasse, nummer, plz, stadt, land)
