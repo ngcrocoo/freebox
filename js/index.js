@@ -97,6 +97,73 @@ function kategorien() {
 
 }
 
+// function datenEintragung() {
+//     console.log("Daten eintragen funktioniert")
+
+//     var seite1 = document.getElementById("seite1") ? document.getElementById("seite1") : null;
+//     var seite2 = document.getElementById("seite2") ? document.getElementById("seite2") : null;
+//     var seite3 = document.getElementById("seite3") ? document.getElementById("seite3") : null;
+
+//     var btnNext = document.getElementById("nextBtn");
+//     var btnBack = document.getElementById("backBtn");
+
+
+//     if (btnNext.onclick) {
+//         if (seite1.style.display = "block") {
+//             seite1.style.display = "none"
+//             seite2.style.display = "block"
+//             seite3.style.display = "none";
+//         } else if (seite2.style.display = "block") {
+//             seite1.style.display = "none"
+//             seite2.style.display = "none"
+//             seite3.style.display = "block";
+//         } else if (seite3.display = "block") {
+
+//         }
+
+//     }
+
+// }
+
+function Tabs() {
+    console.log("1 2 3 funktioniert")
+    var bindAll = function() {
+        var menuElements = document.querySelectorAll('[data-tab]');
+        for (var i = 0; i < menuElements.length; i++) {
+
+            menuElements[i].addEventListener('click', change, false);
+            console.log(menuElements[i])
+        }
+    }
+
+    var clear = function() {
+        console.log("clear")
+        var menuElements = document.querySelectorAll('[data-tab]');
+        console.log(menuElements)
+        for (var i = 0; i < menuElements.length; i++) {
+            menuElements[i].classList.remove('active');
+            var id = menuElements[i].getAttribute('data-tab');
+            document.getElementById(id).classList.remove('active');
+            console.log(menuElements[i])
+        }
+    }
+
+    var change = function(e) {
+        console.log("change")
+        clear();
+        e.target.classList.add('active');
+        var id = e.currentTarget.getAttribute('data-tab');
+        document.getElementById(id).classList.add('active');
+    }
+
+    bindAll();
+}
+
+var connectTabs = new Tabs();
+
+Tabs()
+
+
 
 
 
