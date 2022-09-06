@@ -27,7 +27,7 @@ CREATE TABLE box (
 	id BIGSERIAL NOT NULL PRIMARY KEY,
 	standort, 
 	inhalt VARCHAR(500),
-	user,
+	person,
 );
 
 CREATE TABLE box (
