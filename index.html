@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://kit.fontawesome.com/a57b6f63d4.js" crossorigin="anonymous"></script>
     <link rel="manifest" href="/manifest.json">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +10,6 @@
     <title>FreeBox</title>
     <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/a57b6f63d4.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body style="overflow: hidden">
@@ -170,8 +169,17 @@
 
 
                     <div class="container ml-4 mr-4 mb-2">
-                        <div class="center inhalt scroll">
-                            <container class="container ml-4 mr-4 mb-2">
+                        <div class="inhalt">
+                            <a href="#orange" data-tab="orange" class="b-nav-tab active">
+                                1
+                              </a>
+                            <a href="#green" data-tab="green" class="b-nav-tab">
+                                2
+                              </a>
+                            <a href="#blue" data-tab="blue" class="b-nav-tab">
+                                3
+                              </a>
+                            <div id="orange" class="b-tab active">
                                 <div class="center inhalt">
                                     <label class="checkbox">
                                         <input type="checkbox">
@@ -180,154 +188,92 @@
                                     </label>
                                     <p></p>
                                     <p>oder: Adressdaten eingeben.</p>
-                                </div>
+                                    <div class="field">
+                                        <p class="control mb-1">
+                                            <input class="input is-rounded is-small" id="inputStraße" placeholder="Straße und Hausnummer">
+                                        </p>
 
-
-                            </container>
-
-                            <div class="container inhalt">
-                                <div class="field">
-                                    <p class="control mb-1">
-                                        <input class="input is-rounded is-small" id="inputStraße" placeholder="Straße und Hausnummer">
-                                    </p>
-                                    <!-- <div>
-                                        <p class="beschreibung is-1 ml-0 mt-0">PLZ eingeben.</p>
-                                    </div> -->
-                                    <p class="control mb-1">
-                                        <input class="input is-rounded is-small" id="inputPLZ" placeholder="PLZ">
-                                    </p>
-                                    <p class="control mb-1">
-                                        <input class="input is-rounded is-small" id="inputStadt" placeholder="Stadt">
-                                    </p>
-                                    <div>
-                                        <p class="beschreibung is-1 ml-0 mt-0">Beschreibe den Inhalt Deiner Box.</p>
-                                    </div>
-                                    <p class="control mb-1">
-                                        <input class="textarea is-rounded is-small" id="inputBemerkung">
-                                    </p>
-
-                                    <div class="container">
-                                        <div>
-                                            <p>Wähle eine oder mehrere Kategorien aus:</p>
-                                        </div>
-
-                                        <div class="columns is-mobile mt-2 is-multiline">
-
-                                            <div class="column ml-6">
-                                                <div class="container">
-                                                    <div class="columns ml-0">
-                                                        <div class="column katabstand">
-                                                            <div>
-                                                                <label class="radio">
-                                                                    <input type="radio" name="answer">
-                                                                    Kleidung
-                                                                </label>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="column katabstand">
-                                                            <label class="radio">
-                                                                <input type="radio" name="answer">
-                                                                Bücher
-                                                            </label>
-                                                        </div>
-                                                        <div class="column katabstand">
-                                                            <label class="radio">
-                                                                <input type="radio" name="answer">
-                                                                Elektronik
-                                                            </label>
-                                                        </div>
-
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="column mr-5">
-                                                <div class="container">
-                                                    <div class="columns katabst">
-                                                        <div class="column katabstand">
-                                                            <label class="radio">
-                                                                <input type="radio" name="answer">
-                                                                Pflanzen
-                                                            </label>
-                                                        </div>
-
-                                                        <div class="column katabstand">
-                                                            <label class="radio">
-                                                                <input type="radio" name="answer">
-                                                                Möbel
-                                                            </label>
-                                                        </div>
-                                                        <div class="column katabstand">
-                                                            <label class="radio">
-                                                                <input type="radio" name="answer">
-                                                                Sonstiges
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="container inhalt center">
-                                        <div>
-                                            <p>Lade ein Foto Deiner Box hoch.</p>
-                                        </div>
-                                        <div class="file">
-                                            <label class="file-label">
-                                              <input class="file-input" type="file" name="resume">
-                                              <span class="file-cta">
-                                                <span class="file-icon">
-                                                  <i class="fas fa-upload"></i>
-                                                </span>
-                                                <span class="file-label">
-                                                  Choose a file…
-                                                </span>
-                                              </span>
-                                            </label>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="center mt-2 uploadBtn" id="uploadBtn">
-                                        <button class="button is-hovered is-small is-rounded is-info">Hinzufügen</button>
-                                    </div>
-                                </div>
-                                <div class="columns is-mobile mt-3 is-multiline kategorien">
-                                    <div class="column">
-                                        <label class="checkbox">
-                                                <input type="checkbox">
-                                                Kleidung
-                                            </label>
-                                        <label class="checkbox">
-                                                <input type="checkbox">
-                                                Bücher
-                                            </label>
-                                        <label class="checkbox">
-                                                <input type="checkbox">
-                                                Elektronik
-                                            </label>
-                                    </div>
-                                    <div class="column">
-                                        <label class="checkbox">
-                                                <input type="checkbox">
-                                                Pflanzen
-                                            </label>
-                                        <label class="checkbox">
-                                                <input type="checkbox">
-                                                Möbel
-                                            </label>
-                                        <label class="checkbox">
-                                                <input type="checkbox">
-                                                Sonstiges
-                                            </label>
+                                        <p class="control mb-1">
+                                            <input class="input is-rounded is-small" id="inputPLZ" placeholder="PLZ">
+                                        </p>
+                                        <p class="control mb-1">
+                                            <input class="input is-rounded is-small" id="inputStadt" placeholder="Stadt">
+                                        </p>
                                     </div>
                                 </div>
                             </div>
+                            <div id="green" class="b-tab">
+                                Green tab content
+                            </div>
+                            <div id="blue" class="b-tab">
+                                Blue tab content
+                            </div>
 
+                            <!-- <div class="container seite1" data-tab="seite1">
+                                <div class="center inhalt">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        Meinen Standort verwenden.
+                                        </input>
+                                    </label>
+                                    <p></p>
+                                    <p>oder: Adressdaten eingeben.</p>
+                                </div> -->
+
+                            <!-- <div class="field">
+                                <p class="control mb-1">
+                                    <input class="input is-rounded is-small" id="inputStraße" placeholder="Straße und Hausnummer">
+                                </p>
+
+                                <p class="control mb-1">
+                                    <input class="input is-rounded is-small" id="inputPLZ" placeholder="PLZ">
+                                </p>
+                                <p class="control mb-1">
+                                    <input class="input is-rounded is-small" id="inputStadt" placeholder="Stadt">
+                                </p>
+                            </div> -->
+                        </div>
+                        <!-- 
+                        <div class="container seite2" data-tab="seite1">
+                            <div class="field">
+                                <div>
+                                    <p class="beschreibung is-1 ml-0 mt-0">Beschreibe den Inhalt Deiner Box.</p>
+                                </div>
+                                <p class="control mb-1">
+                                    <input class="textarea is-rounded is-small" id="inputBemerkung">
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="container seite3" data-tab="seite1">
+                            <div>
+                                <p>Lade ein Foto Deiner Box hoch.</p>
+                            </div>
+                            <div class="file">
+                                <label class="file-label">
+                                      <input class="file-input" type="file" name="resume">
+                                      <span class="file-cta">
+                                        <span class="file-icon">
+                                          <i class="fas fa-upload"></i>
+                                        </span>
+                                        <span class="file-label">
+                                          Choose a file…
+                                        </span>
+                                      </span>
+                                    </label>
+                            </div>
+                            <div class="center mt-2 uploadBtn" id="uploadBtn">
+                                <button class="button is-hovered is-small is-rounded is-info">Hinzufügen</button>
+                            </div>
+                        </div> -->
+                        <div>
+                            <i class="fa-solid fa-circle-chevron-right"></i>
+                        </div>
+                        <div class="center mt-2 uploadBtn" id="nextBtn">
+                            <button class="button is-hovered is-small is-rounded is-info">Next</button>
+                        </div>
+                        <div class="center mt-2 uploadBtn" id="backBtn">
+                            <button class="button is-hovered is-small is-rounded is-info">Back</button>
                         </div>
                     </div>
 
@@ -446,6 +392,7 @@
             </div>
         </div>
     </section>
+
 
 
 
