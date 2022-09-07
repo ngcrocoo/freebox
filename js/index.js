@@ -1,5 +1,7 @@
-// function suche() {
-//     console.log("Funktioniert")
+//import bulmaCalendar from '../node_modules/bulma-calendar/dist/js/bulma-calendar.min.js';
+const calendar = require('../node_modules/bulma-calendar/dist/js/bulma-calendar.min.js')
+    // function suche() {
+    //     console.log("Funktioniert")
 
 //     var suche = document.getElementById("suche");
 //     var hinzufuegen = document.getElementById("hinzufuegen");
@@ -162,6 +164,28 @@ function Tabs() {
 var connectTabs = new Tabs();
 
 Tabs()
+
+
+
+// Initialize all input of type date
+var calendars = bulmaCalendar.attach('[type="date"]', options);
+
+// Loop on each calendar initialized
+for (var i = 0; i < calendars.length; i++) {
+    // Add listener to select event
+    calendars[i].on('select', date => {
+        console.log(date);
+    });
+}
+
+// To access to bulmaCalendar instance of an element
+var element = document.querySelector('#my-element');
+if (element) {
+    // bulmaCalendar instance is available as element.bulmaCalendar
+    element.bulmaCalendar.on('select', function(datepicker) {
+        console.log(datepicker.data.value());
+    });
+}
 
 
 

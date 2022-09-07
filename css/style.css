@@ -7876,50 +7876,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-.menuleiste {
-  position: absolute;
-  z-index: 2;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  bottom: 1.5rem;
-  width: 90vw;
-  max-height: 80%;
-  background-color: whitesmoke;
-  padding: 0.5rem;
-  opacity: .8; }
-
-.titel {
-  padding: 1rem; }
-
-.erklaerung {
-  padding: 0.5rem; }
-
-.inhalt {
-  flex-direction: column; }
-
-.beschreibung {
-  text-align: center;
-  margin-top: 0; }
-
-#inputplz {
-  margin-bottom: 0; }
-
-.kategorien {
-  display: flex;
-  justify-content: space-between; }
-
-.goButton {
-  display: flex;
-  justify-content: center; }
-
-.katabstand {
-  padding: 0.2rem; }
-
-.katabst {
-  width: 90%;
-  align-items: center; }
-
 html,
 body {
   margin: 0;
@@ -8001,8 +7957,6 @@ p {
   left: 0; }
 
 .b-tab {
-  padding: 20px;
-  border: 1px solid #000;
   display: none; }
 
 .b-tab.active {
@@ -8010,7 +7964,19 @@ p {
 
 .b-nav-tab {
   display: inline-block;
-  padding: 20px; }
+  padding: 10px; }
 
 .b-nav-tab.active {
-  color: #ff4200; }
+  color: blue; }
+
+.hgt {
+  width: 100%; }
+
+a:link {
+  color: black; }
+
+a:visited {
+  color: black; }
+
+a:active {
+  color: #3e8ed0; }

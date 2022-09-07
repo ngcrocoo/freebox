@@ -15,3 +15,9 @@ npm start
 Danach werden alle Änderungen in der ./sass/styles.scss erfasst und kompiliert und in der ./css/styles.css gespeichert.
 
 MongoDB in VSC installieren -> Shift+Ctrl+x drücken, dann nach MongoDB suchen, installieren und als connection "mongodb+srv://atlascluster.lqnfb.mongodb.net/myFirstDatabase" eingeben
+
+
+Mergen bei gleichzeitiger Bearbeitung einer Datei:
+1. Main Branch pullen - git pull
+2. Main Branch in Antonia Branch mergen - git checkout antonia && git merge main 
+3. Merge Antonia Branch in Main Branch - git checkout main && git merge antonia

@@ -1,9 +1,5 @@
 // keep bulma import always as first import so that you can overwrite the bulma styles with every scss code after that
 @import "../node_modules/bulma/bulma.sass";
-// dividing scss styling into multiple files for different use cases
-@import "main.scss";
-@import "navbar.scss";
-@import "suche.scss";
 html,
 body {
     margin: 0;
@@ -112,8 +108,6 @@ p {
 }
 
 .b-tab {
-    padding: 20px;
-    border: 1px solid #000;
     display: none;
 }
 
@@ -123,9 +117,25 @@ p {
 
 .b-nav-tab {
     display: inline-block;
-    padding: 20px;
+    padding: 10px;
 }
 
 .b-nav-tab.active {
-    color: #ff4200;
+    color: blue;
+}
+
+.hgt {
+    width: 100%;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: #3e8ed0;
 }
