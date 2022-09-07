@@ -1,5 +1,8 @@
 // keep bulma import always as first import so that you can overwrite the bulma styles with every scss code after that
 @import "../node_modules/bulma/bulma.sass";
+@import "main.scss";
+@import "navbar.scss";
+@import "suche.scss";
 html,
 body {
     margin: 0;

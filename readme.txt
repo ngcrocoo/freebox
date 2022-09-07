@@ -18,6 +18,6 @@ MongoDB in VSC installieren -> Shift+Ctrl+x drücken, dann nach MongoDB suchen, 
 
 
 Mergen bei gleichzeitiger Bearbeitung einer Datei:
-1. Main Branch pullen - git pull
+1. Main Branch pullen - git checkout main && git pull
 2. Main Branch in Antonia Branch mergen - git checkout antonia && git merge main 
 3. Merge Antonia Branch in Main Branch - git checkout main && git merge antonia
