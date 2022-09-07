@@ -10,6 +10,9 @@
     <title>FreeBox</title>
     <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a57b6f63d4.js" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body style="overflow: hidden">
@@ -181,10 +184,10 @@
                               </a>
                             <div id="orange" class="b-tab active">
                                 <div class="center inhalt">
-                                    <label class="checkbox">
-                                        <input type="checkbox">
-                                        Meinen Standort verwenden.
-                                        </input>
+                                    <div id="wrapper">
+                                        <button id="location-button">Standortabfrage</button>
+                                        <div id="output"></div>
+                                    </div>
                                     </label>
                                     <p></p>
                                     <p>oder: Adressdaten eingeben.</p>
@@ -396,10 +399,26 @@
 
 
 
+    <script>
+        //standortabfrage
+        document.getElementById('location-button').addEventListener("click", function() {
+            console.log("HURRA")
+            if (navigator.geolocation) {
+                console.log("in schleife")
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    console.log(position.coords.latitude);
+                    console.log(position.coords.longitude);
 
+                });
+            } else {
+                console.log("Geolocation wird nicht unterstuetzt");
+            }
+        });
+    </script>
 
 
     <script>
+        //google API
         function initMap() {
 
             //karten optionen
@@ -428,8 +447,8 @@
                     lat: 52.547170,
                     lng: 13.392540
                 },
-                map: map,
-                //icon:'http://cdn.onlinewebfonts.com/svg/img_462308.png'
+                map: map
+                    //icon:'http://cdn.onlinewebfonts.com/svg/img_462308.png'
             });
 
             //infos auf nadelicon
@@ -448,7 +467,5 @@
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg&callback=initMap ">
     </script>
     <script src="js/index.js"></script>
-
-</body>
 
 </html>
