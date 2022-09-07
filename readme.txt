@@ -16,6 +16,9 @@ Danach werden alle Änderungen in der ./sass/styles.scss erfasst und kompiliert 
 
 MongoDB in VSC installieren -> Shift+Ctrl+x drücken, dann nach MongoDB suchen, installieren und als connection "mongodb+srv://atlascluster.lqnfb.mongodb.net/myFirstDatabase" eingeben
 
+installieren für um pushnotification zu nutzen:
+npm install push.js
+
 
 Mergen bei gleichzeitiger Bearbeitung einer Datei:
 1. Main Branch pullen - git checkout main && git pull
