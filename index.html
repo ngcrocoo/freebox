@@ -420,7 +420,6 @@
                         </div>
                     </div> -->
 
-
                 </div>
 
             </div>
@@ -464,6 +463,22 @@
             } else {
                 console.log("Geolocation wird nicht unterstuetzt");
             }
+        });
+    </script>
+
+
+
+    <script>
+        //long, lat in adresse
+        const url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyCOQ7qub2XGd5keyY4GdqRGvc-8mSYoyMo"
+        fetch(url).then(function(response) {
+            console.log("eins");
+            return response.json();
+        }).then(function(data) {
+            console.log("zwei");
+            console.log(data);
+        }).catch(function() {
+            console.log("Booo");
         });
     </script>
 
@@ -514,8 +529,32 @@
         }
     </script>
 
+
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg&callback=initMap ">
     </script>
     <script src="js/index.js"></script>
 
-</html>
+    </script>
+
+    <script>
+        //NOTIFICATION
+
+
+        console.log("notification:" + Notification.permission);
+
+        if (Notification.permission === "granted") {
+            alert("Push Notification zugestimmt");
+            showNotification();
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(permission => {
+                console.log(permission);
+                showNotification();
+            });
+        }
+
+        function showNotification() {
+            const notification = new Notification("NEUE NACHRICHT:", {
+                body: "hey wir haben jetzt notifications"
+            });
+        }
+    </script>
