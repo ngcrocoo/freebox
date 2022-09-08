@@ -15,14 +15,14 @@ export default function Webcam() {
         useCam.addEventListener("click", takeSnapshot);
         newPhoto.addEventListener("click", newSnapshot);
         newPhoto.style.display = "none";
-        const downloadLink = document.createElement("a");
+        const takePhoto = document.createElement("a");
         // set the name of the download, could change this to something
         // unique
-        downloadLink.download = "download.png";
+        takePhoto.download = "download.png";
 
         const preview = document.querySelector("#preview");
         // on click of preview image, click the download link to download file
-        preview.addEventListener("click", () => downloadLink.click());
+        preview.addEventListener("click", () => takePhoto.click());
 
         const canvas = document.createElement("canvas");
 
@@ -46,12 +46,18 @@ export default function Webcam() {
 
             const imageData = canvas.toDataURL("image/png");
             camera.style.display = "none";
+            newPhoto.style.display = "block";
+            useCam.style.display = " none"
             preview.src = imageData;
+            preview.style.display = "block"
             console.log("picture adress: ", imageData)
         }
 
         function newSnapshot() {
-            camera.style.display = "none";
+            newPhoto.style.display = "none";
+            useCam.style.display = "block"
+            preview.style.display = "none";
+            camera.style.display = "block";
         }
 
         function gotDevices(mediaDevices) {
