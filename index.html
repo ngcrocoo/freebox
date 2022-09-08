@@ -164,53 +164,70 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container mt-3 mb-3">
+                    <div class="container">
                         <div class="center erklaerung">
                             <p>Du hast etwas zu Verschenken? Füge Deine Box zur Karte hinzu.</p>
-                            <p></p>
-                            <p></p>
+
                         </div>
                     </div>
 
 
                     <div class="container ml-4 mr-4 mb-2">
                         <div class="inhalt">
-                            <a href="#orange" data-tab="orange" class="b-nav-tab active">
-                                1
-                              </a>
-                            <a href="#green" data-tab="green" class="b-nav-tab">
-                                2
-                              </a>
-                            <a href="#blue" data-tab="blue" class="b-nav-tab">
-                                3
-                              </a>
-                            <div id="orange" class="b-tab active">
-                                <div class="center inhalt">
-                                    <div id="wrapper">
-                                        <button id="location-button">Standortabfrage</button>
+                            <div class="center">
+                                <a href="#seite1" data-tab="seite1" class="b-nav-tab active center">
+                                    1
+                                  </a>
+                                <a href="#seite2" data-tab="seite2" class="b-nav-tab center">
+                                    2
+                                  </a>
+                                <a href="#seite3" data-tab="seite3" class="b-nav-tab center">
+                                    3
+                                  </a>
+                            </div>
+
+                            <div id="seite1" class="b-tab active">
+                                <div class="inhalt">
+                                    <div class="center">
+                                        <button class="button is-hovered is-small is-rounded is-info" id="location-button">Mein Standort</button>
                                         <div id="output"></div>
                                     </div>
                                     </label>
                                     <p></p>
                                     <p>oder: Adressdaten eingeben.</p>
-                                    <div class="field">
-                                        <p class="control mb-1">
+                                    <div class="field ml-0 mr-0 hgt">
+                                        <p class="control mb-2">
                                             <input class="input is-rounded is-small" id="inputStraße" placeholder="Straße und Hausnummer">
                                         </p>
 
-                                        <p class="control mb-1">
+                                        <p class="control mb-2">
                                             <input class="input is-rounded is-small" id="inputPLZ" placeholder="PLZ">
                                         </p>
-                                        <p class="control mb-1">
+                                        <p class="control mb-2">
                                             <input class="input is-rounded is-small" id="inputStadt" placeholder="Stadt">
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div id="green" class="b-tab">
-                                Green tab content
+                            <div id="seite2" class="b-tab">
+                                <div class="inhalt">
+                                    <div class="center">
+                                        <div class="field hgt">
+                                            <p class="control mb-1">
+                                                <textarea class="textarea is-rounded is-small" rows="4" id="inputBemerkung" placeholder="Die Box steht seitlich am Hauseingang. Enthalten sind fünf Tomatensetzlinge und drei Romane.">
+                                                </textarea>
+                                                <div>
+                                                    <p class="beschreibung is-1 ml-0 mt-0">Beschreibe den Inhalt Deiner Box.</p>
+                                                </div>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <input type="date">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="blue" class="b-tab">
+                            <div id="seite3" class="b-tab">
                                 Blue tab content
                             </div>
 
@@ -271,15 +288,6 @@
                                 <button class="button is-hovered is-small is-rounded is-info">Hinzufügen</button>
                             </div>
                         </div> -->
-                        <div>
-                            <i class="fa-solid fa-circle-chevron-right"></i>
-                        </div>
-                        <div class="center mt-2 uploadBtn" id="nextBtn">
-                            <button class="button is-hovered is-small is-rounded is-info">Next</button>
-                        </div>
-                        <div class="center mt-2 uploadBtn" id="backBtn">
-                            <button class="button is-hovered is-small is-rounded is-info">Back</button>
-                        </div>
                     </div>
 
                     <!-- <div class="container scroll">
