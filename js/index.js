@@ -1,9 +1,11 @@
 import geoLocation from "./geolocation.js";
 import initButtons from "./buttons.js";
 import Tabs from "./tabs.js";
+import Webcam from "./webcam.js"
 initButtons();
 Tabs()
 geoLocation();
+Webcam()
 
 // function suche() {
 //     console.log("Funktioniert")
