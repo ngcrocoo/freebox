@@ -1,3 +1,10 @@
+import geoLocation from "./geolocation.js";
+import initButtons from "./buttons.js";
+import Tabs from "./tabs.js";
+initButtons();
+Tabs()
+geoLocation();
+
 // function suche() {
 //     console.log("Funktioniert")
 
@@ -28,74 +35,7 @@
 
 // }
 
-function suche() {
-    console.log("Funktioniert")
 
-    var suche = document.getElementById("suche") ? document.getElementById("suche") : null;
-    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("hinzufuegen") : null;
-    var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
-
-    console.log(suche)
-    if (suche) {
-        if (suche.classList.contains("inactive")) {
-            console.log("in suche click condition")
-            suche.classList.toggle("inactive");
-        } else {
-            suche.classList.toggle("inactive");
-        }
-    }
-}
-
-function hinzufuegen() {
-    console.log("Funktioniert")
-
-    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("hinzufuegen") : null;
-    var suche = document.getElementById("suche") ? document.getElementById("suche") : null;
-    var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
-
-    console.log(hinzufuegen)
-    if (hinzufuegen) {
-        if (hinzufuegen.classList.contains("inactive")) {
-            console.log("in hinzufuegen click condition")
-            hinzufuegen.classList.toggle("inactive");
-        } else {
-            hinzufuegen.classList.toggle("inactive");
-        }
-    }
-}
-
-function meinAccount() {
-    console.log("Funktioniert")
-
-    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("suche") : null;
-    var suche = document.getElementById("suche") ? document.getElementById("suche") : null;
-    var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
-
-    console.log(benutzer)
-    if (benutzer) {
-        if (benutzer.classList.contains("inactive")) {
-            console.log("in benutzer click condition")
-            benutzer.classList.toggle("inactive");
-        } else {
-            benutzer.classList.toggle("inactive");
-        }
-    }
-}
-
-function kategorien() {
-    console.log("Funktioneirt")
-
-    var kategorien = document.getElementById("kategorien") ? document.getElementById("kategorien") : null;
-    if (kategorien) {
-        if (kategorien.classList.contains("inactive")) {
-            console.log("Click kategorien funktioneirt")
-            kategorien.classList.toggle("inactive");
-        } else {
-            kategorien.classList.toggle("inactive");
-        }
-    }
-
-}
 
 // function datenEintragung() {
 //     console.log("Daten eintragen funktioniert")
@@ -125,43 +65,7 @@ function kategorien() {
 
 // }
 
-function Tabs() {
-    console.log("1 2 3 funktioniert")
-    var bindAll = function() {
-        var menuElements = document.querySelectorAll('[data-tab]');
-        for (var i = 0; i < menuElements.length; i++) {
 
-            menuElements[i].addEventListener('click', change, false);
-            console.log(menuElements[i])
-        }
-    }
-
-    var clear = function() {
-        console.log("clear")
-        var menuElements = document.querySelectorAll('[data-tab]');
-        console.log(menuElements)
-        for (var i = 0; i < menuElements.length; i++) {
-            menuElements[i].classList.remove('active');
-            var id = menuElements[i].getAttribute('data-tab');
-            document.getElementById(id).classList.remove('active');
-            console.log(menuElements[i])
-        }
-    }
-
-    var change = function(e) {
-        console.log("change")
-        clear();
-        e.target.classList.add('active');
-        var id = e.currentTarget.getAttribute('data-tab');
-        document.getElementById(id).classList.add('active');
-    }
-
-    bindAll();
-}
-
-var connectTabs = new Tabs();
-
-Tabs()
 
 
 
