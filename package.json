@@ -1,33 +1,33 @@
 {
-  "name": "freebox",
-  "version": "1.0.0",
-  "description": "Freie Boxen für alle",
-  "main": "./js/index.js",
-  "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/style.scss css/style.css",
-    "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ngcrocoo/freebox.git"
-  },
-  "keywords": [
-    "free",
-    "box"
-  ],
-  "author": "sabeth und antonia",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ngcrocoo/freebox/issues"
-  },
-  "homepage": "https://github.com/ngcrocoo/freebox#readme",
-  "devDependencies": {
-    "bulma": "^0.9.4",
-    "node-sass": "^7.0.1"
-  },
-  "dependencies": {
-    "express": "^4.18.1",
-    "push.js": "^1.0.12"
-  }
+    "name": "freebox",
+    "version": "1.0.0",
+    "description": "Freie Boxen für alle",
+    "main": "./js/index.js",
+    "scripts": {
+        "css-build": "node-sass --omit-source-map-url sass/style.scss css/style.css",
+        "css-watch": "npm run css-build -- --watch",
+        "start": "npm run css-watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ngcrocoo/freebox.git"
+    },
+    "keywords": [
+        "free",
+        "box"
+    ],
+    "author": "sabeth und antonia",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ngcrocoo/freebox/issues"
+    },
+    "homepage": "https://github.com/ngcrocoo/freebox#readme",
+    "devDependencies": {
+        "bulma": "^0.9.4",
+        "node-sass": "^7.0.1"
+    },
+    "dependencies": {
+        "bulma-calendar": "^6.1.18",
+        "express": "^4.18.1"
+    }
 }

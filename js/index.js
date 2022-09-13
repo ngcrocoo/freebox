@@ -1,3 +1,12 @@
+import geoLocation from "./geolocation.js";
+import initButtons from "./buttons.js";
+import Tabs from "./tabs.js";
+import Webcam from "./webcam.js"
+initButtons();
+Tabs()
+geoLocation();
+Webcam()
+
 // function suche() {
 //     console.log("Funktioniert")
 
@@ -28,74 +37,40 @@
 
 // }
 
-function suche() {
-    console.log("Funktioniert")
 
-    var suche = document.getElementById("suche") ? document.getElementById("suche") : null;
-    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("hinzufuegen") : null;
-    var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
 
-    console.log(suche)
-    if (suche) {
-        if (suche.classList.contains("inactive")) {
-            console.log("in suche click condition")
-            suche.classList.toggle("inactive");
-        } else {
-            suche.classList.toggle("inactive");
-        }
-    }
-}
+// function datenEintragung() {
+//     console.log("Daten eintragen funktioniert")
 
-function hinzufuegen() {
-    console.log("Funktioniert")
+//     var seite1 = document.getElementById("seite1") ? document.getElementById("seite1") : null;
+//     var seite2 = document.getElementById("seite2") ? document.getElementById("seite2") : null;
+//     var seite3 = document.getElementById("seite3") ? document.getElementById("seite3") : null;
 
-    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("hinzufuegen") : null;
-    var suche = document.getElementById("suche") ? document.getElementById("suche") : null;
-    var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
+//     var btnNext = document.getElementById("nextBtn");
+//     var btnBack = document.getElementById("backBtn");
 
-    console.log(hinzufuegen)
-    if (hinzufuegen) {
-        if (hinzufuegen.classList.contains("inactive")) {
-            console.log("in hinzufuegen click condition")
-            hinzufuegen.classList.toggle("inactive");
-        } else {
-            hinzufuegen.classList.toggle("inactive");
-        }
-    }
-}
 
-function meinAccount() {
-    console.log("Funktioniert")
+//     if (btnNext.onclick) {
+//         if (seite1.style.display = "block") {
+//             seite1.style.display = "none"
+//             seite2.style.display = "block"
+//             seite3.style.display = "none";
+//         } else if (seite2.style.display = "block") {
+//             seite1.style.display = "none"
+//             seite2.style.display = "none"
+//             seite3.style.display = "block";
+//         } else if (seite3.display = "block") {
 
-    var hinzufuegen = document.getElementById("hinzufuegen") ? document.getElementById("suche") : null;
-    var suche = document.getElementById("suche") ? document.getElementById("suche") : null;
-    var benutzer = document.getElementById("meinAccount") ? document.getElementById("meinAccount") : null;
+//         }
 
-    console.log(benutzer)
-    if (benutzer) {
-        if (benutzer.classList.contains("inactive")) {
-            console.log("in benutzer click condition")
-            benutzer.classList.toggle("inactive");
-        } else {
-            benutzer.classList.toggle("inactive");
-        }
-    }
-}
+//     }
 
-function kategorien() {
-    console.log("Funktioneirt")
+// }
 
-    var kategorien = document.getElementById("kategorien") ? document.getElementById("kategorien") : null;
-    if (kategorien) {
-        if (kategorien.classList.contains("inactive")) {
-            console.log("Click kategorien funktioneirt")
-            kategorien.classList.toggle("inactive");
-        } else {
-            kategorien.classList.toggle("inactive");
-        }
-    }
 
-}
+
+
+
 
 
 
