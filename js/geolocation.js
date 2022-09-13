@@ -3,22 +3,6 @@
   //standortabfrage
   export default function LocationButton() {
 
-      <<
-      << << < HEAD
-      //standortabfrage
-
-      document.getElementById('location-button').addEventListener("click", function() {
-          if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(function(position) {
-                  console.log(position.coords.latitude);
-                  console.log(position.coords.longitude);
-                  console.log(typeof position.coords.longitude)
-              });
-          } else {
-              console.log("Geolocation wird nicht unterstuetzt");
-          }
-      }); ===
-      === =
       document.getElementById('location-button').addEventListener("click", function() {
           console.log("HURRA")
           if (navigator.geolocation) {
@@ -60,8 +44,7 @@
       document.getElementById("inputStraße").value = `${googleObject.strasse} ${googleObject.nummer}`;
       document.getElementById("inputStadt").value = `${googleObject.stadt}`;
       document.getElementById("inputPLZ").value = `${googleObject.zip}`;
-  } >>>
-  >>> > main
+  }
 
 
 
