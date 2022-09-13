@@ -3,7 +3,7 @@
 //GEOLOCATION
 
 //standortabfrage
-/*
+
 document.getElementById('location-button').addEventListener("click", function() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -82,4 +82,3 @@ function initMap() {
 src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg&callback=initMap";
 
 src = "js/index.js";
-**/
