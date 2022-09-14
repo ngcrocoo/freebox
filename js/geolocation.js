@@ -19,6 +19,7 @@
 
   }
 
+  //abfangen der koordinaten und umwandlung in adresse
 
   function fetchAdress(lat, lng) {
       console.log("-- translate coordinates: " + lat + "," + lng)
@@ -44,12 +45,16 @@
       document.getElementById("inputStraße").value = `${googleObject.strasse} ${googleObject.nummer}`;
       document.getElementById("inputStadt").value = `${googleObject.stadt}`;
       document.getElementById("inputPLZ").value = `${googleObject.zip}`;
+
+      nadelAufKarte();
   }
 
 
+  function nadelAufKarte(lat, lng) {
 
 
 
+  }
 
 
   //GEOLOCATION
