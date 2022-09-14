@@ -55,7 +55,7 @@
   //GEOLOCATION
 
   //standortabfrage
-
+  /*
   document.getElementById('location-button').addEventListener("click", function() {
       if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -83,10 +83,6 @@
       console.log("Booo");
   });
 
-  <<
-  << << < HEAD
-  src = "js/index.js"; ===
-  === =
 
   //google KARTENAPI
   function initMap() {
@@ -137,42 +133,5 @@
 
   src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg&callback=initMap";
 
-  src = "js/index.js"; **
-  / >>>
-  >>> > main
-
-  //markierung
-  var marker = new google.maps.Marker({
-      position: {
-          lat: 52.544937,
-          lng: 13.402677
-      },
-      map: map
-  });
-
-  var markerRamler = new google.maps.Marker({
-      position: {
-          lat: 52.547170,
-          lng: 13.392540
-      },
-      map: map
-          //icon:'http://cdn.onlinewebfonts.com/svg/img_462308.png'
-  });
-
-  //infos auf nadelicon
-
-  var infoWindow = new google.maps.InfoWindow({
-      content: '<h1>Mauerpark</h1>'
-  })
-
-  marker.addListener('click', function() {
-      infoWindow.open(map, marker);
-  });
-
-
-  }
-
-
-  src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg&callback=initMap";
-
   src = "js/index.js";
+  **/

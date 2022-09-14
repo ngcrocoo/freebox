@@ -1,10 +1,12 @@
+import { UploadForm } from "./tabs.js"
+
 export default function Webcam() {
     (() => {
         if (!navigator.mediaDevices) {
             alert("No camera access");
             return;
         }
-
+        var globalImageData = null;
         const camerasSelect = document.querySelector("#cameras");
         camerasSelect.addEventListener("change", handleChangeCamera);
 
@@ -12,8 +14,13 @@ export default function Webcam() {
         const useCam = document.getElementById("takePic")
         const newPhoto = document.getElementById("newPic")
 
+        const uploadButton = document.getElementById("uploadBtn")
+        uploadButton.addEventListener("click", sendData);
+        uploadButton.style.display = "none"
+
         useCam.addEventListener("click", takeSnapshot);
         newPhoto.addEventListener("click", newSnapshot);
+
         newPhoto.style.display = "none";
         const takePhoto = document.createElement("a");
         // set the name of the download, could change this to something
@@ -45,12 +52,14 @@ export default function Webcam() {
             context.drawImage(camera, 0, 0, width, height);
 
             const imageData = canvas.toDataURL("image/png");
+            globalImageData = imageData
             camera.style.display = "none";
             newPhoto.style.display = "block";
             useCam.style.display = " none"
+            uploadButton.style.display = "block"
             preview.src = imageData;
             preview.style.display = "block"
-            console.log("picture adress: ", imageData)
+                // console.log("picture adress: ", imageData)
         }
 
         function newSnapshot() {
@@ -58,7 +67,19 @@ export default function Webcam() {
             useCam.style.display = "block"
             preview.style.display = "none";
             camera.style.display = "block";
+            uploadButton.style.display = "none"
         }
+
+        function sendData() {
+            const strasse = document.getElementById("inputStraße").value
+            const stadt = document.getElementById("inputStadt").value
+            const zip = document.getElementById("inputPLZ").value
+            const text = document.getElementById("inputBemerkung").value
+
+            document.getElementById
+            UploadForm(strasse, stadt, zip, text, globalImageData)
+        }
+
 
         function gotDevices(mediaDevices) {
             camerasSelect.innerHTML = "";

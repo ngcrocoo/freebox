@@ -1,5 +1,6 @@
 export default function Tabs() {
     console.log("1 2 3 funktioniert")
+
     var bindAll = function() {
         var menuElements = document.querySelectorAll('[data-tab]');
         for (var i = 0; i < menuElements.length; i++) {
@@ -21,6 +22,8 @@ export default function Tabs() {
         }
     }
 
+
+
     var change = function(e) {
         console.log("change")
         clear();
@@ -29,8 +32,22 @@ export default function Tabs() {
         document.getElementById(id).classList.add('active');
     }
 
+
     bindAll();
+
+
+
 }
+
+export function UploadForm(strasse, stadt, zip, text, foto) {
+
+    console.log("straße:", strasse)
+    console.log("stadt:", stadt)
+    console.log("zip:", zip)
+    console.log("text:", text)
+        // console.log("upload btn: ", foto)
+}
+
 
 var connectTabs = new Tabs();
 
