@@ -88,7 +88,27 @@ p {
     flex: flex-shrink;
 }
 
-.acitve {
+a {
+    text-align: center;
+    font-size: 1!important;
+    flex: flex-shrink;
+}
+
+.logIn {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#loginError {
+    color: red!important;
+}
+
+.registration {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.active {
     display: block;
 }
 

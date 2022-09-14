@@ -7,6 +7,13 @@ Tabs()
 geoLocation();
 Webcam()
 
+const auth = new Auth();
+
+document.querySelector(".logout").addEventListener("click", (e) => {
+    auth.logOut();
+});
+
+
 // function suche() {
 //     console.log("Funktioniert")
 

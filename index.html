@@ -175,67 +175,149 @@
 
                     <div class="container ml-4 mr-4 mb-2">
                         <div class="inhalt">
-                            <div class="center">
-                                <a href="#seite1" data-tab="seite1" class="b-nav-tab active center">
-                                    1
-                                  </a>
-                                <a href="#seite2" data-tab="seite2" class="b-nav-tab center">
-                                    2
-                                  </a>
-                                <a href="#seite3" data-tab="seite3" class="b-nav-tab center">
-                                    3
-                                  </a>
-                            </div>
-
-                            <div id="seite1" class="b-tab active">
-                                <div class="inhalt">
-                                    <div class="center">
-                                        <button class="button is-hovered is-small is-rounded is-info" id="location-button">Mein Standort</button>
-                                        <div id="output"></div>
-                                    </div>
-                                    </label>
-                                    <p></p>
-                                    <p>oder: Adressdaten eingeben.</p>
-                                    <div class="field ml-0 mr-0 hgt">
-                                        <p class="control mb-2">
-                                            <input class="input is-rounded is-small" id="inputStraße" placeholder="Straße und Hausnummer">
-                                        </p>
-
-                                        <p class="control mb-2">
-                                            <input class="input is-rounded is-small" id="inputPLZ" placeholder="PLZ">
-                                        </p>
-                                        <p class="control mb-2">
-                                            <input class="input is-rounded is-small" id="inputStadt" placeholder="Stadt">
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="seite2" class="b-tab">
-                                <div class="inhalt">
-                                    <div class="center">
-                                        <div class="field hgt">
-                                            <textarea class="textarea is-rounded is-small" rows="4" id="inputBemerkung" placeholder="Die Box steht seitlich am Hauseingang. Enthalten sind fünf Tomatensetzlinge und drei Romane.">
-                                            <p class="control mb-1">
-                                                </textarea>
-                                            <div>
-                                                <p class="beschreibung is-1 ml-0 mt-0">Beschreibe den Inhalt Deiner Box.</p>
-                                            </div>
+                            <div class="container">
+                                <div class="logIn inactive">
+                                    <form class="loginForm">
+                                        <div class="field">
+                                            <p class="control has-icons-left has-icons-right">
+                                                <input class="input is-small is-rounded" type="email" placeholder="Email">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-envelope"></i>
+                                                  </span>
+                                                <span class="error-message"></span>
+                                            </p>
+                                            <p class="control has-icons-left mb-1">
+                                                <input class="input is-small is-rounded" type="password" placeholder="Password">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                                <span class="error-message"></span>
                                             </p>
                                         </div>
-                                        <div>
-                                            <input type="date">
+                                        <div class="center">
+                                            <button onclick="logIn()" class="button is-hovered is-small is-rounded is-info">
+                                                    Login
+                                            </button>
+
+                                        </div>
+                                    </form>
+
+                                </div>
+
+                                <div class="mt-2">
+                                    <p class="mb-0">Noch keinen Account?</p>
+                                    <div class="center">
+                                        <a>Registriere Dich.</a>
+                                    </div>
+
+                                    <!-- <a href="#" onclick="kategorien()">Grenze Deine Suche ein.</a> -->
+                                </div>
+
+                                <div class="registration inactive">
+                                    <div class="field">
+                                        <p class="control has-icons-left has-icons-right">
+                                            <input class="input is-small is-rounded" type="text" placeholder="Benutzername">
+                                            <span class="icon is-small is-left">
+                                                <i class="fa-regular fa-check"></i>
+                                              </span>
+                                        </p>
+                                    </div>
+                                    <div class="field">
+                                        <p class="control has-icons-left has-icons-right">
+                                            <input class="input is-small is-rounded" type="email" placeholder="Email">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                              </span>
+                                        </p>
+                                    </div>
+                                    <div class="field">
+                                        <p class="control has-icons-left">
+                                            <input class="input is-small is-rounded" type="password" placeholder="Passwort">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-lock"></i>
+                                              </span>
+                                        </p>
+                                    </div>
+                                    <div class="field">
+                                        <p class="control has-icons-left">
+                                            <input class="input is-small is-rounded" type="password" placeholder="Erneutes Passwort">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-lock"></i>
+                                              </span>
+                                        </p>
+                                    </div>
+                                    <div class="center">
+                                        <button class="button is-hovered is-small is-rounded is-info">
+                                                Registrieren
+                                        </button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="active">
+                                <div class="center">
+                                    <a href="#seite1" data-tab="seite1" class="b-nav-tab active center">
+                                        1
+                                      </a>
+                                    <a href="#seite2" data-tab="seite2" class="b-nav-tab center">
+                                        2
+                                      </a>
+                                    <a href="#seite3" data-tab="seite3" class="b-nav-tab center">
+                                        3
+                                      </a>
+                                </div>
+
+                                <div id="seite1" class="b-tab active">
+                                    <div class="inhalt">
+                                        <div class="center">
+                                            <button class="button is-hovered is-small is-rounded is-info" id="location-button">Mein Standort</button>
+                                            <div id="output"></div>
+                                        </div>
+                                        </label>
+                                        <p></p>
+                                        <p>oder: Adressdaten eingeben.</p>
+                                        <div class="field ml-0 mr-0 hgt">
+                                            <p class="control mb-2">
+                                                <input class="input is-rounded is-small" id="inputStraße" placeholder="Straße und Hausnummer">
+                                            </p>
+
+                                            <p class="control mb-2">
+                                                <input class="input is-rounded is-small" id="inputPLZ" placeholder="PLZ">
+                                            </p>
+                                            <p class="control mb-2">
+                                                <input class="input is-rounded is-small" id="inputStadt" placeholder="Stadt">
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
+                                <div id="seite2" class="b-tab">
+                                    <div class="inhalt">
+                                        <div class="center">
+                                            <div class="field hgt">
+                                                <textarea class="textarea is-rounded is-small" rows="4" id="inputBemerkung" placeholder="Die Box steht seitlich am Hauseingang. Enthalten sind fünf Tomatensetzlinge und drei Romane.">
+                                                    </textarea>
+                                                <div>
+                                                    <p class="beschreibung is-1 ml-0 mt-0">Beschreibe den Inhalt Deiner Box.</p>
+                                                </div>
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <input type="date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="seite3" class="b-tab">
+                                    <select id="cameras"> </select>
+                                    <video id="camera" autoplay></video>
+                                    <img id="preview" />
+                                    <button id="takePic">Foto</button>
+                                    <button id="newPic">daneben nochmal</button>
+                                    <button id="uploadBtn">post data</button>
+                                </div>
                             </div>
-                            <div id="seite3" class="b-tab">
-                                <select id="cameras"> </select>
-                                <video id="camera" autoplay></video>
-                                <img id="preview" />
-                                <button id="takePic">Foto</button>
-                                <button id="newPic">daneben nochmal</button>
-                                <button id="uploadBtn">post data</button>
-                            </div>
+
 
                             <!-- <div class="container seite1" data-tab="seite1">
                                 <div class="center inhalt">
@@ -398,14 +480,15 @@
                     </div>
                 </div>
                 <container class="container mt-3 mb-3 center erklaerung">
-                    <div class="">
-                        <p>Mein Account</p>
-                        <p></p>
-                        <p></p>
-                    </div>
+
                 </container>
                 <container class="container center ml-4 mr-4 mb-2 inhalt">
+                    <div class="center">
+                        <button class="button is-hovered is-small is-rounded is-info">
+                                Abmelden
+                        </button>
 
+                    </div>
                 </container>
             </div>
         </div>
