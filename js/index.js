@@ -7,12 +7,17 @@ Tabs()
 geoLocation();
 Webcam()
 
+<<
+<< << < HEAD
 const auth = new Auth();
 
 document.querySelector(".logout").addEventListener("click", (e) => {
     auth.logOut();
 });
 
+===
+=== = >>>
+>>> > 59545 f6b436a4c7459ec276efc3c13af8558be5a
 
 // function suche() {
 //     console.log("Funktioniert")

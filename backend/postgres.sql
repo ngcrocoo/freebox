@@ -8,7 +8,6 @@ IF NOT EXISTS(
 	nummer INT NOT NULL,
 	plz INT NOT NULL,
 	stadt VARCHAR(50) NOT NULL,
-	land VARCHAR(50) NOT NULL)
 );
 
 -- INSERT INTO standort (koordinaten, strasse, nummer, plz, stadt, land)
@@ -30,12 +29,9 @@ CREATE TABLE box (
 	standort, 
 	inhalt VARCHAR(500),
 	person,
+	bild BLOB CONSTRAINT,
 );
 
-CREATE TABLE box (
-	id BIGSERIAL NOT NULL PRIMARY KEY,
-	inhalt VARCHAR(500),
-);
 
 -- (SELECT koordinaten INTO box FROM standort)
 

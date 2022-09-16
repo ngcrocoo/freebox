@@ -11,10 +11,10 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <script rel="pushnotification" src="./js/push.js"></script>
-    <script rel="googleKarte" src="./js/karte.js"></script>
+
     <script src="https://kit.fontawesome.com/a57b6f63d4.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
-
+    <script src="js/karte.js" charset="utf-8" defer></script>
 </head>
 
 <body style="overflow: hidden">
@@ -25,17 +25,17 @@
                 <div class="columns is-mobile">
                     <div class="column center">
                         <div class="circles">
-                            <img data-id="suche" src="img/suche.png">
+                            <img class="imgIcon" data-id="suche" src="img/suche.png">
                         </div>
                     </div>
                     <div class="column center">
                         <div class="circles">
-                            <img data-id="hinzufuegen" src="img/plus.png">
+                            <img class="imgIcon" data-id="hinzufuegen" src="img/plus.png">
                         </div>
                     </div>
                     <div class="column center">
                         <div class="circles">
-                            <img data-id="meinAccount" src="img/benutzer.png">
+                            <img class="imgIcon" data-id="meinAccount" src="img/benutzer.png">
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                 <div class="container mt-0">
                     <div class="center titel">
                         <div class="circles">
-                            <img src="img/suche.png">
+                            <img class="imgIcon" src="img/suche.png">
                         </div>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                     <div class="container mt-0">
                         <div class="center titel">
                             <div class="circles">
-                                <img src="img/plus.png">
+                                <img class="imgIcon" src="img/plus.png">
                             </div>
                         </div>
                     </div>
@@ -494,7 +494,7 @@
         </div>
     </section>
 
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg&callback=initMap">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg">
     </script>
     <script type="module" src=" js/index.js "></script>
 

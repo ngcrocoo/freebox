@@ -15,7 +15,7 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), options);
 
     //markierung
-    var marker = new google.maps.Marker({
+    var markerTest = new google.maps.Marker({
         position: {
             "lat": 52.544937,
             "lng": 13.402677
@@ -28,67 +28,28 @@ function initMap() {
             "lat": 52.547170,
             "lng": 13.392540
         },
-        map: map
-            //icon:'http://cdn.onlinewebfonts.com/svg/img_462308.png'
+        map: map,
+
     });
 
     //infos auf nadelicon
 
     var infoWindow = new google.maps.InfoWindow({
-        content: '<h1>Mauerpark</h1>'
+        content: '<h4>Überschrift</h4><ul><li><strong>Straße:</strong> Musterstr. 1</li><li><strong>Inhalt:</strong> LoremIpsum</li><li><strong>Bild:</strong><img src="https://corporatedesign.htw-berlin.de/files/Presse/_tmp_/3/4/csm_Logos_1330x430_612fe2f37a.jpg" /></a></p'
     })
 
-    marker.addListener('click', function() {
-        infoWindow.open(map, marker);
+    markerTest.addListener('click', function() {
+        infoWindow.open(map, markerTest);
     });
 
-}
 
 
-
-/*<script>
-//google API
-function initMap() {
-
-    //karten optionen
-    var options = {
-            zoom: 12,
-            mapId: 'IDMAP',
-            center: {
-                "lat": 52.544937,
-                "lng": 13.402677
-            }
-        }
-        //neue karte
-    var map = new google.maps.Map(document.getElementById('map'), options);
-
-    //markierung
-    var marker = new google.maps.Marker({
+    var markerStraffmann = new google.maps.Marker({
         position: {
-            "lat": 52.544937,
-            "lng": 13.402677
+            "lat": 52.5227469,
+            "lng": 13.4518563
         },
         map: map
     });
 
-    var markerRamler = new google.maps.Marker({
-        position: {
-            "lat": 52.547170,
-            "lng": 13.392540
-        },
-        map: map
-            //icon:'http://cdn.onlinewebfonts.com/svg/img_462308.png'
-    });
-
-    //infos auf nadelicon
-
-    var infoWindow = new google.maps.InfoWindow({
-        content: '<h1>Mauerpark</h1>'
-    })
-
-    marker.addListener('click', function() {
-        infoWindow.open(map, marker);
-    });
-
 }
-</script>**/
