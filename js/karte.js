@@ -9,7 +9,8 @@ function initMap() {
             center: {
                 "lat": 52.544937,
                 "lng": 13.402677
-            }
+            },
+            disableDefaultUI: true,
         }
         //neue karte
     var map = new google.maps.Map(document.getElementById('map'), options);
@@ -20,7 +21,8 @@ function initMap() {
             "lat": 52.544937,
             "lng": 13.402677
         },
-        map: map
+        map: map,
+        icon: "../img/marker.png"
     });
 
     var markerRamler = new google.maps.Marker({
@@ -28,7 +30,8 @@ function initMap() {
             "lat": 52.547170,
             "lng": 13.392540
         },
-        map: map
+        map: map,
+        icon: "../img/marker.png"
             //icon:'http://cdn.onlinewebfonts.com/svg/img_462308.png'
     });
 

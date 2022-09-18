@@ -1,5 +1,5 @@
 export default function Tabs() {
-    console.log("1 2 3 funktioniert")
+    console.log("1 2 3 4 funktioniert")
 
     var bindAll = function() {
         var menuElements = document.querySelectorAll('[data-tab]');
