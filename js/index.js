@@ -38,9 +38,9 @@ document.getElementById('date2').value = new Date().toISOString().substring(0, 1
 //     auth.logOut();
 // });
 
-document.querySelector(".logout").addEventListener("click", (e) => {
-    auth.logOut();
-});
+// document.querySelector(".logout").addEventListener("click", (e) => {
+//     auth.logOut();
+// });
 
 
 // function suche() {
