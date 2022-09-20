@@ -1,11 +1,35 @@
 import geoLocation from "./geolocation.js";
 import initButtons from "./buttons.js";
 import Tabs from "./tabs.js";
-import Webcam from "./webcam.js"
+import Webcam from "./webcam.js";
+import { Login } from "./login.js";
+
 initButtons();
 Tabs()
 geoLocation();
-Webcam()
+Webcam();
+
+// create a variable for the login form
+const form = document.querySelector(".loginForm");
+// if the form exists, run the class
+if (form) {
+    console.log("Form existiert");
+    // setup the fields we want to validate, we only have two but you can add others
+    const fields = ["username", "password"];
+    // run the class
+    const validator = new Login(form, fields);
+}
+
+// Get today's date for date input
+document.getElementById('date1').value = new Date().toISOString().substring(0, 10);
+document.getElementById('date2').value = new Date().toISOString().substring(0, 10);
+
+// Display date
+// const date1 = document.getElementById('date1').value;
+// const date2 = document.getElementById('date2').value;
+
+// const zeitraum = "Zeitraum: " + date1 + " bis " + date2;
+// document.getElementById('dateOutput').value = zeitraum;
 
 
 // const auth = new Auth();
@@ -14,6 +38,9 @@ Webcam()
 //     auth.logOut();
 // });
 
+document.querySelector(".logout").addEventListener("click", (e) => {
+    auth.logOut();
+});
 
 
 // function suche() {
