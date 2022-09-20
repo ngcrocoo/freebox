@@ -15,6 +15,9 @@ function initMap() {
         //neue karte
     var map = new google.maps.Map(document.getElementById('map'), options);
 
+ 
+ /** */
+ 
     //markierung
     var markerTest = new google.maps.Marker({
         position: {
@@ -53,6 +56,11 @@ function initMap() {
             "lng": 13.4518563
         },
         map: map
+        
+    });
+
+    markerStraffmann.addListener('click', function() {
+        infoWindow.open(map, markerStraffmann);
     });
 
 }
