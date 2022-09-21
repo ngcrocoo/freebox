@@ -7,7 +7,39 @@ import { Login } from "./login.js";
 initButtons();
 Tabs()
 geoLocation();
+fetchOrte()
 Webcam();
+
+
+function fetchOrte() {
+    fetch('https://freebox.live:8888/standorte', {
+        // headers: {
+        //     'Content-Type': 'application/json',
+        //     'Access-Control-Allow-Origin': '*'
+        // },
+        referrer: 'no-referrer'
+    }).then(function(response) {
+
+        // The API call was successful!
+
+        return response.json();
+
+
+        // There was an error
+
+
+    }).then(function(data) {
+        // This is the JSON from our response
+
+
+
+        initMap(data)
+        console.log("FETCH DATA", orte);
+    }).catch(function(err) {
+        // There was an error
+        console.warn('Something went wrong.', err);
+    });
+}
 
 // create a variable for the login form
 const form = document.querySelector(".loginForm");

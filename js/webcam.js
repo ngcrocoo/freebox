@@ -1,5 +1,3 @@
-import { UploadForm } from "./tabs.js"
-
 export default function Webcam() {
     (() => {
         if (!navigator.mediaDevices) {
@@ -71,13 +69,7 @@ export default function Webcam() {
         }
 
         function sendData() {
-            const strasse = document.getElementById("inputStraße").value
-            const stadt = document.getElementById("inputStadt").value
-            const zip = document.getElementById("inputPLZ").value
-            const text = document.getElementById("inputBemerkung").value
 
-            document.getElementById
-            UploadForm(strasse, stadt, zip, text, globalImageData)
         }
 
 

@@ -39,14 +39,7 @@ export default function Tabs() {
 
 }
 
-export function UploadForm(strasse, stadt, zip, text, foto) {
 
-    console.log("straße:", strasse)
-    console.log("stadt:", stadt)
-    console.log("zip:", zip)
-    console.log("text:", text)
-        // console.log("upload btn: ", foto)
-}
 
 
 var connectTabs = new Tabs();

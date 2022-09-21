@@ -1,4 +1,33 @@
 export default function InitButtons() {
+    document.getElementById("send").addEventListener("click", (e) => {
+
+        const strasse = document.getElementById("inputStraße").value
+        const stadt = document.getElementById("inputStadt").value
+        const zip = document.getElementById("inputPLZ").value
+        const text = document.getElementById("inputBemerkung").value
+
+        const postData = {
+            // "coord":
+        }
+
+        fetch('https://freebox.live:8888/standort', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+    });
+
+
     var btns = document.querySelector("#bottom-menu")
     var imgTags = btns.querySelectorAll("img")
     console.log(btns)
