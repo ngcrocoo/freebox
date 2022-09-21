@@ -8,6 +8,7 @@ export default function InitButtons() {
         const text = document.getElementById("inputBemerkung").value
         const date1 = document.getElementById("date1").value
         const date2 = document.getElementById("date2").value
+        const user = "ngcrocoo"
         console.log(date1)
             //const img = document.getElementById()
 
@@ -17,18 +18,29 @@ export default function InitButtons() {
 
 
 
-        fetch('https://freebox.live:8888/standort', {
+        fetch('https://freebox.live:8888/api/standorte/', {
                 method: 'POST', // or 'PUT'
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                // headers: {
+                //     'Content-Type': 'application/json'
+                // },
+                mode: 'cors',
                 body: JSON.stringify({
-                    "coords": coordinates[0] + "," + coordinates[1],
-                    "strasse": strasse[0],
-                    "nummer": strasse[1],
-                    "zip": zip,
-                    "stadt": stadt
-                }),
+                        coord: coordinates[0] + "," + coordinates[1],
+                        strasse: strasse[0],
+                        nummer: strasse[1],
+                        zip: zip,
+                        stadt: stadt,
+                        bild: img,
+                        text: text,
+                        user: user,
+                        created_at: date1,
+                        updated_at: date2
+                    }) //,
+
+                // body: JSON.stringify({
+                //     email: this.form[0].value,
+                //     password: this.form[1].value,
+                // }),
             })
             .then((response) => response.json())
             .then((data) => {

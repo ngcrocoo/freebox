@@ -7999,9 +7999,9 @@ a {
   font-size: 1 !important;
   flex: flex-shrink; }
 
-.logIn {
-  margin-left: 25%;
-  margin-right: 25%; }
+.loginForm {
+  margin-left: 20%;
+  margin-right: 20%; }
 
 #loginError {
   color: red !important; }

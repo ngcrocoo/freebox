@@ -3,6 +3,7 @@ import initButtons from "./buttons.js";
 import Tabs from "./tabs.js";
 import Webcam from "./webcam.js";
 import { Login } from "./login.js";
+import { Register } from "./register.js";
 
 initButtons();
 Tabs()
@@ -10,10 +11,25 @@ geoLocation();
 fetchOrte()
 Webcam();
 
+function hideLogin() {
+    console.log(" Hide Login")
+    const logIn = document.getElementById("login");
+    const registration = document.getElementById("registration");
+
+    document.getElementById("register").addEventListener("click", function() {
+        logIn.classList.remove('active');
+        logIn.classList.add('inactive');
+        registration.classList.remove('inactive');
+        registration.classList.add('active');
+
+    });
+    console.log("Login verstecken klappt")
+}
+
 var globalImageData = null;
 
 function fetchOrte() {
-    fetch('https://freebox.live:8888/standorte', {
+    fetch('https://freebox.live:8888/api/standorte/', {
         // headers: {
         //     'Content-Type': 'application/json',
         //     'Access-Control-Allow-Origin': '*'
@@ -42,20 +58,31 @@ function fetchOrte() {
     });
 }
 
+// Get today's date for date input
+document.getElementById('date1').value = new Date().toISOString().substring(0, 10);
+document.getElementById('date2').value = new Date().toISOString().substring(0, 10);
+
 // create a variable for the login form
-const form = document.querySelector(".loginForm");
+const formLogin = document.querySelector(".loginForm");
 // if the form exists, run the class
 if (form) {
-    console.log("Form existiert");
     // setup the fields we want to validate, we only have two but you can add others
-    const fields = ["email", "password"];
+    const fieldsLogin = ["email", "password"];
     // run the class
-    const validator = new Login(form, fields);
+    const validatorLogin = new Login(formLogin, fieldsLogin);
+}
+
+const formRegister = document.querySelector(".registerForm");
+if (form) {
+    const fieldsRegister = ["email", "password"];
+    const validatorRegister = new Register(formRegister, fieldsRegister);
 }
 
 // Get today's date for date input
 document.getElementById('date1').value = new Date().toISOString().substring(0, 10);
 document.getElementById('date2').value = new Date().toISOString().substring(0, 10);
+
+
 
 // Display date
 // const date1 = document.getElementById('date1').value;

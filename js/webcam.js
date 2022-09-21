@@ -49,7 +49,7 @@ export default function Webcam() {
 
             context.drawImage(camera, 0, 0, width, height);
 
-            const imageData = canvas.toDataURL("image/webp");
+            const imageData = canvas.toDataURL("image/png");
             localStorage.setItem('globalImage', imageData);
             camera.style.display = "none";
             newPhoto.style.display = "block";

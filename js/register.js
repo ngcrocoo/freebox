@@ -1,4 +1,4 @@
-export class Login {
+export class Register {
     constructor(form, fields) {
         this.form = form;
         this.fields = fields;
@@ -25,7 +25,7 @@ export class Login {
             if (error == 0) {
                 console.log("Keine Fehler, Login Daten posten")
                 console.log(this.form[0].value)
-                fetch('https://freebox.live:8888/api/auth/login', {
+                fetch('https://freebox.live:8888/api/auth/register', {
                         method: "POST",
                         mode: 'cors',
 
@@ -42,10 +42,10 @@ export class Login {
                             alert("Error Password or Username"); /*displays error message*/
                         } else {
                             console.log("das klappt")
-                            this.hideLogin()
-                                // window.open(
-                                //     "target.html"
-                                // ); /*opens the target page while Id & password matches*/
+
+                            // window.open(
+                            //     "target.html"
+                            // ); /*opens the target page while Id & password matches*/
                         }
                     })
                     .catch((err) => {
