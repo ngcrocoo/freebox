@@ -1,7 +1,5 @@
 //google API
 
-
-
 function initMap(daten) {
     var orte = daten ? daten : null;
     //karten optionen
@@ -14,7 +12,8 @@ function initMap(daten) {
             },
             disableDefaultUI: true,
         }
-        //neue karte
+
+    //neue karte
     var map = new google.maps.Map(document.getElementById('map'), options);
 
     var arrayModel = [{ "id": 1, "coord": "52.52277579132764,13.451707735547815", "strasse": "strassmannstrasse", "nummer": 29, "zip": 10249, "stadt": "Berlin" }, { "id": 2, "coord": "52.52197673598406,13.453970728837259", "strasse": "Matternstrasse", "nummer": 10, "zip": 10249, "stadt": "Berlin" }, { "id": 3, "coord": "52.50663906498019, 13.503347013368094", "strasse": "zachertstraße", "nummer": 14, "zip": 10315, "stadt": "Berlin" }]
@@ -40,9 +39,6 @@ function initMap(daten) {
             });
 
 
-
-
-
             //infos auf nadelicon
 
             // var infoWindow = new google.maps.InfoWindow({
@@ -56,3 +52,5 @@ function initMap(daten) {
         }
 
         //initMap()
+
+    }}
