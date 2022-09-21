@@ -39,25 +39,20 @@ function initMap(daten) {
                 icon: "../img/marker.png"
             });
 
+
+
+
+
+            //infos auf nadelicon
+
+            // var infoWindow = new google.maps.InfoWindow({
+            //     content: '<h4>Überschrift</h4><ul><li><strong>Straße:</strong> Musterstr. 1</li><li><strong>Inhalt:</strong> LoremIpsum</li><li><strong>Bild:</strong><img src="https://corporatedesign.htw-berlin.de/files/Presse/_tmp_/3/4/csm_Logos_1330x430_612fe2f37a.jpg" /></a></p'
+            // })
+
+            // marker.addListener('click', function() {
+            //     infoWindow.open(map, marker);
+            // });
+
         }
-    }
 
-    console.log("init map")
-
-
-
-
-
-    //infos auf nadelicon
-
-    // var infoWindow = new google.maps.InfoWindow({
-    //     content: '<h4>Überschrift</h4><ul><li><strong>Straße:</strong> Musterstr. 1</li><li><strong>Inhalt:</strong> LoremIpsum</li><li><strong>Bild:</strong><img src="https://corporatedesign.htw-berlin.de/files/Presse/_tmp_/3/4/csm_Logos_1330x430_612fe2f37a.jpg" /></a></p'
-    // })
-
-    // marker.addListener('click', function() {
-    //     infoWindow.open(map, marker);
-    // });
-
-}
-
-//initMap()
+        //initMap()
