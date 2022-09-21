@@ -1,21 +1,34 @@
 export default function InitButtons() {
     document.getElementById("send").addEventListener("click", (e) => {
 
-        const strasse = document.getElementById("inputStraße").value
+        const coordinates = document.getElementById('output').value.split(',')
+        const strasse = document.getElementById("inputStraße").value.split(' ')
         const stadt = document.getElementById("inputStadt").value
         const zip = document.getElementById("inputPLZ").value
         const text = document.getElementById("inputBemerkung").value
+        const date1 = document.getElementById("date1").value
+        const date2 = document.getElementById("date2").value
+        console.log(date1)
+            //const img = document.getElementById()
 
-        const postData = {
-            // "coord":
-        }
+        const img = localStorage.getItem('globalImage')
+        console.log("Foto:", img)
+
+
+
 
         fetch('https://freebox.live:8888/standort', {
                 method: 'POST', // or 'PUT'
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify({
+                    "coords": coordinates[0] + "," + coordinates[1],
+                    "strasse": strasse[0],
+                    "nummer": strasse[1],
+                    "zip": zip,
+                    "stadt": stadt
+                }),
             })
             .then((response) => response.json())
             .then((data) => {

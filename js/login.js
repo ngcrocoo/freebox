@@ -31,10 +31,38 @@ export class Login {
             });
             // if everything validates, error will be 0 and can continue
             if (error == 0) {
-                //do login api here or in this case, just submit the form and set a localStorage item
-                // Login API fehlt
-                hideLogin();
-                this.form.submit();
+                console.log("Keine Fehler, Login Daten posten")
+                fetch('https://freebox.live:8888/api/auth/login ', {
+                        method: "POST",
+                        mode: 'cors',
+
+                        body: JSON.stringify({
+                            email: this.fields[0].value,
+                            password: this.fields[1].value,
+                        }),
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        console.log(data);
+                        // code here //
+                        if (data.error) {
+                            alert("Error Password or Username"); /*displays error message*/
+                        } else {
+                            console.log("das klappt")
+                                // window.open(
+                                //     "target.html"
+                                // ); /*opens the target page while Id & password matches*/
+                        }
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+
+
+                // //do login api here or in this case, just submit the form and set a localStorage item
+                // // Login API fehlt
+                // hideLogin();
+                // this.form.submit();
 
                 console.log("submit klappt")
             }

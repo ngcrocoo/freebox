@@ -55,4 +55,6 @@ function initMap(daten) {
 
         }
 
-        //initMap()
+    } //initMap()
+
+}

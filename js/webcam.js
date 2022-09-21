@@ -4,7 +4,7 @@ export default function Webcam() {
             alert("No camera access");
             return;
         }
-        var globalImageData = null;
+
         const camerasSelect = document.querySelector("#cameras");
         camerasSelect.addEventListener("change", handleChangeCamera);
 
@@ -49,15 +49,15 @@ export default function Webcam() {
 
             context.drawImage(camera, 0, 0, width, height);
 
-            const imageData = canvas.toDataURL("image/png");
-            globalImageData = imageData
+            const imageData = canvas.toDataURL("image/webp");
+            localStorage.setItem('globalImage', imageData);
             camera.style.display = "none";
             newPhoto.style.display = "block";
             useCam.style.display = " none"
             uploadButton.style.display = "block"
             preview.src = imageData;
             preview.style.display = "block"
-                // console.log("picture adress: ", imageData)
+            console.log("picture adress: ", imageData)
         }
 
         function newSnapshot() {

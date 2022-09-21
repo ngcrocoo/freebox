@@ -10,6 +10,9 @@
               navigator.geolocation.getCurrentPosition(function(position) {
                   console.log("-- getting coordinates")
                   fetchAdress(position.coords.latitude, position.coords.longitude)
+                  console.log("Kooridinaten:", position.coords.latitude, position.coords.longitude)
+                  document.getElementById('output').value = position.coords.latitude + "," + position.coords.longitude;
+                  console.log("Value:", document.getElementById('output').value)
 
               });
           } else {
