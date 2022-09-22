@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FreeBox</title>
-    <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico"> -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <script rel="pushnotification" src="./js/push.js"></script>
 
@@ -42,6 +42,7 @@
                             <img data-id="meinAccount" src="img/user.png">
                         </div>
                     </div>
+                
                 </div>
             </div>
         </nav>
@@ -164,7 +165,7 @@
             </div>
 
             <!-- Box hinzufügen-->
-            <div class="container inactive" data-page id="hinzufuegen">
+            <div class="container inactive" data-page id="hinzufuegen"> 
                 <div class="hinzufuegen">
                     <div class="container mt-0">
                         <div class="center titel">
@@ -309,6 +310,7 @@
                                 <a href="#seite4" data-tab="seite4" class="b-nav-tab center">
                                         4
                                       </a>
+                                
                             </div>
                         </div>
 
@@ -548,7 +550,7 @@
       
             <div class="container">
                 <div class="center">
-                <form class="loginForm">
+                <form class="loginForm" id="signUp">
                     <!-- Registration Form -->
                     <div class="form signup">
                                
@@ -563,7 +565,7 @@
                                 </p>
 -->
                                 <p class="control has-icons-left has-icons-right">
-                                    <input class="input is-small is-rounded" type="email" placeholder="Email">
+                                    <input class="input is-small is-rounded" type=" " placeholder="Email">
                                         <span class="icon is-small is-left">
                                             <i class="fas fa-envelope"></i>
                                         </span>
@@ -592,7 +594,7 @@
                             </div>
         
                             <div class="center">
-                                <button class="button is-hovered is-small is-rounded is-info">Anmelden</button>
+                                <button class="button is-hovered is-small is-rounded is-info" id="signUpBtn">Anmelden</button>
                             </div>
                         </form>
         
@@ -601,11 +603,56 @@
                    
                     </div>
                 </div>
+
+
+                                                   
+                                                <!--    ALTER VERSUCH FÜR LOGIN KANN DANN WEG
+                                    <form class="loginForm">
+                                            <div class="field">
+                                                <p class="control has-icons-left has-icons-right">
+                                                    <input class="input is-small is-rounded" type="email" placeholder="Email">
+                                                    <span class="icon is-small is-left">
+                                                                <i class="fas fa-envelope"></i>
+                                                              </span>
+                                                    <span class="error-message"></span>
+                                                </p>
+                                                <p class="control has-icons-left mb-1">
+                                                    <input class="input is-small is-rounded" type="password" placeholder="Passwort">
+                                                    <span class="icon is-small is-left">
+                                                                <i class="fas fa-lock"></i>
+                                                            </span>
+                                                    <span class="error-message"></span>
+                                                </p>
+                                            </div>
+                                            <div class="center">
+                                                <button class="button is-hovered is-small is-rounded is-info">Login</button>
+                                            </div>
+                                        </form> -->
+                                    </div>
+                                </div>
+    
+    
+    
+    
+    
+                        </container>
+                        <container class="container center ml-4 mr-4 mb-2 inhalt">
+                            <div class="center">
+                              <!--  <button class="button is-hovered is-small is-rounded is-info">
+                                        Abmelden
+                                </button>
+                            -->
+                            </div>
+                        </container>
+                    </div>
+    
+                </div>
             </div>
+
         </div>
-        </form>
+    </div>
             <!--<script src="script.js"></script>-->
-        </html>
+    </html>
 
     </section>
     </body>

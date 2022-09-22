@@ -1,5 +1,6 @@
 import geoLocation from "./geolocation.js";
 import initButtons from "./buttons.js";
+import Register from "./register.js";
 import Tabs from "./tabs.js";
 import Webcam from "./webcam.js";
 import { Login } from "./login.js";
@@ -9,10 +10,11 @@ Tabs()
 geoLocation();
 fetchOrte()
 Webcam();
-
+Register()
 
 function fetchOrte() {
-    fetch('https://freebox.live:8888/standorte', {
+    fetch('https://freebox.live:8888/api/standorte-noauth/', {
+        method: 'GET',
         // headers: {
         //     'Content-Type': 'application/json',
         //     'Access-Control-Allow-Origin': '*'
