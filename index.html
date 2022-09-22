@@ -38,7 +38,7 @@
                             <img data-id="meinAccount" src="img/user.png">
                         </div>
                     </div>
-                
+
                 </div>
             </div>
         </nav>
@@ -46,6 +46,8 @@
         <div id="map" class="hero is-fullheight" style="overflow: hidden">
             <div class="map"></div>
         </div>
+        <!-- Marker Window -->
+
         <!-- Infobox -->
         <div class="infobox">
             <div class="background-opt"></div>
@@ -104,7 +106,7 @@
                                                                 </label>
                                                         </div>
                                                     </div>
-<!--CHECKBOXEN
+                                                    <!--CHECKBOXEN
                                                     <div class="column katabstand">
                                                         <div>
                                                         <label class="checkbox">
@@ -141,10 +143,10 @@
                                                         <label class="checkbox">
                                                                 <input type="checkbox" name="answer">Sonstiges
                                                           </label>
-                                                    </div> --> 
+                                                    </div> -->
                                                 </div>
                                             </div>
-                                   </div>
+                                        </div>
 
 
                                     </div>
@@ -160,7 +162,7 @@
             </div>
 
             <!-- Box hinzufügen-->
-            <div class="container inactive" data-page id="hinzufuegen"> 
+            <div class="container inactive" data-page id="hinzufuegen">
                 <div class="hinzufuegen">
                     <div class="container mt-0">
                         <div class="center titel">
@@ -205,7 +207,7 @@
                     </div>
 
                     <div class="container">
-                        <div class="registration inactive">
+                        <div class="registration active">
                             <form class="registerForm">
                                 <div class="input-group">
                                     <label for="email" class="label"></label>
@@ -257,7 +259,7 @@
                                 <a href="#seite4" data-tab="seite4" class="b-nav-tab center">
                                         4
                                       </a>
-                                
+
                             </div>
                         </div>
 
@@ -382,7 +384,7 @@
                                 <div class="column is-one-third">
                                     First column
                                 </div>
-                                <div class="column">
+                                <div class="column auto">
                                     Second column
                                 </div>
                             </div>
@@ -393,19 +395,19 @@
                                     Abmelden
                             </button>
 
-            </div>
-        </div>
- 
-        <!--Registrierung-->  
-      
-            <div class="container">
-                <div class="center">
-                <form class="loginForm" id="signUp">
-                    <!-- Registration Form -->
-                    <div class="form signup">
-                               
-                            <div class="field">
- <!--   FELD FÜR NAME FALLS WIR DAS DOCH NOCH BENÖTIGEN
+                        </div>
+                    </div>
+
+                    <!--Registrierung-->
+
+                    <div class="container">
+                        <div class="center">
+                            <form class="loginForm" id="signUp">
+                                <!-- Registration Form -->
+                                <div class="form signup">
+
+                                    <div class="field">
+                                        <!--   FELD FÜR NAME FALLS WIR DAS DOCH NOCH BENÖTIGEN
                                 <p class="control has-icons-left has-icons-right">
                                     <input class="input is-small is-rounded" type="name" placeholder="Name">
                                         <span class="icon is-small is-left">
@@ -414,49 +416,49 @@
                                         <span class="error-message"></span>
                                 </p>
 -->
-                                <p class="control has-icons-left has-icons-right">
-                                    <input class="input is-small is-rounded" type=" " placeholder="Email">
-                                        <span class="icon is-small is-left">
+                                        <p class="control has-icons-left has-icons-right">
+                                            <input class="input is-small is-rounded" type=" " placeholder="Email">
+                                            <span class="icon is-small is-left">
                                             <i class="fas fa-envelope"></i>
                                         </span>
-                                        <span class="error-message"></span>
-                                </p>
-                                <p class="control has-icons-left mb-1">
-                                <input class="input is-small is-rounded" type="password" placeholder="Passwort">
-                                <span class="icon is-small is-left">
+                                            <span class="error-message"></span>
+                                        </p>
+                                        <p class="control has-icons-left mb-1">
+                                            <input class="input is-small is-rounded" type="password" placeholder="Passwort">
+                                            <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
-                                <span class="error-message"></span>
-                            </p>
-                            <p class="control has-icons-left mb-1">
-                                <input class="input is-small is-rounded" type="password" placeholder="Passwort wiederholen">
-                                <span class="icon is-small is-left">
+                                            <span class="error-message"></span>
+                                        </p>
+                                        <p class="control has-icons-left mb-1">
+                                            <input class="input is-small is-rounded" type="password" placeholder="Passwort wiederholen">
+                                            <span class="icon is-small is-left">
                                     <i class="fas fa-lock"></i>
                                 </span>
-                                <span class="error-message"></span>
-                            </p>
-                        </div>
-                            <div class="checkbox-text">
-                                <div class="checkbox-content">
-                                    <input type="checkbox" id="termCon">
-                                    <label for="termCon" class="text">I accepted all terms and conditions</label>
-                                </div>
+                                            <span class="error-message"></span>
+                                        </p>
+                                    </div>
+                                    <div class="checkbox-text">
+                                        <div class="checkbox-content">
+                                            <input type="checkbox" id="termCon">
+                                            <label for="termCon" class="text">I accepted all terms and conditions</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="center">
+                                        <button class="button is-hovered is-small is-rounded is-info" id="signUpBtn">Anmelden</button>
+                                    </div>
+                            </form>
+
+                            <div class="login-signup">
                             </div>
-        
-                            <div class="center">
-                                <button class="button is-hovered is-small is-rounded is-info" id="signUpBtn">Anmelden</button>
+
                             </div>
-                        </form>
-        
-                        <div class="login-signup">
                         </div>
-                   
-                    </div>
-                </div>
 
 
-                                                   
-                                                <!--    ALTER VERSUCH FÜR LOGIN KANN DANN WEG
+
+                        <!--    ALTER VERSUCH FÜR LOGIN KANN DANN WEG
                                     <form class="loginForm">
                                             <div class="field">
                                                 <p class="control has-icons-left has-icons-right">
@@ -478,33 +480,34 @@
                                                 <button class="button is-hovered is-small is-rounded is-info">Login</button>
                                             </div>
                                         </form> -->
-                                    </div>
-                                </div>
-    
-    
-    
-    
-    
-                        </container>
-                        <container class="container center ml-4 mr-4 mb-2 inhalt">
-                            <div class="center">
-                              <!--  <button class="button is-hovered is-small is-rounded is-info">
+                    </div>
+                </div>
+
+
+
+
+
+                </container>
+                <container class="container center ml-4 mr-4 mb-2 inhalt">
+                    <div class="center">
+                        <!--  <button class="button is-hovered is-small is-rounded is-info">
                                         Abmelden
                                 </button>
                             -->
-                            </div>
-                        </container>
                     </div>
-    
-                </div>
+                </container>
             </div>
 
         </div>
-    </div>
-            <!--<script src="script.js"></script>-->
-    </html>
+        </div>
 
-    </section>
+        </div>
+        </div>
+        <!--<script src="script.js"></script>-->
+
+</html>
+
+</section>
 </body>
 
 <!-- Karte-->

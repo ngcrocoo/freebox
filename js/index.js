@@ -1,6 +1,6 @@
 import geoLocation from "./geolocation.js";
 import initButtons from "./buttons.js";
-import Register from "./register.js";
+//import Register from "./register.js";
 import Tabs from "./tabs.js";
 import Webcam from "./webcam.js";
 import { Login } from "./login.js";
@@ -9,27 +9,91 @@ import { Register } from "./register.js";
 initButtons();
 Tabs()
 geoLocation();
-fetchOrte()
+FetchOrte()
 Webcam();
+getUserInfo()
 
-function hideLogin() {
-    console.log(" Hide Login")
-    const logIn = document.getElementById("login");
-    const registration = document.getElementById("registration");
 
-    document.getElementById("register").addEventListener("click", function() {
-        logIn.classList.remove('active');
-        logIn.classList.add('inactive');
-        registration.classList.remove('inactive');
-        registration.classList.add('active');
 
-    });
-    console.log("Login verstecken klappt")
-}
+
 
 var globalImageData = null;
 
-function fetchOrte() {
+export default function createCookie(value) {
+    var now = new Date();
+    now.setTime(now.getTime() + (26 * 3600 * 1000));
+    document.cookie = value + "; expires=" + now.toUTCString() + "; path=/"
+}
+
+export function getCookie(name) {
+    let value = '; ' + document.cookie;
+    let parts = value.split(`; ${name}=`);
+    if (parts.length == 2) return parts.pop().split(';').shift();
+}
+
+
+
+export function getUserInfo() {
+    if (getCookie("access_token")) {
+        fetch('https://freebox.live:8888/api/users/me', {
+            headers: {
+                "Authorization": `Bearer ${getCookie("access_token")}`
+            },
+            mode: 'cors',
+            referrer: 'no-referrer'
+        }).then(function(response) {
+            return response.json();
+
+        }).then(function(data) {
+            var userData = data.data
+            createCookie(`user-email=${userData.user.email}`)
+            createCookie(`user-id=${userData.user.id}`)
+                // Login/ Registrierung ausblenden + User Übersicht einblenden
+            console.log("FETCH USER INFO", data.data);
+
+        }).catch(function(err) {
+
+
+        });
+    } else {
+        // Login/ Registrierung einblenden + User Übersicht ausblenden
+    }
+
+}
+
+export function LoginCall(username, password) {
+
+    fetch('https://freebox.live:8888/api/auth/login', {
+            method: "POST",
+            mode: 'cors',
+
+            body: JSON.stringify({
+                email: username,
+                password: password,
+            }),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            // code here //
+            if (data.error) {
+                alert("Error Password or Username"); /*displays error message*/
+            } else {
+                console.log(data.access_token)
+                createCookie(`access_token=${data.access_token}`)
+                getUserInfo()
+                    // hideLogin()
+                    // window.open(
+                    //     "target.html"
+                    // ); /*opens the target page while Id & password matches*/
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}
+
+export function FetchOrte() {
     fetch('https://freebox.live:8888/api/standorte-noauth/', {
         // headers: {
         //     'Content-Type': 'application/json',
@@ -66,7 +130,7 @@ document.getElementById('date2').value = new Date().toISOString().substring(0, 1
 // create a variable for the login form
 const formLogin = document.querySelector(".loginForm");
 // if the form exists, run the class
-if (form) {
+if (formLogin) {
     // setup the fields we want to validate, we only have two but you can add others
     const fieldsLogin = ["email", "password"];
     // run the class
@@ -74,7 +138,7 @@ if (form) {
 }
 
 const formRegister = document.querySelector(".registerForm");
-if (form) {
+if (formRegister) {
     const fieldsRegister = ["email", "password"];
     const validatorRegister = new Register(formRegister, fieldsRegister);
 }
@@ -85,159 +149,6 @@ document.getElementById('date2').value = new Date().toISOString().substring(0, 1
 
 
 
-// Display date
-// const date1 = document.getElementById('date1').value;
-// const date2 = document.getElementById('date2').value;
-
-// const zeitraum = "Zeitraum: " + date1 + " bis " + date2;
-// document.getElementById('dateOutput').value = zeitraum;
-
-
-// const auth = new Auth();
-
-// document.querySelector(".logout").addEventListener("click", (e) => {
-//     auth.logOut();
-// });
-
-// document.querySelector(".logout").addEventListener("click", (e) => {
-//     auth.logOut();
-// });
-
-
-// function suche() {
-//     console.log("Funktioniert")
-
-//     var suche = document.getElementById("suche");
-//     var hinzufuegen = document.getElementById("hinzufuegen");
-//     var benutzer = document.getElementById("meinAccount");
-
-//     if (this.style.display === "none") {
-//             this.style.display = "block";
-//         } else {
-//             this.style.display = "none";
-//         }
-
-//         else if (this == hinzufuegen) {
-//         if (this.style.display === "none") {
-//             this.style.display = "block";
-//         } else {
-//             this.style.display = "none";
-//         }
-//     } else {
-//         if (this.style.display === "none") {
-//             this.style.display = "block";
-//         } else {
-//             this.style.display = "none";
-//         } 
-//     }
-
-
-// }
-
-
-
-// function datenEintragung() {
-//     console.log("Daten eintragen funktioniert")
-
-//     var seite1 = document.getElementById("seite1") ? document.getElementById("seite1") : null;
-//     var seite2 = document.getElementById("seite2") ? document.getElementById("seite2") : null;
-//     var seite3 = document.getElementById("seite3") ? document.getElementById("seite3") : null;
-
-//     var btnNext = document.getElementById("nextBtn");
-//     var btnBack = document.getElementById("backBtn");
-
-
-//     if (btnNext.onclick) {
-//         if (seite1.style.display = "block") {
-//             seite1.style.display = "none"
-//             seite2.style.display = "block"
-//             seite3.style.display = "none";
-//         } else if (seite2.style.display = "block") {
-//             seite1.style.display = "none"
-//             seite2.style.display = "none"
-//             seite3.style.display = "block";
-//         } else if (seite3.display = "block") {
-
-//         }
-
-//     }
-
-// }
-
-
-
-
-
-
-
-
-
-// function hinzufuegen() {
-//     console.log("Funktioniert")
-
-//     var suche = document.getElementById("suche");
-//     var hinzufuegen = document.getElementById("hinzufuegen");
-//     var benutzer = document.getElementById("meinAccount");
-
-//     if (hinzufuegen.style.display === "none") {
-//         hinzufuegen.style.display = "block";
-//         suche.style.display = "none";
-//         benutzer.style.display = "none";
-//     } else {
-//         hinzufuegen.style.display = "none";
-//     }
-// }
-
-// function meinAccount() {
-//     console.log("Funktioniert")
-
-//     var suche = document.getElementById("suche");
-//     var hinzufuegen = document.getElementById("hinzufuegen");
-//     var benutzer = document.getElementById("meinAccount");
-
-//     if (benutzer.style.display === "none") {
-//         benutzer.style.display = "block";
-//         hinzufuegen.style.display = "none";
-//         suche.style.display = "none";
-//     } else {
-//         benutzer.style.display = "none";
-//     }
-// }
-
-/**
-<html>
-<head>
-<script src="jquery-2.1.4.js"></script>
-
-</head>
-<body>
-<div id="navbar"><span>Red Stapler - Geolocation API</span></div>
-<div id="wrapper">
-  <button id="location-button">Get User Location</button>
-  <div id="output"></div>
-</div>
-
-<script>
-        $('#location-button').click(function(){
-      
-          if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(function(position){
-                console.log(position);
-                $.get( "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude + "," + position.coords.longitude +"&sensor=false", function(data) {
-                  console.log(data);
-                })
-                var img = new Image();
-                img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude + "," + position.coords.longitude + "&zoom=13&size=800x400&sensor=false";
-                $('#output').html(img);
-              });
-              
-          }
-
-        });
-</script>
-</body>
-</html> 
-**/
 
 
 // This works on all devices/browsers, and uses IndexedDBShim as a final fallback

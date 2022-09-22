@@ -1,9 +1,27 @@
+import createCookie from "./index.js"
+import { LoginCall } from "./index.js";
+
 export class Login {
     constructor(form, fields) {
         this.form = form;
         this.fields = fields;
         this.validateonSubmit();
     }
+
+    // hideLogin() {
+    //     console.log(" Hide Login")
+    //     const logIn = document.getElementById("login");
+    //     // const registration = document.getElementById("registration");
+
+    //     document.getElementById("login").addEventListener("click", function() {
+    //         logIn.classList.remove('active');
+    //         logIn.classList.add('inactive');
+    //         // registration.classList.remove('inactive');
+    //         // registration.classList.add('active');
+
+    //     });
+    //     console.log("Login verstecken klappt")
+    // }
 
     validateonSubmit() {
         let self = this; // setup calls to the "this" values of the class described in the constructor
@@ -25,39 +43,7 @@ export class Login {
             if (error == 0) {
                 console.log("Keine Fehler, Login Daten posten")
                 console.log(this.form[0].value)
-                fetch('https://freebox.live:8888/api/auth/login', {
-                        method: "POST",
-                        mode: 'cors',
-
-                        body: JSON.stringify({
-                            email: this.form[0].value,
-                            password: this.form[1].value,
-                        }),
-                    })
-                    .then((response) => response.json())
-                    .then((data) => {
-                        console.log(data);
-                        // code here //
-                        if (data.error) {
-                            alert("Error Password or Username"); /*displays error message*/
-                        } else {
-                            console.log("das klappt")
-                            this.hideLogin()
-                                // window.open(
-                                //     "target.html"
-                                // ); /*opens the target page while Id & password matches*/
-                        }
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
-
-
-                // //do login api here or in this case, just submit the form and set a localStorage item
-                // // Login API fehlt
-                // hideLogin();
-                // this.form.submit();
-
+                LoginCall(this.form[0].value, this.form[1].value)
                 console.log("submit klappt")
             }
         });
@@ -69,7 +55,9 @@ export class Login {
             // set the status based on the field, the field label, and if it is an error message
             this.setStatus(
                 field,
-                `${field.previousElementSibling.innerText} darf nicht leer sein`,
+                `
+                                                    $ { field.previousElementSibling.innerText }
+                                                    darf nicht leer sein `,
                 "error"
             );
             return false;
@@ -81,7 +69,9 @@ export class Login {
                     // set the status based on the field, the field label, and if it is an error message
                     this.setStatus(
                         field,
-                        `${field.previousElementSibling.innerText} mindestens fünf Zeichen`,
+                        `
+                                                    $ { field.previousElementSibling.innerText }
+                                                    mindestens fünf Zeichen `,
                         "error"
                     );
                     return false;
@@ -114,8 +104,12 @@ export class Login {
             field.classList.add("input-error");
         }
     }
-    
+
+
 }
+
+
+
 
 /** INTERNETZ CODE
  * 

@@ -1,3 +1,5 @@
+import { getCookie, FetchOrte } from "./index.js";
+
 export default function InitButtons() {
     document.getElementById("send").addEventListener("click", (e) => {
 
@@ -13,31 +15,40 @@ export default function InitButtons() {
             //const img = document.getElementById()
 
         const img = localStorage.getItem('globalImage')
-        console.log("Foto:", img)
+        console.log("XX OO XX OO:", {
+            coord: coordinates[0] + "," + coordinates[1],
+            strasse: strasse[0],
+            nummer: parseInt(strasse[1]),
+            zip: parseInt(zip),
+            stadt: stadt,
+            bild: img,
+            text: text
+        })
 
+        if (document.cookie) {
 
+        }
 
+        console.log("cookie value", getCookie("access_token"))
 
         fetch('https://freebox.live:8888/api/standorte/', {
                 method: 'POST', // or 'PUT'
-                // headers: {
-                //     'Content-Type': 'application/json'
-                // },
+                headers: {
+                    "Authorization": `Bearer ${getCookie("access_token")}`
+                },
                 mode: 'cors',
+
                 body: JSON.stringify({
                         coord: coordinates[0] + "," + coordinates[1],
                         strasse: strasse[0],
-                        nummer: strasse[1],
-                        zip: zip,
+                        nummer: parseInt(strasse[1]),
+                        zip: parseInt(zip),
                         stadt: stadt,
                         bild: img,
-                        text: text,
-                        user: user,
-                        created_at: date1,
-                        updated_at: date2
+                        text: text
                     }) //,
 
-                // body: JSON.stringify({
+                //     body: JSON.stringify({
                 //     email: this.form[0].value,
                 //     password: this.form[1].value,
                 // }),
@@ -45,6 +56,8 @@ export default function InitButtons() {
             .then((response) => response.json())
             .then((data) => {
                 console.log('Success:', data);
+                FetchOrte()
+
             })
             .catch((error) => {
                 console.error('Error:', error);

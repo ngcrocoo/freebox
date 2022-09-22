@@ -50,14 +50,31 @@ export default function Webcam() {
             context.drawImage(camera, 0, 0, width, height);
 
             const imageData = canvas.toDataURL("image/png");
-            localStorage.setItem('globalImage', imageData);
+            const base64Canvas = canvas.toDataURL("image/jpeg").split(';base64,')[1];
+            console.log("picture data: ", base64Canvas)
+                // var picByte = base64ToArrayBuffer(base64Canvas)
+                // console.log("OOOO - picture btyes: ", picByte)
+
+
+            localStorage.setItem('globalImage', base64Canvas);
             camera.style.display = "none";
             newPhoto.style.display = "block";
             useCam.style.display = " none"
             uploadButton.style.display = "block"
             preview.src = imageData;
             preview.style.display = "block"
-            console.log("picture adress: ", imageData)
+
+        }
+
+
+        function base64ToArrayBuffer(base64) {
+            var binary_string = window.atob(base64);
+            var len = binary_string.length;
+            var bytes = new Uint8Array(len);
+            for (var i = 0; i < len; i++) {
+                bytes[i] = binary_string.charCodeAt(i);
+            }
+            return bytes.buffer;
         }
 
         function newSnapshot() {

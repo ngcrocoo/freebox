@@ -1,3 +1,5 @@
+import { LoginCall } from "./index.js";
+
 export class Register {
     constructor(form, fields) {
         this.form = form;
@@ -21,6 +23,8 @@ export class Register {
                     error++;
                 }
             });
+            var formUser = this.form[0].value;
+            var formPassword = this.form[1].value;
             // if everything validates, error will be 0 and can continue
             if (error == 0) {
                 console.log("Keine Fehler, Login Daten posten")
@@ -31,7 +35,11 @@ export class Register {
 
                         body: JSON.stringify({
                             email: this.form[0].value,
+                            name: this.form[0].value,
                             password: this.form[1].value,
+                            passwordConfirm: this.form[1].value,
+                            photo: "default.png"
+
                         }),
                     })
                     .then((response) => response.json())
@@ -41,11 +49,12 @@ export class Register {
                         if (data.error) {
                             alert("Error Password or Username"); /*displays error message*/
                         } else {
-                            console.log("das klappt")
 
-                            // window.open(
-                            //     "target.html"
-                            // ); /*opens the target page while Id & password matches*/
+                            console.log("das klappt")
+                            LoginCall(this.form[0].value, this.form[1].value)
+                                // window.open(
+                                //     "target.html"
+                                // ); /*opens the target page while Id & password matches*/
                         }
                     })
                     .catch((err) => {
