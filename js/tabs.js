@@ -6,7 +6,7 @@ export default function Tabs() {
         for (var i = 0; i < menuElements.length; i++) {
 
             menuElements[i].addEventListener('click', change, false);
-            console.log(menuElements[i])
+            //console.log(menuElements[i])
         }
     }
 

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FreeBox</title>
-    <!-- <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico"> -->
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <script rel="pushnotification" src="./js/push.js"></script>
 
@@ -38,6 +38,7 @@
                             <img data-id="meinAccount" src="img/user.png">
                         </div>
                     </div>
+                
                 </div>
             </div>
         </nav>
@@ -93,25 +94,31 @@
                                                 <div class="columns ml-0">
                                                     <div class="column katabstand">
                                                         <div>
-                                                            <label class="radio">
-                                                                    <input type="radio" name="answer">
-                                                                    Kleidung
+                                                            <label class="checkbox">
+                                                                    <input type="checkbox" name="answer">Kleidung
+                                                                    <input type="checkbox" name="answer">Bücher
+                                                                    <input type="checkbox" name="answer">Elektronik
+                                                                    <input type="checkbox" name="answer">Pflanzen
+                                                                    <input type="checkbox" name="answer">Möbel
+                                                                    <input type="checkbox" name="answer">Sonstiges
                                                                 </label>
                                                         </div>
                                                     </div>
-
+<!--CHECKBOXEN
                                                     <div class="column katabstand">
-                                                        <label class="radio">
-                                                            <input type="radio" name="answer">Bücher
+                                                        <div>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" name="answer">Bücher
                                                         </label>
                                                     </div>
+                                                    </div>
                                                     <div class="column katabstand">
-                                                        <label class="radio">
-                                                                <input type="radio" name="answer">Elektronik
+                                                        <label class="checkbox">
+                                                                <input type="checkbox" name="answer">Elektronik
                                                             </label>
                                                     </div>
 
-
+                                                
                                                 </div>
                                             </div>
 
@@ -120,24 +127,24 @@
                                             <div class="container">
                                                 <div class="columns katabst">
                                                     <div class="column katabstand">
-                                                        <label class="radio">
-                                                                <input type="radio" name="answer">Pflanzen
+                                                        <label class="checkbox">
+                                                                <input type="checkbox" name="answer">Pflanzen
                                                             </label>
                                                     </div>
 
                                                     <div class="column katabstand">
-                                                        <label class="radio">
-                                                                <input type="radio" name="answer">Möbel
+                                                        <label class="checkbox">
+                                                                <input type="checkbox" name="answer">Möbel
                                                             </label>
                                                     </div>
                                                     <div class="column katabstand">
-                                                        <label class="radio">
-                                                                <input type="radio" name="answer">Sonstiges
-                                                            </label>
-                                                    </div>
+                                                        <label class="checkbox">
+                                                                <input type="checkbox" name="answer">Sonstiges
+                                                          </label>
+                                                    </div> --> 
                                                 </div>
                                             </div>
-                                        </div>
+                                   </div>
 
 
                                     </div>
@@ -153,7 +160,7 @@
             </div>
 
             <!-- Box hinzufügen-->
-            <div class="container inactive" data-page id="hinzufuegen">
+            <div class="container inactive" data-page id="hinzufuegen"> 
                 <div class="hinzufuegen">
                     <div class="container mt-0">
                         <div class="center titel">
@@ -250,6 +257,7 @@
                                 <a href="#seite4" data-tab="seite4" class="b-nav-tab center">
                                         4
                                       </a>
+                                
                             </div>
                         </div>
 
@@ -392,12 +400,13 @@
       
             <div class="container">
                 <div class="center">
-                <form class="loginForm">
+                <form class="loginForm" id="signUp">
                     <!-- Registration Form -->
                     <div class="form signup">
                                
                             <div class="field">
- <!--                               <p class="control has-icons-left has-icons-right">
+ <!--   FELD FÜR NAME FALLS WIR DAS DOCH NOCH BENÖTIGEN
+                                <p class="control has-icons-left has-icons-right">
                                     <input class="input is-small is-rounded" type="name" placeholder="Name">
                                         <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
@@ -406,7 +415,7 @@
                                 </p>
 -->
                                 <p class="control has-icons-left has-icons-right">
-                                    <input class="input is-small is-rounded" type="email" placeholder="Email">
+                                    <input class="input is-small is-rounded" type=" " placeholder="Email">
                                         <span class="icon is-small is-left">
                                             <i class="fas fa-envelope"></i>
                                         </span>
@@ -427,11 +436,74 @@
                                 <span class="error-message"></span>
                             </p>
                         </div>
+                            <div class="checkbox-text">
+                                <div class="checkbox-content">
+                                    <input type="checkbox" id="termCon">
+                                    <label for="termCon" class="text">I accepted all terms and conditions</label>
+                                </div>
+                            </div>
+        
+                            <div class="center">
+                                <button class="button is-hovered is-small is-rounded is-info" id="signUpBtn">Anmelden</button>
+                            </div>
+                        </form>
+        
+                        <div class="login-signup">
+                        </div>
+                   
                     </div>
                 </div>
 
+
+                                                   
+                                                <!--    ALTER VERSUCH FÜR LOGIN KANN DANN WEG
+                                    <form class="loginForm">
+                                            <div class="field">
+                                                <p class="control has-icons-left has-icons-right">
+                                                    <input class="input is-small is-rounded" type="email" placeholder="Email">
+                                                    <span class="icon is-small is-left">
+                                                                <i class="fas fa-envelope"></i>
+                                                              </span>
+                                                    <span class="error-message"></span>
+                                                </p>
+                                                <p class="control has-icons-left mb-1">
+                                                    <input class="input is-small is-rounded" type="password" placeholder="Passwort">
+                                                    <span class="icon is-small is-left">
+                                                                <i class="fas fa-lock"></i>
+                                                            </span>
+                                                    <span class="error-message"></span>
+                                                </p>
+                                            </div>
+                                            <div class="center">
+                                                <button class="button is-hovered is-small is-rounded is-info">Login</button>
+                                            </div>
+                                        </form> -->
+                                    </div>
+                                </div>
+    
+    
+    
+    
+    
+                        </container>
+                        <container class="container center ml-4 mr-4 mb-2 inhalt">
+                            <div class="center">
+                              <!--  <button class="button is-hovered is-small is-rounded is-info">
+                                        Abmelden
+                                </button>
+                            -->
+                            </div>
+                        </container>
+                    </div>
+    
+                </div>
             </div>
+
         </div>
+    </div>
+            <!--<script src="script.js"></script>-->
+    </html>
+
     </section>
 </body>
 

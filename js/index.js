@@ -1,5 +1,6 @@
 import geoLocation from "./geolocation.js";
 import initButtons from "./buttons.js";
+import Register from "./register.js";
 import Tabs from "./tabs.js";
 import Webcam from "./webcam.js";
 import { Login } from "./login.js";
@@ -29,7 +30,7 @@ function hideLogin() {
 var globalImageData = null;
 
 function fetchOrte() {
-    fetch('https://freebox.live:8888/api/standorte/', {
+    fetch('https://freebox.live:8888/api/standorte-noauth/', {
         // headers: {
         //     'Content-Type': 'application/json',
         //     'Access-Control-Allow-Origin': '*'
