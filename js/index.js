@@ -14,7 +14,25 @@ Webcam();
 getUserInfo()
 
 
+function hideLogin() {
 
+    const logRegister = document.getElementsByClassName("logorregister")
+    console.log(logRegister)
+        // .classList.remove('active');
+    for (let i = 0; i < logRegister.length; i++) {
+        logRegister[i].classList.remove('active')
+        logRegister[i].classList.add('inactive')
+    }
+    console.log(logRegister)
+    document.getElementById('seiten').classList.remove('inactive')
+    document.getElementById('seiten').classList.add('active')
+
+
+    // document.getElementsByClassName("seiten").classList.remove('inactive');
+    // document.getElementsByClassName("logorregister").classList.add('inactive');
+    // document.getElementsByClassName("seiten").classList.add('active');
+    console.log("Login verstecken klappt");
+}
 
 
 var globalImageData = null;
@@ -48,6 +66,7 @@ export function getUserInfo() {
             var userData = data.data
             createCookie(`user-email=${userData.user.email}`)
             createCookie(`user-id=${userData.user.id}`)
+            hideLogin()
                 // Login/ Registrierung ausblenden + User Übersicht einblenden
             console.log("FETCH USER INFO", data.data);
 
@@ -116,7 +135,7 @@ export function FetchOrte() {
 
 
         initMap(data)
-        console.log("FETCH DATA", orte);
+        console.log("FETCH DATA", data);
     }).catch(function(err) {
         // There was an error
         console.warn('Something went wrong.', err);

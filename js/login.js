@@ -8,20 +8,6 @@ export class Login {
         this.validateonSubmit();
     }
 
-    // hideLogin() {
-    //     console.log(" Hide Login")
-    //     const logIn = document.getElementById("login");
-    //     // const registration = document.getElementById("registration");
-
-    //     document.getElementById("login").addEventListener("click", function() {
-    //         logIn.classList.remove('active');
-    //         logIn.classList.add('inactive');
-    //         // registration.classList.remove('inactive');
-    //         // registration.classList.add('active');
-
-    //     });
-    //     console.log("Login verstecken klappt")
-    // }
 
     validateonSubmit() {
         let self = this; // setup calls to the "this" values of the class described in the constructor
