@@ -4,7 +4,7 @@ function initMap(daten) {
     var orte = daten ? daten : null;
     //karten optionen
     var options = {
-        zoom: 12,
+        zoom: 10,
         mapId: 'IDMAP',
         center: {
             "lat": 52.544937,
@@ -27,7 +27,7 @@ function initMap(daten) {
             var stadtString = `${orte.data[i].stadt}`
             var textString = `${orte.data[i].text}`
             var textBild = `${orte.data[i].bild}`
-            console.log("coors", coordString)
+                //       console.log("coors", coordString)
             var coordinates = coordString.split(',');
             var lat = Number(coordinates[0]);
             var lng = Number(coordinates[1]);

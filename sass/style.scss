@@ -226,3 +226,29 @@ a:active {
     margin: 0.5rem;
     padding: 0;
 }
+
+.bildBox{
+    width: 100%;
+    height: 100%;
+}
+
+.markerInhalt{
+    text-align: center;
+    padding-right: 5%;
+    padding-left: 4%;
+}
+
+.flex-container {
+    display: flex;
+    background-color: grey;
+  }
+  
+  .flex-item {
+    background-color: white;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    justify-content:space-around;
+   
+  }

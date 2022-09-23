@@ -30,6 +30,7 @@ export default function InitButtons() {
                 method: 'POST', // or 'PUT'
                 headers: {
                     "Authorization": `Bearer ${getCookie("access_token")}`
+
                 },
                 mode: 'cors',
 
