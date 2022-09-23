@@ -35,6 +35,7 @@ export default function InitButtons() {
                 method: 'POST', // or 'PUT'
                 headers: {
                     "Authorization": `Bearer ${getCookie("access_token")}`
+           
                 },
                 mode: 'cors',
 
@@ -68,7 +69,7 @@ export default function InitButtons() {
 
     var btns = document.querySelector("#bottom-menu")
     var imgTags = btns.querySelectorAll("img")
-    console.log(btns)
+  //  console.log(btns)
     for (let i = 0; i < imgTags.length; i++) {
         imgTags[i].addEventListener("click", (e) => {
             bindClick(e.target.dataset.id)
