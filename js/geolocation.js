@@ -4,15 +4,15 @@
   export default function LocationButton() {
 
       document.getElementById('location-button').addEventListener("click", function() {
-          console.log("HURRA")
+          //console.log("HURRA")
           if (navigator.geolocation) {
-              console.log("in schleife")
+            //  console.log("in schleife")
               navigator.geolocation.getCurrentPosition(function(position) {
-                  console.log("-- getting coordinates")
+             //     console.log("-- getting coordinates")
                   fetchAdress(position.coords.latitude, position.coords.longitude)
-                  console.log("Kooridinaten:", position.coords.latitude, position.coords.longitude)
+              //    console.log("Kooridinaten:", position.coords.latitude, position.coords.longitude)
                   document.getElementById('output').value = position.coords.latitude + "," + position.coords.longitude;
-                  console.log("Value:", document.getElementById('output').value)
+               //   console.log("Value:", document.getElementById('output').value)
 
               });
           } else {
@@ -25,7 +25,7 @@
   //abfangen der koordinaten und umwandlung in adresse
 
   function fetchAdress(lat, lng) {
-      console.log("-- translate coordinates: " + lat + "," + lng)
+     // console.log("-- translate coordinates: " + lat + "," + lng)
           //long, lat in adresse
       const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyCOQ7qub2XGd5keyY4GdqRGvc-8mSYoyMo`
       fetch(url)
@@ -36,14 +36,14 @@
   }
 
   function injectAdress(addObj) {
-      console.log("fetched obj", addObj)
+    //  console.log("fetched obj", addObj)
       const googleObject = {
           "strasse": addObj.address_components[0] ? addObj.address_components[1].long_name : "strasse",
           "nummer": addObj.address_components[0] ? addObj.address_components[0].long_name : 123,
           "stadt": addObj.address_components[0] ? addObj.address_components[3].long_name : "stadt",
           "zip": addObj.address_components[0] ? addObj.address_components[7].long_name : 123
       }
-      console.log("new obj", googleObject)
+ //     console.log("new obj", googleObject)
 
       document.getElementById("inputStraße").value = `${googleObject.strasse} ${googleObject.nummer}`;
       document.getElementById("inputStadt").value = `${googleObject.stadt}`;
@@ -58,6 +58,9 @@
 
 
   }
+
+
+  // ADRESSE ZU GEOKOORDINATEN https://ourcodeworld.com/articles/read/1387/how-to-convert-a-text-address-into-geographic-coordinates-using-googles-geocoding-api
 
 
   //GEOLOCATION

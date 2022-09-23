@@ -60,7 +60,7 @@ function getRange(startDate, endDate, type) {
 }
 
 const checkDates = () => {
-    console.log("checking dates");
+   // console.log("checking dates");
     loader.style.display = "block";
     const availableOptions = [];
     let completedDates = 0;
@@ -99,7 +99,7 @@ const checkDates = () => {
                 }
                 previousList = currentList;
                 res.forEach((re) => {
-                    console.log(re);
+                 //   console.log(re);
                     content += `<li>${re.date} | ${re.city}, ${re.state}</li>`;
                 });
                 list.innerHTML = content;

@@ -49,7 +49,7 @@ export function getUserInfo() {
             createCookie(`user-email=${userData.user.email}`)
             createCookie(`user-id=${userData.user.id}`)
                 // Login/ Registrierung ausblenden + User Übersicht einblenden
-            console.log("FETCH USER INFO", data.data);
+        //    console.log("FETCH USER INFO", data.data);
 
         }).catch(function(err) {
 
@@ -116,7 +116,7 @@ export function FetchOrte() {
 
 
         initMap(data)
-        console.log("FETCH DATA", orte);
+       // console.log("FETCH DATA", data);
     }).catch(function(err) {
         // There was an error
         console.warn('Something went wrong.', err);
@@ -183,7 +183,7 @@ request.onupgradeneeded = function() {
 };
 
 request.onsuccess = function() {
-    console.log("Database opened successfully");
+ //   console.log("Database opened successfully");
 
     const db = request.result;
     const transaction = db.transaction("boxes", "readwrite");
@@ -208,21 +208,21 @@ request.onsuccess = function() {
     const adresseQuery = adresseIndex.get(["Straßmannstraße 29", "Berlin", "10249"]);
 
     idQuery.onsuccess = function() {
-        console.log("idQuery", idQuery.result);
+    //    console.log("idQuery", idQuery.result);
     };
 
     stadtQuery.onsuccess = function() {
-        console.log("stadtQuery", stadtQuery.result);
+    //    console.log("stadtQuery", stadtQuery.result);
     };
 
     adresseQuery.onsuccess = function() {
-        console.log("adresseQuery", adresseQuery.result);
+      //  console.log("adresseQuery", adresseQuery.result);
     };
 
     const deleteBox = store.delete(1);
 
     deleteBox.onsuccess = function() {
-        console.log("Straßmannstraße 29, 10249 Berlin wurde gelöscht'");
+     //   console.log("Straßmannstraße 29, 10249 Berlin wurde gelöscht'");
     };
 
     const stadtBerlin = stadtIndex.getKey(["Berlin"]);
@@ -231,7 +231,7 @@ request.onsuccess = function() {
         const deleteBox = store.delete(stadtBerlin.result);
 
         deleteBox.onsuccess = function() {
-            console.log("Boxen in Berlin wurden gelöscht");
+           // console.log("Boxen in Berlin wurden gelöscht");
         };
     };
     transaction.oncomplete = function() {

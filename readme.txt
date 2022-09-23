@@ -1,24 +1,20 @@
+FreeBox
 
-Falls das Projekt neu geclont wird muss anfänglich folgender Befehl ausgeführt werden.anfänglich
+Diese Anwendung zeigt dir Orte an, an denen FreeBoxen stehen. Free Boxen, sind Boxen, deren Inhalt kostenfrei zum mitnehmen ist. 
+Diese Boxen werden von Personen oder Läden auf die Straße gestellt und in unserer App hochgeladen.
+
+Falls das Projekt neu geclont wird muss anfänglich folgender Befehl ausgeführt werden:
 
 npm -install
-mongodb installieren (https://www.mongodb.com/docs/mongodb-shell/install/)
 
-mongosh "mongodb+srv://atlascluster.lqnfb.mongodb.net/myFirstDatabase" --apiVersion 1 --username sabeth
-
-PW: AntoniaSabeth2022
-
-Beim weiteren bearbeiten des Projektes ist zuerst immer folgender Befehlt im Terminal auszuführen.auszuführen
+Beim weiteren bearbeiten des Projektes ist zuerst immer folgender Befehlt im Terminal auszuführen:
 
 npm start
 
 Danach werden alle Änderungen in der ./sass/styles.scss erfasst und kompiliert und in der ./css/styles.css gespeichert.
 
-MongoDB in VSC installieren -> Shift+Ctrl+x drücken, dann nach MongoDB suchen, installieren und als connection "mongodb+srv://atlascluster.lqnfb.mongodb.net/myFirstDatabase" eingeben
-
 installieren für um pushnotification zu nutzen:
 npm install push.js
-
 
 Mergen bei gleichzeitiger Bearbeitung einer Datei:
 1. Main Branch pullen - git checkout main && git pull
