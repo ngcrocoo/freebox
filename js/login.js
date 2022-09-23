@@ -21,6 +21,7 @@ export class Login {
             var error = 0;
             // loop through the fields and check them against a function for validation
             self.fields.forEach((field) => {
+                console.log("BIST DU NOCH DA?")
                 const input = document.querySelector(`#${field}`);
                 console.log("--------------------------INPUT", input)
                 if (self.validateFields(input) == false) {

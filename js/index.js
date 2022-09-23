@@ -1,5 +1,6 @@
 import geoLocation from "./geolocation.js";
 import initButtons from "./buttons.js";
+import { toggleContent } from "./buttons.js";
 //import Register from "./register.js";
 import Tabs from "./tabs.js";
 import Webcam from "./webcam.js";
@@ -15,11 +16,10 @@ getUserInfo()
 
 
 
-const registerInst = document.querySelector('#register')
-console.log("-------------", registerInst)
 
+const registerInst = document.querySelector('#register')
 const log = document.querySelector('#log')
-console.log("-------------", log)
+const logout = document.querySelector('#logout')
 
 registerInst.addEventListener("click", function() {
     hideLogin()
@@ -27,6 +27,11 @@ registerInst.addEventListener("click", function() {
 
 log.addEventListener("click", function() {
     hideRgister()
+});
+
+logout.addEventListener("click", function() {
+    console.log("Logout Eventlistener -------------------")
+    Logout()
 });
 
 export function hideLogin() {
@@ -43,25 +48,38 @@ export function hideRgister() {
     document.getElementById('registration').classList.add('inactive')
 }
 
-function hideLoginRegister() {
+// function hideLoginRegister() {
 
-    const logRegister = document.getElementsByClassName("logorregister")
-    console.log(logRegister)
-        // .classList.remove('active');
-    for (let i = 0; i < logRegister.length; i++) {
-        logRegister[i].classList.remove('active')
-        logRegister[i].classList.add('inactive')
-    }
-    console.log(logRegister)
-    document.getElementById('seiten').classList.remove('inactive')
-    document.getElementById('seiten').classList.add('active')
+//     const logRegister = document.getElementsByClassName("logorregister")
+//     console.log(logRegister)
+//         // .classList.remove('active');
+//     for (let i = 0; i < logRegister.length; i++) {
+//         logRegister[i].classList.remove('active')
+//         logRegister[i].classList.add('inactive')
+//     }
+//     console.log(logRegister)
+//     document.getElementById('seiten').classList.remove('inactive')
+//     document.getElementById('seiten').classList.add('active')
+//     document.getElementById('AccLogin').classList.add('inactive')
 
 
-    // document.getElementsByClassName("seiten").classList.remove('inactive');
-    // document.getElementsByClassName("logorregister").classList.add('inactive');
-    // document.getElementsByClassName("seiten").classList.add('active');
-    console.log("Login verstecken klappt");
-}
+//     // document.getElementsByClassName("seiten").classList.remove('inactive');
+//     // document.getElementsByClassName("logorregister").classList.add('inactive');
+//     // document.getElementsByClassName("seiten").classList.add('active');
+//     console.log("Login verstecken klappt");
+// }
+
+// function showLoginRegister() {
+//     const logRegister = document.getElementsByClassName("logorregister")
+
+//     for (let i = 0; i < logRegister.length; i++) {
+//         logRegister[i].classList.remove('inactive')
+//         logRegister[i].classList.add('active')
+//     }
+//     console.log(logRegister)
+//     document.getElementById('seiten').classList.remove('inactive')
+//     document.getElementById('seiten').classList.add('active')
+// }
 
 
 var globalImageData = null;
@@ -74,11 +92,18 @@ export default function createCookie(value) {
 
 export function getCookie(name) {
     let value = '; ' + document.cookie;
+    // console.log("-----------------VALUE", value)
     let parts = value.split(`; ${name}=`);
     if (parts.length == 2) return parts.pop().split(';').shift();
+    console.log("-----------------VALUE", parts.pop().split(';').shift())
 }
 
+export function deleteCookie(name) {
+    document.cookie = name + '=; Max-Age=-99999999;';
+}
 
+// AUSLOGGEN FUNKTION: COOKIE LÖSCHEN?
+// 
 
 export function getUserInfo() {
     if (getCookie("access_token")) {
@@ -95,7 +120,7 @@ export function getUserInfo() {
             var userData = data.data
             createCookie(`user-email=${userData.user.email}`)
             createCookie(`user-id=${userData.user.id}`)
-            hideLoginRegister()
+            toggleContent(true)
                 // Login/ Registrierung ausblenden + User Übersicht einblenden
             console.log("FETCH USER INFO", data.data);
 
@@ -104,7 +129,7 @@ export function getUserInfo() {
 
         });
     } else {
-        // Login/ Registrierung einblenden + User Übersicht ausblenden
+        toggleContent(false) // Login/ Registrierung einblenden + User Übersicht ausblenden
     }
 
 }
@@ -138,8 +163,39 @@ export function LoginCall(username, password) {
         })
         .catch((err) => {
             console.log(err);
+
         });
 }
+
+export function Logout() {
+    if (getCookie("access_token")) {
+        fetch('https://freebox.live:8888/api/auth/logout', {
+            headers: {
+                "Authorization": `Bearer ${getCookie("access_token")}`
+            },
+            mode: 'cors',
+            referrer: 'no-referrer'
+        }).then(function(response) {
+            return response.json();
+
+        }).then(function(data) {
+            deleteCookie("access_token")
+            deleteCookie("user-email")
+            deleteCookie("user-id")
+            location.reload();
+            console.log("Logout Funktioniert");
+
+        }).catch(function(err) {
+
+
+        });
+    } else {
+        // Login/ Registrierung einblenden + User Übersicht ausblenden
+    }
+    console.log("TEST LOGOUT")
+}
+
+
 
 export function FetchOrte() {
     fetch('https://freebox.live:8888/api/standorte-noauth/', {

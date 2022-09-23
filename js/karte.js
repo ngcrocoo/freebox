@@ -16,12 +16,11 @@ function initMap(daten) {
     //neue karte
     var map = new google.maps.Map(document.getElementById('map'), options);
 
-    var arrayModel = [{ "id": 1, "coord": "52.52277579132764,13.451707735547815", "strasse": "strassmannstrasse", "nummer": 29, "zip": 10249, "stadt": "Berlin" }, { "id": 2, "coord": "52.52197673598406,13.453970728837259", "strasse": "Matternstrasse", "nummer": 10, "zip": 10249, "stadt": "Berlin" }, { "id": 3, "coord": "52.50663906498019, 13.503347013368094", "strasse": "zachertstraße", "nummer": 14, "zip": 10315, "stadt": "Berlin" }]
-    console.log("c------ondition", orte)
+
     if (orte) {
-        console.log("-----in condition", orte)
+
         for (let i = 0; i < orte.data.length; i++) {
-            console.log(orte[i]);
+            console.log("HHHHHHHHHHH", orte.data[i]);
             var coordString = orte.data[i].coord;
             var strasseString = `${orte.data[i].strasse + " " + orte.data[i].nummer}`
             var zipString = `${orte.data[i].zip}`
@@ -33,6 +32,26 @@ function initMap(daten) {
             var lat = Number(coordinates[0]);
             var lng = Number(coordinates[1]);
 
+            var content = `<div>
+            <ul>
+                <li>
+                    <strong>Adresse:</strong>
+                        <p>
+                            ${strasseString}<br />
+                            ${zipString} ${stadtString}
+                        </p>
+                </li>
+                <li>
+                    <strong>Inhalt:</strong>
+                        <p>
+                            ${textString}
+                        </p>
+                </li>
+            </ul>
+            <img src="data:image/png;base64, ${textBild}" />
+        </div>`
+
+
             console.log("COORS", lat, lng);
 
             var marker = new google.maps.Marker({
@@ -43,39 +62,24 @@ function initMap(daten) {
                 map: map,
                 icon: "../img/marker.png"
             });
+            attachSecretMessage(marker, content);
+        }
 
 
-            //infos auf nadelicon
-            console.log("########## create info window")
-
-            var infoWindow = new google.maps.InfoWindow({
-                content: `<div>
-                            <ul>
-                                <li>
-                                    <strong>Adresse:</strong>
-                                        <p>
-                                            ${strasseString}<br />
-                                            ${zipString} ${stadtString}
-                                        </p>
-                                </li>
-                                <li>
-                                    <strong>Inhalt:</strong>
-                                        <p>
-                                            ${textString}
-                                        </p>
-                                </li>
-                            </ul>
-                            <img src="data:image/png;base64, ${textBild}" />
-                        </div>`
-
-            })
-
-            console.log("xxxxxxxxxxx create marker info window event")
-            marker.addListener('click', function() {
-                infoWindow.open(map, marker);
+        function attachSecretMessage(marker, secretMessage) {
+            const infowindow = new google.maps.InfoWindow({
+                content: secretMessage,
             });
 
+            marker.addListener("click", () => {
+                infowindow.open(marker.get("map"), marker);
+            });
         }
+
+
+
+
+
 
     } //initMap()
 

@@ -179,7 +179,7 @@
                     </div>
                 </div>
                 <div class="container ml-4 mr-4 mb-2">
-                    <div class="logorregister active">
+                    <div class="inactive" id="logorregister">
                         <div class="container">
                             <div id="logIn" class="active">
                                 <form class="loginForm">
@@ -369,7 +369,7 @@
 
             </div>
 
-            <div class="container inactive" data-page id="meinAccount">
+            <div class="container" data-page id="meinAccount">
                 <div class="meinAccount">
                     <div class="container mt-0">
                         <div class="center titel">
@@ -384,89 +384,30 @@
                         </div>
 
                     </div>
+
                     <div class="container ml-4 mr-4 mb-2 mt-2">
-                        <!-- <div>
-                            <div class="columns">
-                                <div class="column is-one-third">
-                                    First column
-                                </div>
-                                <div class="column auto">
-                                    Second column
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="logorregister active">
-                            <div class="container">
-                                <div id="logIn" class="active">
-                                    <form class="loginForm">
-                                        <div class="input-group">
-                                            <label for="email" class="label"></label>
-                                            <input type="text" id="email" class="input is-small is-rounded" placeholder="E-Mail">
-                                            <span class="error-message"></span>
-                                        </div>
-
-                                        <div class="input-group">
-                                            <label for="password" class="label"></label>
-                                            <input type="password" id="password" class="input is-small is-rounded" placeholder="Passwort">
-                                            <span class="error-message"></span>
-                                        </div>
-                                        <div class="center mt-2">
-                                            <button class="button is-hovered is-small is-rounded is-info" type="submit">Login</button>
-                                        </div>
-                                    </form>
-                                    <div class="center">
-                                        <p class="mb-0 mt-1">Noch keinen Account?</p>
-                                    </div>
-                                    <div class="center mt-1 mb-2">
-                                        <span id="register">Registriere Dich jetzt.</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="container">
-                                <div id="registration" class="inactive">
-                                    <form class="registerForm">
-                                        <div class="input-group">
-                                            <label for="email" class="label"></label>
-                                            <input type="text" id="email" class="input is-small is-rounded" placeholder="E-Mail">
-                                            <span class="error-message"></span>
-                                        </div>
-
-                                        <div class="input-group">
-                                            <label for="password" class="label"></label>
-                                            <input type="password" id="password" class="input is-small is-rounded" placeholder="Passwort">
-                                            <span class="error-message"></span>
-                                        </div>
-                                        <div class="input-group">
-                                            <label for="password" class="label"></label>
-                                            <input type="password" id="password" class="input is-small is-rounded" placeholder="Erneutes Passwort">
-                                            <span class="error-message"></span>
-                                        </div>
-                                        <div class="center mt-2">
-                                            <button class="button is-hovered is-small is-rounded is-info" type="submit">Registrieren</button>
-                                        </div>
-                                    </form>
-                                    <div class="center mt-1">
-                                        <span id="log">Oder doch lieber einloggen?</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="center">
+                        <div id="logout" class="center inactive">
                             <button class="button is-hovered is-small is-rounded is-info">
                                     Abmelden
                             </button>
 
                         </div>
+                        <div id="AccLogin" class="inactive">
+
+                            <div class="center">Für Zugriff auf Deine Daten, bitte einloggen.</div>
+                            <div class="center mt-2">
+                                <button id="goToLogin" class="button is-hovered is-small is-rounded is-info">
+                                Anmelden
+                            </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
 
 
 
 
-                <!--             
+                    <!--             
                     <container class="container center ml-4 mr-4 mb-2 inhalt">
                         <div class="center">
             
@@ -474,9 +415,9 @@
                     </container>
                 </div> -->
 
+                </div>
             </div>
-        </div>
-        <!--<script src="script.js"></script>-->
+            <!--<script src="script.js"></script>-->
 
 
 
