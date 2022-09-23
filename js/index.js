@@ -14,7 +14,36 @@ Webcam();
 getUserInfo()
 
 
-function hideLogin() {
+
+const registerInst = document.querySelector('#register')
+console.log("-------------", registerInst)
+
+const log = document.querySelector('#log')
+console.log("-------------", log)
+
+registerInst.addEventListener("click", function() {
+    hideLogin()
+});
+
+log.addEventListener("click", function() {
+    hideRgister()
+});
+
+export function hideLogin() {
+    document.getElementById('logIn').classList.remove('active')
+    document.getElementById('logIn').classList.add('inactive')
+    document.getElementById('registration').classList.remove('inactive')
+    document.getElementById('registration').classList.add('active')
+}
+
+export function hideRgister() {
+    document.getElementById('logIn').classList.remove('inactive')
+    document.getElementById('logIn').classList.add('active')
+    document.getElementById('registration').classList.remove('active')
+    document.getElementById('registration').classList.add('inactive')
+}
+
+function hideLoginRegister() {
 
     const logRegister = document.getElementsByClassName("logorregister")
     console.log(logRegister)
@@ -66,7 +95,7 @@ export function getUserInfo() {
             var userData = data.data
             createCookie(`user-email=${userData.user.email}`)
             createCookie(`user-id=${userData.user.id}`)
-            hideLogin()
+            hideLoginRegister()
                 // Login/ Registrierung ausblenden + User Übersicht einblenden
             console.log("FETCH USER INFO", data.data);
 
@@ -150,10 +179,12 @@ document.getElementById('date2').value = new Date().toISOString().substring(0, 1
 const formLogin = document.querySelector(".loginForm");
 // if the form exists, run the class
 if (formLogin) {
-    // setup the fields we want to validate, we only have two but you can add others
+    console.log("Neues Formular wird abgeschickt -----------------------")
+        // setup the fields we want to validate, we only have two but you can add others
     const fieldsLogin = ["email", "password"];
     // run the class
     const validatorLogin = new Login(formLogin, fieldsLogin);
+    console.log("Neues Objekt wird erstellt -----------------------", validatorLogin)
 }
 
 const formRegister = document.querySelector(".registerForm");

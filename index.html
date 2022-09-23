@@ -181,7 +181,7 @@
                 <div class="container ml-4 mr-4 mb-2">
                     <div class="logorregister active">
                         <div class="container">
-                            <div class="logIn">
+                            <div id="logIn" class="active">
                                 <form class="loginForm">
                                     <div class="input-group">
                                         <label for="email" class="label"></label>
@@ -201,14 +201,14 @@
                                 <div class="center">
                                     <p class="mb-0 mt-1">Noch keinen Account?</p>
                                 </div>
-                                <div class="center">
-                                    <a id="register">Registriere Dich jetzt.</a>
+                                <div class="center mt-1">
+                                    <span id="register">Registriere Dich jetzt.</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="container">
-                            <div class="registration">
+                            <div id="registration" class="inactive">
                                 <form class="registerForm">
                                     <div class="input-group">
                                         <label for="email" class="label"></label>
@@ -230,12 +230,15 @@
                                         <button class="button is-hovered is-small is-rounded is-info" type="submit">Registrieren</button>
                                     </div>
                                 </form>
+                                <div class="center mt-1">
+                                    <span id="log">Oder doch lieber einloggen?</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
 
-                    <div class="seiten inactive">
+                    <div id="seiten" class="inactive">
                         <div class="center">
                             <div class="nav-tab-circle">
                                 <a href="#seite1" data-tab="seite1" class="b-nav-tab active center">1</a>
@@ -382,13 +385,70 @@
 
                     </div>
                     <div class="container ml-4 mr-4 mb-2 mt-2">
-                        <div>
+                        <!-- <div>
                             <div class="columns">
                                 <div class="column is-one-third">
                                     First column
                                 </div>
                                 <div class="column auto">
                                     Second column
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="logorregister active">
+                            <div class="container">
+                                <div id="logIn" class="active">
+                                    <form class="loginForm">
+                                        <div class="input-group">
+                                            <label for="email" class="label"></label>
+                                            <input type="text" id="email" class="input is-small is-rounded" placeholder="E-Mail">
+                                            <span class="error-message"></span>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <label for="password" class="label"></label>
+                                            <input type="password" id="password" class="input is-small is-rounded" placeholder="Passwort">
+                                            <span class="error-message"></span>
+                                        </div>
+                                        <div class="center mt-2">
+                                            <button class="button is-hovered is-small is-rounded is-info" type="submit">Login</button>
+                                        </div>
+                                    </form>
+                                    <div class="center">
+                                        <p class="mb-0 mt-1">Noch keinen Account?</p>
+                                    </div>
+                                    <div class="center mt-1 mb-2">
+                                        <span id="register">Registriere Dich jetzt.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container">
+                                <div id="registration" class="inactive">
+                                    <form class="registerForm">
+                                        <div class="input-group">
+                                            <label for="email" class="label"></label>
+                                            <input type="text" id="email" class="input is-small is-rounded" placeholder="E-Mail">
+                                            <span class="error-message"></span>
+                                        </div>
+
+                                        <div class="input-group">
+                                            <label for="password" class="label"></label>
+                                            <input type="password" id="password" class="input is-small is-rounded" placeholder="Passwort">
+                                            <span class="error-message"></span>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="password" class="label"></label>
+                                            <input type="password" id="password" class="input is-small is-rounded" placeholder="Erneutes Passwort">
+                                            <span class="error-message"></span>
+                                        </div>
+                                        <div class="center mt-2">
+                                            <button class="button is-hovered is-small is-rounded is-info" type="submit">Registrieren</button>
+                                        </div>
+                                    </form>
+                                    <div class="center mt-1">
+                                        <span id="log">Oder doch lieber einloggen?</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -400,118 +460,30 @@
 
                         </div>
                     </div>
-
-                    <!--Registrierung-->
-
-                    <div class="container">
-                        <div class="center">
-                            <form class="loginForm" id="signUp">
-                                <!-- Registration Form -->
-                                <div class="form signup">
-
-                                    <div class="field">
-                                        <!--   FELD FÜR NAME FALLS WIR DAS DOCH NOCH BENÖTIGEN
-                                <p class="control has-icons-left has-icons-right">
-                                    <input class="input is-small is-rounded" type="name" placeholder="Name">
-                                        <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope"></i>
-                                        </span>
-                                        <span class="error-message"></span>
-                                </p>
--->
-                                        <p class="control has-icons-left has-icons-right">
-                                            <input class="input is-small is-rounded" type=" " placeholder="Email">
-                                            <span class="icon is-small is-left">
-                                            <i class="fas fa-envelope"></i>
-                                        </span>
-                                            <span class="error-message"></span>
-                                        </p>
-                                        <p class="control has-icons-left mb-1">
-                                            <input class="input is-small is-rounded" type="password" placeholder="Passwort">
-                                            <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                                            <span class="error-message"></span>
-                                        </p>
-                                        <p class="control has-icons-left mb-1">
-                                            <input class="input is-small is-rounded" type="password" placeholder="Passwort wiederholen">
-                                            <span class="icon is-small is-left">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                                            <span class="error-message"></span>
-                                        </p>
-                                    </div>
-                                    <div class="checkbox-text">
-                                        <div class="checkbox-content">
-                                            <input type="checkbox" id="termCon">
-                                            <label for="termCon" class="text">I accepted all terms and conditions</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="center">
-                                        <button class="button is-hovered is-small is-rounded is-info" id="signUpBtn">Anmelden</button>
-                                    </div>
-                            </form>
-
-                            <div class="login-signup">
-                            </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <!--    ALTER VERSUCH FÜR LOGIN KANN DANN WEG
-                                    <form class="loginForm">
-                                            <div class="field">
-                                                <p class="control has-icons-left has-icons-right">
-                                                    <input class="input is-small is-rounded" type="email" placeholder="Email">
-                                                    <span class="icon is-small is-left">
-                                                                <i class="fas fa-envelope"></i>
-                                                              </span>
-                                                    <span class="error-message"></span>
-                                                </p>
-                                                <p class="control has-icons-left mb-1">
-                                                    <input class="input is-small is-rounded" type="password" placeholder="Passwort">
-                                                    <span class="icon is-small is-left">
-                                                                <i class="fas fa-lock"></i>
-                                                            </span>
-                                                    <span class="error-message"></span>
-                                                </p>
-                                            </div>
-                                            <div class="center">
-                                                <button class="button is-hovered is-small is-rounded is-info">Login</button>
-                                            </div>
-                                        </form> -->
-                    </div>
                 </div>
 
 
 
 
 
-                </container>
-                <container class="container center ml-4 mr-4 mb-2 inhalt">
-                    <div class="center">
-                        <!--  <button class="button is-hovered is-small is-rounded is-info">
-                                        Abmelden
-                                </button>
-                            -->
-                    </div>
-                </container>
+                <!--             
+                    <container class="container center ml-4 mr-4 mb-2 inhalt">
+                        <div class="center">
+            
+                        </div>
+                    </container>
+                </div> -->
+
             </div>
-
-        </div>
-        </div>
-
-        </div>
         </div>
         <!--<script src="script.js"></script>-->
 
-</html>
 
-</section>
+
+    </section>
 </body>
+
+</html>
 
 <!-- Karte-->
 <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMDKGk7nFrYA4h6Cci0OavpfBHXE0iGg&callback=initMap"></script>

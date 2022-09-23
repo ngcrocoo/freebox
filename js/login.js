@@ -5,6 +5,7 @@ export class Login {
     constructor(form, fields) {
         this.form = form;
         this.fields = fields;
+        console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", this.form, this.fields)
         this.validateonSubmit();
     }
 
@@ -15,11 +16,13 @@ export class Login {
         // add a "submit" event listener to the form
         this.form.addEventListener("submit", (e) => {
             // remove default functionality 
+            console.log("EventListener dazu -----------------------")
             e.preventDefault(); // warum wird die Seite trotzdem neu geladen?
             var error = 0;
             // loop through the fields and check them against a function for validation
             self.fields.forEach((field) => {
                 const input = document.querySelector(`#${field}`);
+                console.log("--------------------------INPUT", input)
                 if (self.validateFields(input) == false) {
                     // if a field does not validate, auto-increment our error integer
                     error++;
