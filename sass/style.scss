@@ -237,3 +237,18 @@ a:active {
     padding-right: 5%;
     padding-left: 4%;
 }
+
+.flex-container {
+    display: flex;
+    background-color: grey;
+  }
+  
+  .flex-item {
+    background-color: white;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    justify-content:space-around;
+   
+  }
