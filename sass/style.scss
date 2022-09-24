@@ -227,12 +227,12 @@ a:active {
     padding: 0;
 }
 
-.bildBox{
+.bildBox {
     width: 100%;
     height: 100%;
 }
 
-.markerInhalt{
+.markerInhalt {
     text-align: center;
     padding-right: 5%;
     padding-left: 4%;
@@ -241,14 +241,61 @@ a:active {
 .flex-container {
     display: flex;
     background-color: grey;
-  }
-  
-  .flex-item {
+}
+
+.flex-item {
     background-color: white;
     width: 200px;
     margin: 10px;
     text-align: center;
     line-height: 100px;
-    justify-content:space-around;
-   
-  }
+    justify-content: space-around;
+}
+
+// .test {
+//     width: 50%;
+//     height: 50%;
+// }
+// .media-content {
+//     align-items: center;
+// }
+// .media {
+//     margin: auto!important;
+// }
+.card-image {
+    width: 100%;
+}
+
+.media-content {
+    text-align: center!important;
+}
+
+.content figure {
+    margin-left: 0rem!important;
+    margin-right: 0rem!important;
+}
+
+.card-content {
+    padding: 0.5rem!important;
+}
+
+.boxDescription {
+    float: left;
+    text-align: left;
+}
+
+.trash {
+    float: right;
+}
+
+// .media-content {
+//     box-sizing: border-box;
+// }
+.myBox {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    height: 13rem;
+    max-width: 30rem;
+    overflow-y: auto;
+}

@@ -1,6 +1,45 @@
-import { getCookie, FetchOrte } from "./index.js";
+import { getCookie, FetchOrte, showMyBox } from "./index.js";
 
 export default function InitButtons() {
+
+    var deleteBtns = document.getElementsByClassName('deleteBox')
+    console.log("------------ DELETE BTNS", deleteBtns)
+
+    for (let i = 0; i < deleteBtns.length; i++) {
+        // var boxIDElem = document.querySelector(`#boxID${i}`)
+        // console.log("------------ BOX ID !!!!!!!!!", boxIDElem)
+        // var boxID = boxIDElem.innerText
+        // console.log("----------- Test hier SOLLTE DIE BOXID STEHEN JEWEILS MIT DER BTN ID", boxID, deleteBtns[i])
+
+
+        // deleteIcon.addEventListener("click", (e) => {
+        //     fetch('https://freebox.live:8888/api/standorte/:standortId', {
+        //         method: 'DELETE', // or 'PUT'
+        //         headers: {
+        //             "Authorization": `Bearer ${getCookie("access_token")}`
+
+        //         },
+        //         mode: 'cors',
+
+        //        //,
+
+        //         //     body: JSON.stringify({
+        //         //     email: this.form[0].value,
+        //         //     password: this.form[1].value,
+        //         // }),
+        //     })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         console.log('Success:', data);
+        //         FetchOrte()
+
+        //     })
+        //     .catch((error) => {
+        //         console.error('Error:', error);
+        //     });
+        // });
+    }
+
     document.getElementById("send").addEventListener("click", (e) => {
 
         const coordinates = document.getElementById('output').value.split(',')

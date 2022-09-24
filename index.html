@@ -82,7 +82,7 @@
                         <div class="container">
                             <div class="auswahl">
 
-                             <!--   <p class="mb-0">Du suchst nach etwas Bestimmten?</p> -->
+                                <!--   <p class="mb-0">Du suchst nach etwas Bestimmten?</p> -->
                                 <div class="is-focused center">
                                     <a href="#">Grenze Deine Suche ein.</a>
                                     <!-- <a href="#" onclick="kategorien()">Grenze Deine Suche ein.</a> -->
@@ -383,40 +383,70 @@
                     <div class="container">
                         <div class="center">
                             <h2>Mein Profil</h2>
-                            
+
                         </div>
-                        <div class="flex-container">
-                            <div class="flex-item">Deine Boxen:</div>
-                            <div class="flex-item">Deine Daten:</div>
-            
-                          </div>
-              
 
-                    </div>
+                        <div class="myBox ml-6 mr-6">
+                            <div id="myBoxList" class="columns">
+                                <div id="boxElement" class="column">
+                                    <div class="card boxElemCard">
+                                        <div class="card-image boxElemImg">
+                                            <figure class="image is-4by3 parentOfImg">
+                                                <img class="boxImg" src="" alt="Placeholder image">
+                                            </figure>
+                                        </div>
+                                        <div class="card-content boxElemContent">
+                                            <div class="media boxElemCMedia">
+                                                <div class="media-content boxElemCMC">
+                                                    <span class="boxDescription boxElemCMCDesc">
+                                                        <p class="boxaddress"></p>
+                                                    </span>
+                                                    <span class="icon trash boxElemIcon">
+                                                        <i class="fa-solid fa-trash deleteBox"></i>
+                                                        <i class="inactive boxID"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                    <div class="container ml-4 mr-4 mb-2 mt-2">
-                        <div id="logout" class="center inactive">
-                            <button class="button is-hovered is-small is-rounded is-info">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- <div class="flex-container">
+                                <div class="flex-item">Deine Boxen:</div>
+                                <div class="flex-item">Deine Daten:</div>
+
+                            </div> -->
+
+
+                        </div>
+
+                        <div class="container ml-4 mr-4 mb-2 mt-2">
+
+                            <div id="logout" class="center inactive">
+                                <button id="btnLogout" class="button is-hovered is-small is-rounded is-info">
                                     Abmelden
                             </button>
 
-                        </div>
-                        <div id="AccLogin" class="inactive">
+                            </div>
+                            <div id="AccLogin" class="inactive">
 
-                            <div class="center">Für Zugriff auf Deine Daten, bitte einloggen.</div>
-                            <div class="center mt-2">
-                                <button id="goToLogin" class="button is-hovered is-small is-rounded is-info">
+                                <div class="center">Für Zugriff auf Deine Daten, bitte einloggen.</div>
+                                <div class="center mt-2">
+                                    <button id="goToLogin" class="button is-hovered is-small is-rounded is-info">
                                 Anmelden
                             </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
 
 
 
-                    <!--             
+                        <!--             
                     <container class="container center ml-4 mr-4 mb-2 inhalt">
                         <div class="center">
             
@@ -424,9 +454,9 @@
                     </container>
                 </div> -->
 
+                    </div>
                 </div>
-            </div>
-            <!--<script src="script.js"></script>-->
+                <!--<script src="script.js"></script>-->
 
 
 

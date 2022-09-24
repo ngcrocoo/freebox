@@ -20,6 +20,8 @@ getUserInfo()
 const registerInst = document.querySelector('#register')
 const log = document.querySelector('#log')
 const logout = document.querySelector('#logout')
+const myBoxes = []
+
 
 registerInst.addEventListener("click", function() {
     hideLogin()
@@ -122,7 +124,7 @@ export function getUserInfo() {
             createCookie(`user-id=${userData.user.id}`)
             toggleContent(true)
                 // Login/ Registrierung ausblenden + User Übersicht einblenden
-        //    console.log("FETCH USER INFO", data.data);
+                //    console.log("FETCH USER INFO", data.data);
 
         }).catch(function(err) {
 
@@ -195,7 +197,31 @@ export function Logout() {
     console.log("TEST LOGOUT")
 }
 
+// export function getBox() {
+//     fetch('https://freebox.live:8888/api/standorte/:standortId', {
+//         headers: {
+//             "Authorization": `Bearer ${getCookie("access_token")}`
 
+//         },
+//         mode: 'cors',
+//         // referrer: 'no-referrer'
+//     }).then(function(response) {
+
+//         // The API call was successful!
+
+//         return response.json();
+
+
+//         // There was an error
+
+
+//     }).then(function(data) {
+//         console.log("FETCH DATA-------------------", data);
+//     }).catch(function(err) {
+//         // There was an error
+//         console.warn('Something went wrong.', err);
+//     });
+// }
 
 export function FetchOrte() {
     fetch('https://freebox.live:8888/api/standorte-noauth/', {
@@ -215,16 +241,124 @@ export function FetchOrte() {
 
 
     }).then(function(data) {
-        // This is the JSON from our response
-
-
+        console.log("------------------- das ist DATA", data)
 
         initMap(data)
-       // console.log("FETCH DATA", data);
+        for (let i = 0; i < data.data.length; i++) {
+            if (getCookie("access_token")) {
+                if (identifyMyBoxes(data.data[i].user)) {
+                    myBoxes.push(data.data[i])
+                    console.log("MEINE BOXEN ----------------", myBoxes)
+                    showMyBox(data.data[i].id, data.data[i].bild, data.data[i].strasse, data.data[i].nummer)
+                }
+            }
+        }
+        document.getElementById('boxElement').classList.add('inactive')
+
+        // console.log("FETCH DATA", data);
     }).catch(function(err) {
         // There was an error
         console.warn('Something went wrong.', err);
     });
+}
+
+function identifyMyBoxes(user) {
+
+    if (getCookie("user-id") === user) {
+        return true
+            // showMyBox()
+            // console.log("DAS IST MEINE BOXXXXXXXX", user)
+    } else {
+        return false
+    }
+}
+var number = 0
+
+export function showMyBox(id, bild, strasse, nummer) {
+    console.log("--------BILD, STRASSE, NUMMER", bild, strasse, nummer)
+    var boxElement = document.getElementById('boxElement')
+        // console.log("---------------TEST", boxElement)
+        // for (let i = 0; i <= myBoxes.length; i++) {
+        ++number
+        // console.log("----------MYBOXES INHALT", myBoxes[i].strasse)
+    var clone = boxElement.cloneNode(true);
+    console.log("------------CLONE", clone)
+    clone.id = `boxElement${number}`;
+    boxElement.after(clone);
+
+    var child1 = clone.children[0]
+    child1.id = `boxElemCard${number}`
+    console.log("---------------TEST", child1)
+
+    var child1id = document.getElementById(`boxElemCard${number}`)
+    var child2 = child1id.children[0]
+    child2.id = `boxElemImg${number}`
+    console.log("---------------TEST2", child2)
+
+    var child2txt = child1id.children[1]
+    child2txt.id = `boxElemContent${number}`
+    var child2txtid = document.getElementById(`boxElemContent${number}`)
+    var child3txt = child2txtid.children[0]
+    child3txt.id = `boxElemCMedia${number}`
+    var child3txtid = document.getElementById(`boxElemCMedia${number}`)
+    var child4txt = child3txtid.children[0]
+    child4txt.id = `boxElemCMC${number}`
+    var child4txtid = document.getElementById(`boxElemCMC${number}`)
+    var child5txt = child4txtid.children[0]
+    var idIcongroup = child4txtid.children[1]
+    idIcongroup.id = `boxElemIcon${number}`
+    var idIcongroup = document.getElementById(`boxElemIcon${number}`)
+    var deleteIconItem = idIcongroup.children[0]
+    deleteIconItem.id = `deleteBox${number}`
+    const deleteIcon = document.getElementById(`deleteBox${number}`)
+    var boxIDItem = idIcongroup.children[1]
+    boxIDItem.id = `boxID${number}`
+    const boxID = document.getElementById(`boxID${number}`)
+    boxID.innerText = `${id}`
+
+    child5txt.id = `boxElemCMCDesc${number}`
+    var child5txtid = document.getElementById(`boxElemCMCDesc${number}`)
+    var child6txt = child5txtid.children[0]
+
+    child6txt.id = `boxaddress${number}`
+    document.getElementById(`boxaddress${number}`).innerText = `${strasse} ${nummer}`
+
+    // child6txt.innerHTML(`${strasse} ${nummer}`)
+    // console.log("---------------LETZTE TEST", child6txt)
+
+    var child2id = document.getElementById(`boxElemImg${number}`)
+    var child3 = child2id.children[0]
+    child3.id = `parentOfImg${number}`
+    console.log("---------------TEST3", child3)
+
+    var child3id = document.getElementById(`parentOfImg${number}`)
+    var boxImg = child3id.children[0]
+    boxImg.id = `boxImg${number}`
+    boxImg.src = `data:image/png;base64, ${bild}`
+    console.log("---------------TEST4", boxImg)
+
+
+
+
+    // var boxImg = document.querySelector('.boxImg')
+    // boxImg.src = `data:image/png;base64, ${bild}`
+    // var boxDescription = document.querySelector('.boxDescription')
+    // boxDescription.outerHTML = `<p>${strasse} ${nummer}</p>`
+    // console.log(boxDescription)
+
+
+    // console.log("------------CLONE CHILDREN", clone.children)
+    // }
+    // boxElement.parentNode.removeChild(boxElement);
+    // for (let i = 0; i < number; i++) {
+    //     var boxImg = document.querySelector('.boxImg')
+    //     var boxDescription = document.querySelector('.boxDescription')
+    //     boxDescription.outerHTML = `<p>${strasse} ${nummer}</p>`
+    //     console.log(boxDescription)
+    //     boxImg.src = `data:image/png;base64, ${bild}`
+    // }
+
+
 }
 
 // Get today's date for date input
@@ -289,7 +423,7 @@ request.onupgradeneeded = function() {
 };
 
 request.onsuccess = function() {
- //   console.log("Database opened successfully");
+    //   console.log("Database opened successfully");
 
     const db = request.result;
     const transaction = db.transaction("boxes", "readwrite");
@@ -314,21 +448,21 @@ request.onsuccess = function() {
     const adresseQuery = adresseIndex.get(["Straßmannstraße 29", "Berlin", "10249"]);
 
     idQuery.onsuccess = function() {
-    //    console.log("idQuery", idQuery.result);
+        //    console.log("idQuery", idQuery.result);
     };
 
     stadtQuery.onsuccess = function() {
-    //    console.log("stadtQuery", stadtQuery.result);
+        //    console.log("stadtQuery", stadtQuery.result);
     };
 
     adresseQuery.onsuccess = function() {
-      //  console.log("adresseQuery", adresseQuery.result);
+        //  console.log("adresseQuery", adresseQuery.result);
     };
 
     const deleteBox = store.delete(1);
 
     deleteBox.onsuccess = function() {
-     //   console.log("Straßmannstraße 29, 10249 Berlin wurde gelöscht'");
+        //   console.log("Straßmannstraße 29, 10249 Berlin wurde gelöscht'");
     };
 
     const stadtBerlin = stadtIndex.getKey(["Berlin"]);
@@ -337,7 +471,7 @@ request.onsuccess = function() {
         const deleteBox = store.delete(stadtBerlin.result);
 
         deleteBox.onsuccess = function() {
-           // console.log("Boxen in Berlin wurden gelöscht");
+            // console.log("Boxen in Berlin wurden gelöscht");
         };
     };
     transaction.oncomplete = function() {

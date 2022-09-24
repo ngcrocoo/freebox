@@ -8121,3 +8121,28 @@ a:active {
   text-align: center;
   line-height: 100px;
   justify-content: space-around; }
+
+.card-image {
+  width: 100%; }
+
+.media-content {
+  text-align: center !important; }
+
+.content figure {
+  margin-left: 0rem !important;
+  margin-right: 0rem !important; }
+
+.card-content {
+  padding: 0.5rem !important; }
+
+.boxDescription {
+  float: left;
+  text-align: left; }
+
+.trash {
+  float: right; }
+
+.myBox {
+  height: 13rem;
+  max-width: 30rem;
+  overflow-y: auto; }
