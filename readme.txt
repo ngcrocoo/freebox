@@ -1,9 +1,11 @@
-FreeBox
+#**FreeBox**
 
-Diese Anwendung zeigt dir Orte an, an denen FreeBoxen stehen. Free Boxen, sind Boxen, deren Inhalt kostenfrei zum mitnehmen ist. 
-Diese Boxen werden von Personen oder Läden auf die Straße gestellt und in unserer App hochgeladen.
+## Diese Anwendung zeigt dir Orte an, an denen FreeBoxen stehen. Free Boxen, sind Boxen, deren Inhalt kostenfrei zum mitnehmen ist. 
+Diese Boxen werden von Personen oder Läden auf die Straße gestellt und in unserer App hochgeladen. Boxen können auch ohne Anmeldung angeschaut werden, hochladen einer Box ist nur nach dem einloggen möglich.
 
-Falls das Projekt neu geclont wird muss anfänglich folgender Befehl ausgeführt werden:
+Die Webanwendung ist downloadbar und offline bedingt nutzbar. Durch die Einschränkung der Google Map ist die Google Karte leider offline nicht nutzbar.
+
+Falls das Projekt neu geclont wird muss anfänglich, nach dem pull der main branch, folgender Befehl ausgeführt werden:
 
 npm -install
 
