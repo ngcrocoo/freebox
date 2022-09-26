@@ -1,69 +1,26 @@
 import { getCookie, FetchOrte, showMyBox } from "./index.js";
+import {fetchCoordinates} from "./geolocation.js"
 
-export default function InitButtons() {
-
-    var deleteBtns = document.getElementsByClassName('deleteBox')
-    console.log("------------ DELETE BTNS", deleteBtns)
-
-    for (let i = 0; i < deleteBtns.length; i++) {
-        // var boxIDElem = document.querySelector(`#boxID${i}`)
-        // console.log("------------ BOX ID !!!!!!!!!", boxIDElem)
-        // var boxID = boxIDElem.innerText
-        // console.log("----------- Test hier SOLLTE DIE BOXID STEHEN JEWEILS MIT DER BTN ID", boxID, deleteBtns[i])
-
-
-        // deleteIcon.addEventListener("click", (e) => {
-        //     fetch('https://freebox.live:8888/api/standorte/:standortId', {
-        //         method: 'DELETE', // or 'PUT'
-        //         headers: {
-        //             "Authorization": `Bearer ${getCookie("access_token")}`
-
-        //         },
-        //         mode: 'cors',
-
-        //        //,
-
-        //         //     body: JSON.stringify({
-        //         //     email: this.form[0].value,
-        //         //     password: this.form[1].value,
-        //         // }),
-        //     })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         console.log('Success:', data);
-        //         FetchOrte()
-
-        //     })
-        //     .catch((error) => {
-        //         console.error('Error:', error);
-        //     });
-        // });
-    }
+export default function InitButtons() { 
+     
+//formular für adresse, weiterleitung an backend, API CALL
 
     document.getElementById("send").addEventListener("click", (e) => {
-
-        const coordinates = document.getElementById('output').value.split(',')
         const strasse = document.getElementById("inputStraße").value.split(' ')
         const stadt = document.getElementById("inputStadt").value
         const zip = document.getElementById("inputPLZ").value
+
+        // document.getElementById('output')=`${data.results[0].geometry.location.lat},${}`
+       fetchCoordinates(strasse[0]+" "+  strasse[1] +" " + zip + " "+ stadt)
+     
+        const coordinates = localStorage.getItem('coords').split(',')
+
         const text = document.getElementById("inputBemerkung").value
         const date1 = document.getElementById("date1").value
         const date2 = document.getElementById("date2").value
         const user = "ngcrocoo"
-        console.log(date1)
-            //const img = document.getElementById()
-        const img = localStorage.getItem('globalImage')
-            // console.log("XX OO XX OO:", {
-            //     coord: coordinates[0] + "," + coordinates[1],
-            //     strasse: strasse[0],
-            //     nummer: parseInt(strasse[1]),
-            //     zip: parseInt(zip),
-            //     stadt: stadt,
-            //     bild: img,
-            //     text: text
-            // })
 
-        console.log("cookie value", getCookie("access_token"))
+        const img = localStorage.getItem('globalImage')
 
         fetch('https://freebox.live:8888/api/standorte/', {
                 method: 'POST', // or 'PUT'
@@ -81,30 +38,26 @@ export default function InitButtons() {
                         stadt: stadt,
                         bild: img,
                         text: text
-                    }) //,
+                    }) 
 
-                //     body: JSON.stringify({
-                //     email: this.form[0].value,
-                //     password: this.form[1].value,
-                // }),
+ 
             })
             .then((response) => response.json())
             .then((data) => {
-                console.log('Success:', data);
                 FetchOrte()
+                location.reload();
 
             })
             .catch((error) => {
-                console.error('Error:', error);
             });
 
     });
 
 
 
+//hinzufügen einer box wird geöffnet
 
-
-    var backToLog = document.querySelector("#goToLogin")
+    var backToLog = document.querySelector("#goToLogin")  //wenn nicht eingeloggt, weiterleitung zu log in
     backToLog.addEventListener("click", (e) => {
         bindClick('hinzufuegen')
     });
@@ -112,7 +65,6 @@ export default function InitButtons() {
     var btns = document.querySelector("#bottom-menu")
     var imgTags = btns.querySelectorAll("img")
     for (let i = 0; i < imgTags.length; i++) {
-        console.log("111111111111111111111", imgTags[i])
         imgTags[i].addEventListener("click", (e) => {
             bindClick(e.target.dataset.id)
         });
@@ -121,9 +73,8 @@ export default function InitButtons() {
     }
 }
 
-
+// öffnet den angeklickenbereich
 function bindClick(id) {
-    console.log(id)
     const pages = document.querySelectorAll('[data-page]');
     pages.forEach(element => {
 
@@ -136,10 +87,8 @@ function bindClick(id) {
 }
 
 export function toggleContent(state) {
-    // const btn = document.getElementById({buttonid})
-    // btn.addEventListener("click", (e) => {
 
-    // 
+    //login=true, nicht eingeloggt=false) im weiteren verlauf-> blendet login funktion ein, wenn nciht eingeloggt oder die logoutfuktion wenn bereits eingeloggt (
     const myLogin = document.getElementById("AccLogin")
     const myLogout = document.getElementById("logout")
     const logRegis = document.getElementById('logorregister')
@@ -155,12 +104,4 @@ export function toggleContent(state) {
         myLogout.classList.add("inactive")
         myLogin.classList.remove("inactive")
     }
-
-
-
-
-
-
-
-
 }

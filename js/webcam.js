@@ -23,11 +23,11 @@ export default function Webcam() {
         const takePhoto = document.createElement("a");
         // set the name of the download, could change this to something
         // unique
-        takePhoto.download = "download.png";
+        //takePhoto.download = "download.png";
 
         const preview = document.querySelector("#preview");
         // on click of preview image, click the download link to download file
-        preview.addEventListener("click", () => takePhoto.click());
+        //preview.addEventListener("click", () => takePhoto.click());
 
         const canvas = document.createElement("canvas");
 
@@ -51,10 +51,6 @@ export default function Webcam() {
 
             const imageData = canvas.toDataURL("image/png");
             const base64Canvas = canvas.toDataURL("image/jpeg").split(';base64,')[1];
-            console.log("picture data: ", base64Canvas)
-                // var picByte = base64ToArrayBuffer(base64Canvas)
-                // console.log("OOOO - picture btyes: ", picByte)
-
 
             localStorage.setItem('globalImage', base64Canvas);
             camera.style.display = "none";
@@ -64,17 +60,6 @@ export default function Webcam() {
             preview.src = imageData;
             preview.style.display = "block"
 
-        }
-
-
-        function base64ToArrayBuffer(base64) {
-            var binary_string = window.atob(base64);
-            var len = binary_string.length;
-            var bytes = new Uint8Array(len);
-            for (var i = 0; i < len; i++) {
-                bytes[i] = binary_string.charCodeAt(i);
-            }
-            return bytes.buffer;
         }
 
         function newSnapshot() {
@@ -137,6 +122,5 @@ export default function Webcam() {
         // set device to default environment camera
         setDevice();
     })();
-
 
 }

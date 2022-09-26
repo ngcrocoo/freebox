@@ -44,30 +44,18 @@ export class Register {
                     })
                     .then((response) => response.json())
                     .then((data) => {
-                        console.log(data);
                         // code here //
                         if (data.error) {
                             alert("Error Password or Username"); /*displays error message*/
                         } else {
 
-                            console.log("das klappt")
                             LoginCall(this.form[0].value, this.form[1].value)
-                                // window.open(
-                                //     "target.html"
-                                // ); /*opens the target page while Id & password matches*/
                         }
                     })
                     .catch((err) => {
                         console.log(err);
                     });
 
-
-                // //do login api here or in this case, just submit the form and set a localStorage item
-                // // Login API fehlt
-                // hideLogin();
-                // this.form.submit();
-
-                console.log("submit klappt")
             }
         });
     }

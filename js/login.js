@@ -5,10 +5,8 @@ export class Login {
     constructor(form, fields) {
         this.form = form;
         this.fields = fields;
-        console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", this.form, this.fields)
         this.validateonSubmit();
     }
-
 
     validateonSubmit() {
         let self = this; // setup calls to the "this" values of the class described in the constructor
@@ -16,14 +14,11 @@ export class Login {
         // add a "submit" event listener to the form
         this.form.addEventListener("submit", (e) => {
             // remove default functionality 
-            console.log("EventListener dazu -----------------------")
-            e.preventDefault(); // warum wird die Seite trotzdem neu geladen?
+            e.preventDefault(); 
             var error = 0;
             // loop through the fields and check them against a function for validation
             self.fields.forEach((field) => {
-                console.log("BIST DU NOCH DA?")
                 const input = document.querySelector(`#${field}`);
-                console.log("--------------------------INPUT", input)
                 if (self.validateFields(input) == false) {
                     // if a field does not validate, auto-increment our error integer
                     error++;
@@ -31,10 +26,7 @@ export class Login {
             });
             // if everything validates, error will be 0 and can continue
             if (error == 0) {
-                console.log("Keine Fehler, Login Daten posten")
-                console.log(this.form[0].value)
                 LoginCall(this.form[0].value, this.form[1].value)
-                console.log("submit klappt")
             }
         });
     }
@@ -95,46 +87,4 @@ export class Login {
         }
     }
 
-
 }
-
-
-
-
-/** INTERNETZ CODE
- * 
- * const container = document.querySelector(".container"),
-      pwShowHide = document.querySelectorAll(".showHidePw"),
-      pwFields = document.querySelectorAll(".password"),
-      signUp = document.querySelector(".signup-link"),
-      login = document.querySelector(".login-link");
-
-    //   js code to show/hide password and change icon
-    pwShowHide.forEach(eyeIcon =>{
-        eyeIcon.addEventListener("click", ()=>{
-            pwFields.forEach(pwField =>{
-                if(pwField.type ==="password"){
-                    pwField.type = "text";
-
-                    pwShowHide.forEach(icon =>{
-                        icon.classList.replace("uil-eye-slash", "uil-eye");
-                    })
-                }else{
-                    pwField.type = "password";
-
-                    pwShowHide.forEach(icon =>{
-                        icon.classList.replace("uil-eye", "uil-eye-slash");
-                    })
-                }
-            }) 
-        })
-    })
-
-    // js code to appear signup and login form
-    signUp.addEventListener("click", ( )=>{
-        container.classList.add("active");
-    });
-    login.addEventListener("click", ( )=>{
-        container.classList.remove("active");
-    });
- */

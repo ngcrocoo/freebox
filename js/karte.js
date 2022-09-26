@@ -20,39 +20,36 @@ function initMap(daten) {
     if (orte) {
 
         for (let i = 0; i < orte.data.length; i++) {
-            console.log("HHHHHHHHHHH", orte.data[i]);
             var coordString = orte.data[i].coord;
             var strasseString = `${orte.data[i].strasse + " " + orte.data[i].nummer}`
             var zipString = `${orte.data[i].zip}`
             var stadtString = `${orte.data[i].stadt}`
             var textString = `${orte.data[i].text}`
             var textBild = `${orte.data[i].bild}`
-                //       console.log("coors", coordString)
             var coordinates = coordString.split(',');
             var lat = Number(coordinates[0]);
             var lng = Number(coordinates[1]);
 
             var content = `<div>
             <ul>
-                <li>
-                    <strong>Adresse:</strong>
-                        <p>
+                <h2>FreeBox</h2>
+                <div>
+                    
                             ${strasseString}<br />
                             ${zipString} ${stadtString}
-                        </p>
-                </li>
-                <li>
+                            <br />
+                            <br />
+                        
+                </div>
+                <div>
                     <strong>Inhalt:</strong>
-                        <p>
+                        <div>
                             ${textString}
-                        </p>
-                </li>
+                        </div>
+                </div>
             </ul>
-            <img src="data:image/png;base64, ${textBild}" />
+            <img class="hochgeladenesBild" src="data:image/png;base64, ${textBild}" />
         </div>`
-
-
-            console.log("COORS", lat, lng);
 
             var marker = new google.maps.Marker({
                 position: {
@@ -76,11 +73,6 @@ function initMap(daten) {
             });
         }
 
-
-
-
-
-
-    } //initMap()
+    } 
 
 }

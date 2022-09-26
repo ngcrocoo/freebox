@@ -16,6 +16,8 @@
     <script src="js/karte.js"></script>
 </head>
 
+
+
 <body style="overflow: hidden">
     <section class="content is-small">
         <!-- Menüleiste -->
@@ -48,7 +50,7 @@
         </div>
         <!-- Marker Window -->
 
-        <!-- Infobox -->
+        <!-- Infobox SUCHE-->
         <div class="infobox">
             <div class="background-opt"></div>
             <div class="container inactive" data-page id="suche">
@@ -108,54 +110,10 @@
                                                                 </label>
                                                         </div>
                                                     </div>
-                                                    <!--CHECKBOXEN
-                                                    <div class="column katabstand">
-                                                        <div>
-                                                        <label class="checkbox">
-                                                            <input type="checkbox" name="answer">Bücher
-                                                        </label>
-                                                    </div>
-                                                    </div>
-                                                    <div class="column katabstand">
-                                                        <label class="checkbox">
-                                                                <input type="checkbox" name="answer">Elektronik
-                                                            </label>
-                                                    </div>
-
-                                                
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="column">
-                                            <div class="container">
-                                                <div class="columns katabst">
-                                                    <div class="column katabstand">
-                                                        <label class="checkbox">
-                                                                <input type="checkbox" name="answer">Pflanzen
-                                                            </label>
-                                                    </div>
-
-                                                    <div class="column katabstand">
-                                                        <label class="checkbox">
-                                                                <input type="checkbox" name="answer">Möbel
-                                                            </label>
-                                                    </div>
-                                                    <div class="column katabstand">
-                                                        <label class="checkbox">
-                                                                <input type="checkbox" name="answer">Sonstiges
-                                                          </label>
-                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
-
-
                                     </div>
-
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -239,29 +197,24 @@
                         </div>
                     </div>
 
-
+<!--SEITEN 1-4 -->
                     <div id="seiten" class="inactive">
                         <div class="center">
                             <div class="nav-tab-circle">
                                 <a href="#seite1" data-tab="seite1" class="b-nav-tab active center">1</a>
                             </div>
 
-                            <!-- <a class="b-nav-tab space">-</a>
-                            <a class="b-nav-tab space">-</a> -->
                             <div class="nav-tab-circle">
                                 <a href="#seite2" data-tab="seite2" class="b-nav-tab center">
                                     2
                                   </a>
                             </div>
 
-                            <!-- <a class="b-nav-tab space">-</a>
-                            <a class="b-nav-tab space">-</a> -->
                             <div class="nav-tab-circle">
                                 <a href="#seite3" data-tab="seite3" class="b-nav-tab center">
                                         3
                                       </a>
-                                <!-- <a class="b-nav-tab space">-</a>
-                            <a class="b-nav-tab space">-</a> -->
+
                             </div>
                             <div class="nav-tab-circle">
                                 <a href="#seite4" data-tab="seite4" class="b-nav-tab center">
@@ -342,24 +295,8 @@
                             <div class="center mt-3">
                                 <p>Alles richtig eingetragen?</p>
 
-                                <!-- <span class="icon">
-                                   <i class="fa-solid fa-location-dot"></i>
-                                   </span> -->
                             </div>
-                            <!-- <div class="center">
-                                Übersicht eingetragene Daten
-                                <div>
-                                    <p>Adresse:</p>
-                                    <p></p>
-                                    <p></p>
-                                    muss noch implementiert werden
-                                </div>
-                                <div class="adressinput">
-                                    <p>Straße</p>
-                                    <p>PLZ</p>
-                                    <p>Stadt</p>
-                                </div>
-                            </div> -->
+                         
                             <div class="center mb-3 mt-2">
                                 <button class="button is-hovered is-small is-rounded is-info" id="send">Absenden</button>
                             </div>
@@ -371,6 +308,8 @@
 
             </div>
 
+
+            <!-- MEIN ACCOUNT-->
             <div class="container" data-page id="meinAccount">
                 <div class="meinAccount">
                     <div class="container mt-0">
@@ -387,47 +326,16 @@
                         </div>
 
                         <div class="myBox ml-6 mr-6">
-                            <div id="myBoxList" class="columns">
-                                <div id="boxElement" class="column">
-                                    <div class="card boxElemCard">
-                                        <div class="card-image boxElemImg">
-                                            <figure class="image is-4by3 parentOfImg">
-                                                <img class="boxImg" src="" alt="Placeholder image">
-                                            </figure>
-                                        </div>
-                                        <div class="card-content boxElemContent">
-                                            <div class="media boxElemCMedia">
-                                                <div class="media-content boxElemCMC">
-                                                    <span class="boxDescription boxElemCMCDesc">
-                                                        <p class="boxaddress"></p>
-                                                    </span>
-                                                    <span class="icon trash boxElemIcon">
-                                                        <i class="fa-solid fa-trash deleteBox"></i>
-                                                        <i class="inactive boxID"></i>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
+                            <div id="myBoxList" class="columns is-multiline is-mobile">
+                             
                             </div>
-
-                            <!-- <div class="flex-container">
-                                <div class="flex-item">Deine Boxen:</div>
-                                <div class="flex-item">Deine Daten:</div>
-
-                            </div> -->
-
 
                         </div>
 
                         <div class="container ml-4 mr-4 mb-2 mt-2">
 
                             <div id="logout" class="center inactive">
-                                <button id="btnLogout" class="button is-hovered is-small is-rounded is-info">
-                                    Abmelden
+                                <button id="btnLogout" class="button is-hovered is-small is-rounded is-info">Abmelden
                             </button>
 
                             </div>
@@ -435,30 +343,14 @@
 
                                 <div class="center">Für Zugriff auf Deine Daten, bitte einloggen.</div>
                                 <div class="center mt-2">
-                                    <button id="goToLogin" class="button is-hovered is-small is-rounded is-info">
-                                Anmelden
+                                    <button id="goToLogin" class="button is-hovered is-small is-rounded is-info">Anmelden
                             </button>
                                 </div>
                             </div>
                         </div>
 
-
-
-
-
-                        <!--             
-                    <container class="container center ml-4 mr-4 mb-2 inhalt">
-                        <div class="center">
-            
-                        </div>
-                    </container>
-                </div> -->
-
                     </div>
                 </div>
-                <!--<script src="script.js"></script>-->
-
-
 
     </section>
 </body>
